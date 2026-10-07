@@ -1,0 +1,71 @@
+@use "../../styles/main.scss" as *;
+
+.table_container {
+  padding: 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  // box-shadow: $box-shadow-all-sides;
+
+  max-width: 100%;
+  margin: 5vh auto;
+  font-family: $font-stack;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  @media (max-width: 768px) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+.table_header {
+  padding: 1rem;
+  text-align: left;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-bottom: 1px solid #444;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+.table_cell {
+  // color: var(--muted-text-color);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #444;
+
+  text-align: left;
+
+  @media (max-width: 768px) {
+    display: block;
+    padding: 0.5rem 0.75rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #6867673d;
+    border-bottom: 1px solid #888;
+  }
+}
+
+tr {
+  @media (max-width: 768px) {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

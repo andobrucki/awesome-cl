@@ -1,0 +1,214 @@
+@use "../lib-styles/borders.scss";
+@use "../lib-styles/colors.scss";
+@use "../lib-styles/paddings.scss";
+@use "../lib-styles/radius.scss";
+@use "../lib-styles/component-sizes.scss";
+@use "../lib-styles/font-sizes.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  margin-left: 0.5rem;
+  user-select: none;
+  color: inherit;
+}
+
+.label-left {
+  flex-direction: row-reverse;
+  .label {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+}
+
+.label-right {
+  flex-direction: row;
+}
+
+.label-bottom {
+  flex-direction: column;
+  align-items: center;
+  .label {
+    margin-top: 0.5rem;
+  }
+}
+
+.label-top {
+  flex-direction: column-reverse;
+  align-items: center;
+  .label {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Size classes
+.size-sm {
+  width: var(--checkbox-size-sm);
+  height: var(--checkbox-size-sm);
+}
+
+.size-md {
+  width: var(--checkbox-size-md);
+  height: var(--checkbox-size-md);
+}
+
+.size-lg {
+  width: var(--checkbox-size-lg);
+  height: var(--checkbox-size-lg);
+}
+
+/* Radius classes*/
+.radius-none {
+  border-radius: var(--border-radius-none);
+}
+
+.radius-sm {
+  border-radius: var(--border-radius-sm);
+}
+
+.radius-md {
+  border-radius: var(--border-radius-md);
+}
+
+.radius-full {
+  border-radius: var(--border-radius-full);
+}
+
+/* border-classes */
+.border-none {
+  border: none;
+}
+.border-sm {
+  border: var(--border-xs);
+}
+
+.border-lg {
+  border: var(--border-sm);
+}
+
+// Color classes with variants (subtle, solid)
+.variant-subtle {
+  border: none;
+}
+
+.color-default.variant-subtle {
+  background-color: var(--default-base);
+  .checkmark {
+    color: var(--default-dark);
+  }
+}
+
+.color-primary.variant-subtle {
+  background-color: var(--primary-light);
+  .checkmark {
+    color: var(--primary-dark);
+  }
+}
+
+.color-secondary.variant-subtle {
+  background-color: var(--secondary-light);
+  .checkmark {
+    color: var(--secondary-dark);
+  }
+}
+
+.color-success.variant-subtle {
+  background-color: var(--success-light);
+  .checkmark {
+    color: var(--dark-success-dark);
+  }
+}
+
+.color-warning.variant-subtle {
+  background-color: var(--warning-light);
+  .checkmark {
+    color: var(--warning-dark);
+  }
+}
+
+.color-danger.variant-subtle {
+  background-color: var(--danger-light);
+  .checkmark {
+    color: var(--danger-dark);
+  }
+}
+
+// Solid classes
+.variant-solid {
+  background-color: var(--default-light);
+  border-color: var(--default-base);
+  .checkmark {
+    color: var(--default-light);
+  }
+  &.checked {
+    border: none;
+  }
+}
+
+.color-default.variant-solid {
+  &.checked {
+    background-color: var(--default-dark);
+
+    .checkmark {
+      color: var(--default-base-lighter);
+    }
+  }
+}
+
+.color-primary.variant-solid {
+  &.checked {
+    background-color: var(--primary-base);
+  }
+}
+
+.color-secondary.variant-solid {
+  &.checked {
+    background-color: var(--secondary-base);
+  }
+}
+
+.color-success.variant-solid {
+  &.checked {
+    background-color: var(--success-base);
+  }
+}
+
+.color-warning.variant-solid {
+  &.checked {
+    background-color: var(--warning-base);
+
+    .checkmark {
+      color: #212121;
+    }
+  }
+}
+
+.color-danger.variant-solid {
+  &.checked {
+    background-color: var(--danger-base);
+  }
+}

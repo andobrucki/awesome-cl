@@ -1,0 +1,17 @@
+// borders have no colors
+
+$border-none: none;
+$border-xs: solid 1px;
+$border-sm: solid 3px;
+$border-md: solid 5px;
+$border-lg: solid 8px;
+$border-xl: solid 12px;
+
+:root {
+  --border-none: #{$border-none};
+  --border-xs: #{$border-xs};
+  --border-sm: #{$border-sm};
+  --border-md: #{$border-md};
+  --border-lg: #{$border-lg};
+  --border-xl: #{$border-xl};
+}

@@ -1,0 +1,133 @@
+// Light theme colors (default)
+// Default Colors
+// $default-base: #a3a3a3;
+// $default-base-lighter: #f4f4f4;
+// $default-dark: black;
+// $default-light: white;
+
+// // Primary Colors
+// $primary-base: #4a90e2;
+// $primary-dark: #00509e;
+// $primary-light: #a0c4f2;
+
+// // Secondary Colors
+// $secondary-base: #8f52bc;
+// $secondary-dark: #6d3f8e;
+// $secondary-light: #b685db;
+
+// // Success Colors
+// $success-base: #39cb73;
+// $success-dark: #2e9b59;
+// $success-light: #88e1ac;
+
+// // Warning Colors
+// $warning-base: #f2f05e;
+// $warning-dark: #b6b33d;
+// $warning-light: #f7f5a1;
+
+// // Danger Colors
+// $danger-base: #e35260;
+// $danger-dark: #a33a46;
+// $danger-light: #f2a0aa;
+
+// // Dark theme colors
+// // Default Colors
+// $dark-default-base: #303030;
+// $dark-default-base-lighter: #424242;
+// $dark-default-dark: #f4f4f4;
+// $dark-default-light: #e0e0e0;
+
+// // Primary Colors
+// $dark-primary-base: #4a90e2;
+// $dark-primary-dark: #81b3ed;
+// $dark-primary-light: #204970;
+
+// // Secondary Colors
+// $dark-secondary-base: #8f52bc;
+// $dark-secondary-dark: #b685db;
+// $dark-secondary-light: #4c316b;
+
+// // Success Colors
+// $dark-success-base: #39cb73;
+// $dark-success-dark: #4ddb88;
+// $dark-success-light: #1f5a36;
+
+// // Warning Colors
+// $dark-warning-base: #f2f05e;
+// $dark-warning-dark: #f7f787;
+// $dark-warning-light: #645e27;
+
+// // Danger Colors
+// $dark-danger-base: #e35260;
+// $dark-danger-dark: #f27885;
+// $dark-danger-light: #5a2c33;
+
+:root {
+  // Default Colors
+  --default-base: #747474;
+  --default-base-lighter: #ececec;
+  --default-dark: rgb(29, 29, 29);
+  --default-dark-lighter: rgb(58, 58, 58);
+  --default-light: white;
+
+  // Primary Colors
+  --primary-base: #4a90e2;
+  --primary-dark: #00509e;
+  --primary-light: #a0c4f2;
+
+  // Secondary Colors
+  --secondary-base: #8f52bc;
+  --secondary-dark: #6d3f8e;
+  --secondary-light: #b685db;
+
+  // Success Colors
+  --success-base: #39cb73;
+  --success-dark: #2e9b59;
+  --success-light: #88e1ac;
+
+  // Warning Colors
+  --warning-base: #f2f05e;
+  --warning-dark: #b6b33d;
+  --warning-light: #f7f5a1;
+
+  // Danger Colors
+  --danger-base: #e35260;
+  --danger-dark: #a33a46;
+  --danger-light: #f2a0aa;
+}
+
+body.dark-theme {
+  // Dark theme colors
+  // Default Colors
+  --default-base: #bbbbbb;
+  --default-base-lighter: #424242;
+  --default-dark: #f4f4f4;
+  --default-dark-lighter: #ffffff;
+  --default-light: #2c2c2c;
+
+  // Primary Colors
+  --primary-base: #4a90e2;
+  --primary-dark: #81b3ed;
+  --primary-light: #204970;
+
+  // Secondary Colors
+  --secondary-base: #8f52bc;
+  --secondary-dark: #b685db;
+  --secondary-light: #4c316b;
+
+  // Success Colors
+  --success-base: #39cb73;
+  --success-dark: #4ddb88;
+  --success-light: #1f5a36;
+
+  // Warning Colors
+  --warning-base: #f2f05e;
+  --warning-dark: #f7f787;
+  --warning-light: #645e27;
+
+  // Danger Colors
+  --danger-base: #e35260;
+  // --danger-base: yellow;
+  --danger-dark: #f27885;
+  --danger-light: #5a2c33;
+}

@@ -1,0 +1,133 @@
+// Component Sizes (SASS Variables)
+$checkbox-size-sm: 1rem;
+$checkbox-size-md: 1.25rem;
+$checkbox-size-lg: 1.5rem;
+
+$switch-track-width-sm: 2rem;
+$switch-track-width-md: 2.5rem;
+$switch-track-width-lg: 3rem;
+$switch-track-width-xl: 3.5rem;
+
+$switch-track-height-sm: 1rem;
+$switch-track-height-md: 1.25rem;
+$switch-track-height-lg: 1.5rem;
+$switch-track-height-xl: 1.75rem;
+
+$switch-thumb-size-sm: 0.875rem;
+$switch-thumb-size-md: 1rem;
+$switch-thumb-size-lg: 1.25rem;
+$switch-thumb-size-xl: 1.5rem;
+
+$spinner-diameter-sm: 1.5rem;
+$spinner-diameter-md: 2rem;
+$spinner-diameter-lg: 2.5rem;
+
+$spinner-thickness-sm: 4px;
+$spinner-thickness-md: 6px;
+$spinner-thickness-lg: 8px;
+
+$card-sm-width: 200px;
+$card-sm-min-height: 100px; /* Minimum for small cards */
+$card-sm-padding: 0.5rem;
+$card-sm-font-size: 0.8rem;
+
+$card-md-width: 300px;
+$card-md-min-height: 150px;
+$card-md-padding: 1rem;
+$card-md-font-size: 1rem;
+
+$card-lg-width: 400px;
+$card-lg-min-height: 200px; /* Minimum for large cards */
+$card-lg-padding: 1.5rem;
+$card-lg-font-size: 1.125rem;
+
+// Global Component Sizes (CSS Variables)
+:root {
+  --checkbox-size-sm: #{$checkbox-size-sm};
+  --checkbox-size-md: #{$checkbox-size-md};
+  --checkbox-size-lg: #{$checkbox-size-lg};
+
+  --switch-track-width-sm: #{$switch-track-width-sm};
+  --switch-track-width-md: #{$switch-track-width-md};
+  --switch-track-width-lg: #{$switch-track-width-lg};
+  --switch-track-width-xl: #{$switch-track-width-xl};
+
+  --switch-track-height-sm: #{$switch-track-height-sm};
+  --switch-track-height-md: #{$switch-track-height-md};
+  --switch-track-height-lg: #{$switch-track-height-lg};
+  --switch-track-height-xl: #{$switch-track-height-xl};
+
+  --switch-thumb-size-sm: #{$switch-thumb-size-sm};
+  --switch-thumb-size-md: #{$switch-thumb-size-md};
+  --switch-thumb-size-lg: #{$switch-thumb-size-lg};
+  --switch-thumb-size-xl: #{$switch-thumb-size-xl};
+
+  --spinner-diameter-sm: #{$spinner-diameter-sm};
+  --spinner-diameter-md: #{$spinner-diameter-md};
+  --spinner-diameter-lg: #{$spinner-diameter-lg};
+
+  --spinner-thickness-sm: #{$spinner-thickness-sm};
+  --spinner-thickness-md: #{$spinner-thickness-md};
+  --spinner-thickness-lg: #{$spinner-thickness-lg};
+
+  --card-sm-width: #{$card-sm-width};
+  --card-sm-min-height: #{$card-sm-min-height};
+  --card-sm-padding: #{$card-sm-padding};
+  --card-sm-font-size: #{$card-sm-font-size};
+
+  --card-md-width: #{$card-md-width};
+  --card-md-min-height: #{$card-md-min-height};
+  --card-md-padding: #{$card-md-padding};
+  --card-md-font-size: #{$card-md-font-size};
+
+  --card-lg-width: #{$card-lg-width};
+  --card-lg-min-height: #{$card-lg-min-height};
+  --card-lg-padding: #{$card-lg-padding};
+  --card-lg-font-size: #{$card-lg-font-size};
+}
+
+// Tablet Component Sizes
+@media (max-width: 1024px) {
+  :root {
+    --checkbox-size-sm: 0.9rem;
+    --checkbox-size-md: 1.1rem;
+    --checkbox-size-lg: 1.3rem;
+
+    --switch-track-width-sm: 1.8rem;
+    --switch-track-width-md: 2.2rem;
+    --switch-track-width-lg: 2.7rem;
+
+    --switch-track-height-sm: 0.9rem;
+    --switch-track-height-md: 1.1rem;
+    --switch-track-height-lg: 1.35rem;
+
+    --switch-thumb-size-sm: 0.8rem;
+    --switch-thumb-size-md: 0.9rem;
+    --switch-thumb-size-lg: 1.1rem;
+  }
+}
+
+// Mobile Component Sizes
+@media (max-width: 768px) {
+  :root {
+    --checkbox-size-sm: 0.8rem;
+    --checkbox-size-md: 1rem;
+    --checkbox-size-lg: 1.2rem;
+    --checkbox-size-xl: 1.4rem;
+
+    --switch-track-width-sm: 1.6rem;
+    --switch-track-width-md: 2rem;
+    --switch-track-width-lg: 2.5rem;
+    --switch-track-width-xl: 3rem;
+
+    --switch-track-height-sm: 0.8rem;
+    --switch-track-height-md: 1rem;
+    --switch-track-height-lg: 1.2rem;
+    --switch-track-height-xl: 1.4rem;
+
+    --switch-thumb-size-sm: 0.75rem;
+    --switch-thumb-size-md: 0.85rem;
+    --switch-thumb-size-lg: 1rem;
+    --switch-thumb-size-xl: 1.2rem;
+  }
+}

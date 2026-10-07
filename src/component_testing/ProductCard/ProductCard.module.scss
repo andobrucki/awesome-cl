@@ -1,0 +1,215 @@
+@use "../../styles/main.scss" as *;
+
+.productCard {
+  border-radius: 16px;
+  box-shadow: $box-shadow-all-sides;
+  background-color: #ffffff;
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+
+  margin: 20px auto;
+  padding: 12px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  .imageWrapper {
+    position: relative;
+    height: 220px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    .productImage {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  }
+
+  .productTitle {
+    font-size: 1.4rem;
+    color: black;
+    margin-bottom: 10px;
+  }
+
+  .productDescription {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 10px;
+  }
+
+  .productPricing {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+
+    .productPrice {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .productOriginalPrice {
+      text-decoration: line-through;
+      color: #d16c6c;
+    }
+
+    .productDiscount {
+      color: #e91e63;
+    }
+  }
+
+  .productButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .button {
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &.buyButton,
+      &.addToBagButton {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-bottom: 5px;
+      }
+
+      &.buyButton {
+        background-color: #42a5f5;
+        color: white;
+
+        &:hover {
+          background-color: #0056b3;
+          transform: scale(1.05);
+        }
+      }
+
+      &.addToBagButton {
+        background-color: #28a745;
+        color: white;
+
+        &:hover {
+          background-color: #218838;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  &.dark-theme {
+    background: #1e1e2f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: #e0e0e0;
+
+    .productTitle,
+    .productDescription,
+    .productOriginalPrice {
+      color: #e0e0e0;
+    }
+    .productPrice {
+      color: #42a5f5;
+    }
+
+    .productDiscount {
+      color: #ff7043;
+    }
+    .productButtons {
+      .buyButton {
+        background-color: #ff7043;
+
+        &:hover {
+          background-color: #ff3d00;
+        }
+      }
+
+      .addToBagButton {
+        background-color: #42a5f5;
+
+        &:hover {
+          background-color: #1e88e5;
+        }
+      }
+    }
+  }
+
+  &.neon-theme {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.5);
+
+    .productTitle {
+      color: #ff33cc;
+    }
+
+    .productDescription {
+      color: #00ffff;
+      text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    }
+
+    .productPricing .productPrice {
+      color: #00ff00;
+      text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    }
+
+    .productButtons {
+      .buyButton {
+        background-color: #ff33cc;
+
+        &:hover {
+          background-color: #ff66ff;
+        }
+      }
+
+      .addToBagButton {
+        background-color: #01ffff;
+        color: #ff33cc;
+
+        &:hover {
+          background-color: #33ccff;
+        }
+      }
+    }
+  }
+}
+
+.themeSwitcher {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto;
+  button {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &.default {
+      background-color: #42a5f5;
+    }
+
+    &.darkTheme {
+      background-color: #333;
+    }
+
+    &.neonTheme {
+      background-color: #a045ba;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

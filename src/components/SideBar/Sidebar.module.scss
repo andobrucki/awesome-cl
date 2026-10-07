@@ -1,0 +1,132 @@
+@use "../../styles/main" as *;
+@use "sass:color";
+
+.sidebar {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  width: 12rem;
+  height: 100vh;
+  z-index: 1000;
+  background-color: $primary-color;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+  // Custom scrollbar styles
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $primary-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary-color;
+  }
+}
+
+.sidebarInner {
+  background-color: $primary-color;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 3rem 1rem;
+
+  // li elements
+  .sidebarInnerItem {
+    width: 100%;
+    margin: 0.5rem;
+  }
+}
+
+.sidebarMainLinkWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0.3rem 0.6rem;
+  gap: 0.5rem;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+}
+
+.sidebarMainLink {
+  display: flex;
+  align-items: center;
+  color: $text-color;
+  font-size: 1rem;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+}
+
+.arrowOpen {
+  transform: rotate(-90deg);
+}
+
+.sidebarSubCat {
+  width: 100%;
+  padding-left: 0.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+
+  .sidebarSubCatItem {
+    overflow-x: hidden;
+    padding: 0.3rem;
+
+    .sidebarSubCatLink {
+      cursor: pointer;
+      color: $muted-text-color;
+      padding: 0.3rem 0.6rem;
+      text-align: left;
+      width: 100%;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 1rem;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.playground-btn {
+  background: linear-gradient(to right, #8f52bc, $slightlyLighter-color);
+  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.3), 0px 5px 10px rgba(0, 0, 0, 0.102);
+  margin: auto 0 10rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for both transform and shadow */
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3), 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.activeLink {
+  border-bottom: $border-color;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.activeSubLink {
+  border-bottom: $border-color;
+  transition: all 0.3s ease;
+}

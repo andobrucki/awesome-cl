@@ -1,0 +1,229 @@
+@use "../lib-styles/borders.scss";
+@use "../lib-styles/colors.scss";
+@use "../lib-styles/font-sizes.scss";
+@use "../lib-styles/paddings.scss";
+@use "../lib-styles/radius.scss";
+
+@use "sass:color";
+
+* {
+  box-sizing: border-box;
+}
+
+.outer-wrapper {
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+}
+
+.inner-wrapper {
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+}
+
+.input {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 100%;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.size-sm {
+  font-size: var(--font-size-sm);
+  padding: var(--padding-sm);
+}
+
+.size-md {
+  font-size: var(--font-size-md);
+  padding: var(--padding-md);
+}
+
+.size-lg {
+  font-size: var(--font-size-lg);
+  padding: var(--padding-xl);
+}
+
+.radius-none {
+  border-radius: var(--border-radius-none);
+}
+
+.radius-sm {
+  border-radius: var(--border-radius-sm);
+}
+
+.radius-md {
+  border-radius: var(--border-radius-md);
+}
+
+.radius-lg {
+  border-radius: var(--border-radius-lg);
+}
+
+.radius-full {
+  border-radius: var(--border-radius-full);
+}
+
+/* border-classes */
+
+.border-none {
+  border: none;
+}
+
+.border-default {
+  border: var(--border-sm);
+}
+.border-bottom {
+  border: none;
+  border-bottom: 2px solid;
+}
+
+/* color-classes */
+.color-primary {
+  border-color: var(--primary-dark);
+  .inner-wrapper {
+    border-color: var(--primary-dark);
+  }
+  .input {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    &::placeholder {
+      color: var(--primary-dark);
+      font-style: italic;
+    }
+  }
+  .button {
+    background-color: var(--primary-base);
+    border-color: var(--primary-dark);
+    color: var(--primary-dark);
+  }
+}
+
+.color-default {
+  border-color: var(--default-dark);
+  .inner-wrapper {
+    border-color: var(--default-dark);
+  }
+  .input {
+    background-color: var(--default-light);
+    color: var(--default-dark);
+    border-color: var(--default-dark);
+    &::placeholder {
+      color: cvar(--default-dark);
+      font-style: italic;
+    }
+  }
+  .button {
+    background-color: var(--default-base);
+    border-color: var(--default-dark);
+    color: var(--default-dark);
+  }
+}
+
+.color-secondary {
+  border-color: var(--secondary-dark);
+  .inner-wrapper {
+    border-color: var(--secondary-dark);
+  }
+  .input {
+    background-color: var(--secondary-light);
+    color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+    &::placeholder {
+      color: var(--secondary-dark);
+      font-style: italic;
+    }
+  }
+  .button {
+    background-color: var(--secondary-base);
+    border-color: var(--secondary-dark);
+    color: var(--secondary-dark);
+  }
+}
+
+.color-success {
+  border-color: var(--success-dark);
+  .inner-wrapper {
+    border-color: var(--success-dark);
+  }
+  .input {
+    background-color: var(--success-light);
+    color: var(--success-dark);
+    border-color: var(--success-dark);
+    &::placeholder {
+      color: var(--success-dark);
+      font-style: italic;
+    }
+  }
+  .button {
+    background-color: var(--success-base);
+    border-color: var(--success-dark);
+    color: var(--success-dark);
+  }
+}
+
+.color-warning {
+  border-color: var(--warning-dark);
+  .inner-wrapper {
+    border-color: var(--warning-dark);
+  }
+  .input {
+    background-color: var(--warning-light);
+    color: var(--warning-dark);
+    border-color: var(--warning-dark);
+    &::placeholder {
+      color: var(--warning-dark);
+      font-style: italic;
+    }
+  }
+  .button {
+    background-color: var(--warning-base);
+    border-color: var(--warning-dark);
+    color: var(--warning-dark);
+  }
+}
+
+.color-danger {
+  border-color: var(--danger-dark);
+  .inner-wrapper {
+    border-color: var(--danger-dark);
+  }
+  .input {
+    background-color: var(--danger-light);
+    color: var(--danger-dark);
+    border-color: var(--danger-dark);
+    &::placeholder {
+      color: var(--danger-dark);
+      font-style: italic;
+    }
+  }
+  .button {
+    background-color: var(--danger-base);
+    border-color: var(--danger-dark);
+    color: var(--danger-dark);
+  }
+}
+
+.bordered {
+  overflow: hidden;
+  .button {
+    border: none;
+    border-radius: none;
+  }
+  .input {
+    border: none;
+    border-radius: none;
+  }
+}

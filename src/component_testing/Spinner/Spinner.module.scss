@@ -1,0 +1,81 @@
+@use "../lib-styles/borders.scss";
+@use "../lib-styles/colors.scss";
+@use "../lib-styles/paddings.scss";
+@use "../lib-styles/radius.scss";
+@use "../lib-styles/component-sizes.scss";
+@use "../lib-styles/font-sizes.scss";
+
+.spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border-style: solid;
+  animation: spin linear infinite;
+
+  /* Smooth animation */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// Size classes
+.size-sm {
+  width: var(--spinner-diameter-sm);
+  height: var(--spinner-diameter-sm);
+}
+
+.size-md {
+  width: var(--spinner-diameter-md);
+  height: var(--spinner-diameter-md);
+}
+
+.size-lg {
+  width: var(--spinner-diameter-lg);
+  height: var(--spinner-diameter-lg);
+}
+
+.thickness-sm {
+  border-width: var(--spinner-thickness-sm);
+}
+
+.thickness-md {
+  border-width: var(--spinner-thickness-md);
+}
+
+.thickness-lg {
+  border-width: var(--spinner-thickness-lg);
+}
+
+.color-default {
+  border-color: var(--default-base);
+  border-bottom-color: transparent;
+}
+
+.color-primary {
+  border-color: var(--primary-base);
+  border-bottom-color: transparent;
+}
+
+.color-secondary {
+  border-color: var(--secondary-base);
+  border-bottom-color: transparent;
+}
+
+.color-success {
+  border-color: var(--success-base);
+  border-bottom-color: transparent;
+}
+
+.color-warning {
+  border-color: var(--warning-base);
+  border-bottom-color: transparent;
+}
+
+.color-danger {
+  border-color: var(--danger-base);
+  border-bottom-color: transparent;
+}

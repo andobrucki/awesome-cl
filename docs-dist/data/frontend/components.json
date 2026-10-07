@@ -1,0 +1,117 @@
+[
+  {
+    "title": "Button",
+    "description": "A versatile button component that can be used in different styles and sizes.",
+    
+    "installation": [
+      {
+        "name": "CLI",
+        "command": "cli-command-to-install",
+        "path": "relative/path/to/cli-icon.png"
+      },
+      {
+        "name": "npm",
+        "command": "npm install your-library",
+        "path": "relative/path/to/npm-icon.png"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add your-library",
+        "path": "relative/path/to/yarn-icon.png"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add your-library",
+        "path": "relative/path/to/pnpm-icon.png"
+      },
+      {
+        "name": "bun",
+        "command": "bun add your-library",
+        "path": "relative/path/to/bun-icon.png"
+      }
+    ],
+    
+    "import": {
+      "code": "import { Button } from 'your-library';",
+      "description": "This code shows how to import the Button component from your library."
+    },
+    
+    "examples": {
+      "code": "<Button size='large' color='primary'>Click Me</Button>",
+      "description": "Basic usage of the Button component with size and color props.",
+      "renderVariants": true,
+      "variants": [
+        {
+          "size": "small",
+          "color": "secondary",
+          "label": "Small Button"
+        },
+        {
+          "size": "large",
+          "color": "primary",
+          "label": "Large Button"
+        }
+      ]
+    },
+  
+    "propsTable": {
+      "title": "Props",
+      "description": "List of all props supported by the Button component.",
+      "columns": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "size",
+          "type": "string",
+          "description": "Defines the size of the button. Options are: 'small', 'medium', 'large'.",
+          "defaultValue": "medium"
+        },
+        {
+          "propName": "color",
+          "type": "string",
+          "description": "Defines the color of the button. Options are: 'primary', 'secondary', 'success', 'danger'.",
+          "defaultValue": "primary"
+        },
+        {
+          "propName": "disabled",
+          "type": "boolean",
+          "description": "Disables the button when set to true.",
+          "defaultValue": "false"
+        },
+        {
+          "propName": "onClick",
+          "type": "function",
+          "description": "Callback function triggered when the button is clicked.",
+          "defaultValue": "undefined"
+        }
+      ]
+    },
+  
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Button component.",
+      "columns": ["Event Name", "Description"],
+      "rows": [
+        {
+          "eventName": "onClick",
+          "description": "Triggered when the button is clicked."
+        }
+      ]
+    },
+  
+    "accessibility": {
+      "description": "Accessibility considerations for the Button component.",
+      "ariaRoles": [
+        {
+          "role": "button",
+          "description": "The Button component is rendered with the button role by default."
+        },
+        {
+          "ariaProp": "aria-label",
+          "description": "If the button has only an icon and no text, you should add an aria-label for screen readers."
+        }
+      ]
+    }
+  }
+  
+  
+]

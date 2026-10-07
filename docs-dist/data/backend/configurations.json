@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Database Connection and API Documentation Setup",
+    "description": "This group of middleware functions is responsible for establishing a connection to the MongoDB database using Mongoose, and for setting up API documentation using Swagger. These are essential for ensuring that the application can connect to the database and provide documentation to help developers interact with the API endpoints.",
+    "controllers": [
+      {
+        "title": "Connection to the DB",
+        "description": "The connectDB function is responsible for establishing a connection to a MongoDB instance using Mongoose. It fetches the connection string from the environment variables (specifically MONGODB_URI). If the connection is successful, it logs the MongoDB host to the console. If the connection fails, the function logs the error message and exits the process with a failure code (process.exit(1)).",
+        "code": "import mongoose from 'mongoose';\n\n/**\n * Function to establish a connection to MongoDB.\n * It uses the connection string from the environment variables (MONGODB_URI).\n * If the connection is successful, it logs the MongoDB host.\n * If it fails, the error is caught, logged, and the process exits with a failure code.\n */\nconst connectDB = async () => {\n  try {\n    // Connect to MongoDB using the connection string from the environment variables\n    const conn = await mongoose.connect(process.env.MONGODB_URI, {});\n\n    // Log a success message, displaying the host to which MongoDB is connected\n    console.log(`MongoDB connected: ${conn.connection.host}`);\n  } catch (error) {\n    // Catch any error that occurs during the connection attempt\n    console.error(`Error: ${error.message}`);\n\n    // Exit the process with a failure code (1) if the connection fails\n    process.exit(1);\n  }\n};\n\nexport default connectDB;",
+        "language": "javascript"
+      },
+      {
+        "title": "Swagger Setup for API Documentation",
+        "description": "This setup generates API documentation using Swagger and serves it via a web interface using Swagger-UI. It includes the OpenAPI version, API details such as title, description, and the URL of the development server. The `apis` field indicates where Swagger will look for route annotations to build the documentation automatically.",
+        "code": "import swaggerJsDoc from 'swagger-jsdoc'; // Import Swagger documentation generation tool\nimport swaggerUi from 'swagger-ui-express'; // Import Swagger UI to serve the documentation in a web interface\n\n// Define the Swagger configuration options\nconst swaggerOptions = {\n  swaggerDefinition: {\n    openapi: '3.0.0', // Specify the OpenAPI version (Swagger 3.0)\n    info: {\n      title: 'Cleaning Service API', // Title of the API documentation\n      version: '1.0.0', // API version\n      description: 'API documentation for Cleaning Service', // Short description of the API\n      contact: {\n        name: 'Developer', // Contact information for the developer\n        email: 'developer@example.com' // Developer's email\n      }\n    },\n    servers: [\n      {\n        url: 'http://localhost:5000', // URL for your development server\n        description: 'Development Server' // Label for the server (you can add more servers for production or staging)\n      }\n    ]\n  },\n  apis: ['./routes/*.js'] // Path to the routes where Swagger should look for annotations to generate the documentation\n};\n\n// Generate the Swagger documentation based on the provided options\nconst swaggerDocs = swaggerJsDoc(swaggerOptions);\n\n// Export the generated Swagger documentation and the Swagger UI\nexport { swaggerDocs, swaggerUi };",
+        "language": "javascript"
+      }
+    ]
+  }
+]

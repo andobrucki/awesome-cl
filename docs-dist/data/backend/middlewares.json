@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Middleware for Authentication, Authorization, and Error Handling",
+    "description": "This group of middleware functions includes mechanisms to protect routes, restrict access to administrators, and handle errors across the application. These middleware functions ensure that only authenticated and authorized users can access certain routes, and that any errors are handled in a consistent manner across the system.",
+    "controllers": [
+      {
+        "title": "Protect Middleware",
+        "description": "The 'protect' middleware ensures that only authenticated users can access certain routes. It checks for a valid JWT token in the Authorization header, verifies the token using the JWT secret, and attaches the user data to the request object.",
+        "code": "const jwt = require('jsonwebtoken');\nconst User = require('../models/User');\n\n// Middleware function to protect routes and ensure only authenticated users can access\nconst protect = async (req, res, next) => {\n  let token;\n\n  // Check if the request contains an Authorization header and if it starts with 'Bearer'\n  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {\n    try {\n      // Extract the token from the Authorization header\n      token = req.headers.authorization.split(' ')[1];\n\n      // Verify the token using the JWT secret\n      const decoded = jwt.verify(token, process.env.JWT_SECRET);\n\n      // Find the user in the database using the ID from the decoded token (exclude password)\n      req.user = await User.findById(decoded.id).select('-password');\n\n      // Call the next middleware function or route handler\n      next();\n    } catch (error) {\n      // If token verification fails, log the error and return a 401 Unauthorized response\n      console.error(error);\n      res.status(401).json({ message: 'Not authorized, token failed' });\n    }\n  }\n\n  // If no token is provided, return a 401 Unauthorized response\n  if (!token) {\n    res.status(401).json({ message: 'Not authorized, no token' });\n  }\n};\n\nmodule.exports = protect;",
+        "language": "javascript"
+      },
+      {
+        "title": "Admin Middleware",
+        "description": "The 'admin' middleware restricts access to certain routes for users who are not administrators. It checks the role of the authenticated user and allows the request to proceed if the user has the 'admin' role. Otherwise, it returns a 403 Forbidden response.",
+        "code": "const admin = (req, res, next) => {\n  // Check if the authenticated user has the role of 'admin'\n  if (req.user && req.user.role === 'admin') {\n    next(); // Allow the request to proceed\n  } else {\n    // Return a 403 Forbidden response if the user is not an admin\n    res.status(403).json({ message: 'Access denied, you are not an administrator' });\n  }\n};\n\nmodule.exports = admin;",
+        "language": "javascript"
+      },
+      {
+        "title": "Error Handler Middleware",
+        "description": "The 'errorHandler' middleware catches and handles any errors that occur during the processing of requests. It sets the status code based on the error, defaults to 500 if not specified, and sends a JSON response with the error message and, in development mode, the stack trace.",
+        "code": "const errorHandler = (err, req, res, next) => {\n  // Set the status code from the error, or default to 500 (Internal Server Error)\n  const statusCode = err.statusCode || 500;\n\n  // Respond with a JSON object containing the error message and stack trace\n  res.status(statusCode).json({\n    message: err.message, // Error message from the thrown error\n    // If the app is running in production mode, hide the stack trace for security reasons\n    // In development mode, show the stack trace to help with debugging\n    stack: process.env.NODE_ENV === 'production' ? null : err.stack,\n  });\n};\n\nmodule.exports = errorHandler; // Export the error handler middleware",
+        "language": "javascript"
+      }
+    ]
+  }
+]

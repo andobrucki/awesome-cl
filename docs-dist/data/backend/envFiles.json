@@ -1,0 +1,68 @@
+[
+  {
+    "title": ".env Configuration Variables",
+    "description": "This file contains the environment variables required for the application's configuration. Each variable is explained to help with setting up a secure and functional environment.",
+    "controllers": [
+      {
+        "title": "MONGODB_URI",
+        "description": "The connection string used to connect to the MongoDB database. It includes credentials (username and password), the MongoDB cluster URL, and additional options like retry logic.",
+        "code": "MONGODB_URI=mongodb+srv://username:password@cluster0.mongodb.net/?retryWrites=true&w=majority",
+        "language": "plaintext"
+      },
+      {
+        "title": "NEXTAUTH_SECRET",
+        "description": "A secret key used by NextAuth.js to sign and encrypt tokens, ensuring that the authentication process is secure.",
+        "code": "NEXTAUTH_SECRET=your_nextauth_secret_key",
+        "language": "plaintext"
+      },
+      {
+        "title": "JWT_SECRET",
+        "description": "The secret key used to sign JSON Web Tokens (JWT) for authentication and authorization. This key should be strong and unique.",
+        "code": "JWT_SECRET=your_jwt_secret_key",
+        "language": "plaintext"
+      },
+      {
+        "title": "EMAIL_SERVER_HOST",
+        "description": "The SMTP server host used to send emails. In this case, the application is using Gmail's SMTP server.",
+        "code": "EMAIL_SERVER_HOST=smtp.your-email-server.com",
+        "language": "plaintext"
+      },
+      {
+        "title": "EMAIL_SERVER_PORT",
+        "description": "The port used by the email server. Common ports for SMTP servers are 587 (TLS) and 465 (SSL).",
+        "code": "EMAIL_SERVER_PORT=587",
+        "language": "plaintext"
+      },
+      {
+        "title": "EMAIL_SERVER_USER",
+        "description": "The username (usually the email address) used to authenticate with the SMTP server.",
+        "code": "EMAIL_SERVER_USER=your_email@example.com",
+        "language": "plaintext"
+      },
+      {
+        "title": "EMAIL_SERVER_PASSWORD",
+        "description": "The password or app-specific password for authenticating with the SMTP server. For security, it is recommended to use app-specific passwords when using services like Gmail.",
+        "code": "EMAIL_SERVER_PASSWORD=your_email_password_or_app_password",
+        "language": "plaintext"
+      },
+      {
+        "title": "EMAIL_FROM",
+        "description": "The email address and name that will appear as the sender of the emails. This is typically formatted as a name followed by the email in quotes.",
+        "code": "EMAIL_FROM=\"Your Name your_email@example.com\"",
+        "language": "plaintext"
+      },
+      {
+        "title": "FRONTEND_URL",
+        "description": "The URL of the frontend application. This is used for CORS policies and other front-end related configurations.",
+        "code": "FRONTEND_URL=\"http://localhost:3000\"",
+        "language": "plaintext"
+      },
+      {
+        "title": "ALLOWED_ORIGINS",
+        "description": "Comma-separated list of allowed origins for Cross-Origin Resource Sharing (CORS). This restricts which front-end origins can interact with the backend.",
+        "code": "ALLOWED_ORIGINS=http://localhost:3000,https://your-production-url.com",
+        "language": "plaintext"
+      }
+    ]
+  }
+]

@@ -1,0 +1,51 @@
+@use "../lib-styles/borders.scss";
+@use "../lib-styles/colors.scss";
+@use "../lib-styles/paddings.scss";
+@use "../lib-styles/radius.scss";
+@use "../lib-styles/component-sizes.scss";
+@use "../lib-styles/font-sizes.scss";
+
+
+.sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    border-radius: var(--border-radius-sm); /* Optional: Add a radius variable */
+    transition: background 0.3s ease; /* Smooth color transition */
+  
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: var(--thumb-color, #333);
+      border: 2px solid #fff; /* Optional: Add a border for visibility */
+      cursor: pointer;
+    }
+  
+    &::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: var(--thumb-color, #333);
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+  }
+  
+  .valueLabel {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--label-color, #333); /* Optional: Add a label color variable */
+  }
+  

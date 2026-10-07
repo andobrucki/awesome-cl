@@ -1,0 +1,64 @@
+@use "../../styles/main.scss" as *;
+
+.container {
+  padding: 2rem;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    margin-bottom: -5rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+.controller {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  // border-radius: 10px;
+  background-color: var(--background-color-transparent);
+  box-shadow: $box-shadow-all-sides;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.controllerTitle {
+  font-size: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+.controllerDescription {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}

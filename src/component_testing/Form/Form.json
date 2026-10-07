@@ -1,0 +1,185 @@
+{
+  "title": "form",
+  "path": "/frontend/components/form",
+  "description": "A versatile form component with multiple variants for various use cases like contact, appointment, feedback, inquiry, and newsletter.",
+  "installation": [
+    {
+      "name": "npm",
+      "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+      "path": "/icons/npm-brands-solid.svg"
+    },
+    {
+      "name": "yarn",
+      "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+      "path": "/icons/yarn-brands-solid.svg"
+    },
+    {
+      "name": "pnpm",
+      "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+      "path": "/icons/cubes-solid.svg"
+    },
+    {
+      "name": "bun",
+      "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+      "path": "/icons/lemon-regular.svg"
+    }
+  ],
+  "import": {
+    "code": "import { Form } from 'AwesomeCL';",
+    "description": "This code shows how to import the Form component from the library."
+  },
+  "examples": [
+    {
+      "title": "Contact Form",
+      "components": [
+        {
+          "type": "Form",
+          "props": {
+            "variant": "contact",
+            "fields": ["firstName", "lastName", "email", "message"]
+          },
+          "children": "Contact Form Content"
+        }
+      ],
+      "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Form variant=\"contact\" />\n  );\n}"
+    },
+    {
+      "title": "Appointment Form",
+      "components": [
+        {
+          "type": "Form",
+          "props": {
+            "variant": "appointment",
+            "fields": [
+              "firstName",
+              "lastName",
+              "email",
+              "phone",
+              "appointmentDate"
+            ]
+          },
+          "children": "Appointment Form Content"
+        }
+      ],
+      "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  const additionalFields = [\n    {\n      name: 'reason',\n      label: 'Reason for Appointment',\n      type: 'textarea',\n      required: true,\n    },\n  ];\n\n  const customStyles = {\n    inputField: {\n      border: '1px solid #333',\n      padding: '8px',\n      borderRadius: '4px',\n    },\n    submitButton: {\n      backgroundColor: '#007bff',\n      color: '#fff',\n      padding: '8px 16px',\n      border: 'none',\n      borderRadius: '4px',\n    },\n  };\n\n  const handleSubmit = (formData) => {\n    alert(`Appointment Scheduled: ${JSON.stringify(formData, null, 2)}`);\n  };\n\n  return (\n    <Form\n      variant=\"appointment\"\n      additionalFields={additionalFields}\n      customStyles={customStyles}\n      onSubmit={handleSubmit}\n    />\n  );\n}"
+    },
+    {
+      "title": "Feedback Form",
+      "components": [
+        {
+          "type": "Form",
+          "props": {
+            "variant": "feedback",
+            "fields": ["firstName", "lastName", "email", "feedback"]
+          },
+          "children": "Feedback Form Content"
+        }
+      ],
+      "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  const customStyles = {\n    inputField: {\n      border: '2px solid #4caf50',\n      padding: '10px',\n      borderRadius: '5px',\n    },\n    submitButton: {\n      backgroundColor: '#4caf50',\n      color: 'white',\n      padding: '10px 20px',\n      border: 'none',\n      borderRadius: '5px',\n      cursor: 'pointer',\n    },\n  };\n\n  return (\n    <Form variant=\"feedback\" customStyles={customStyles} />\n  );\n}"
+    },
+    {
+      "title": "Inquiry Form",
+      "components": [
+        {
+          "type": "Form",
+          "props": {
+            "variant": "inquiry",
+            "fields": ["firstName", "lastName", "email", "inquiry"]
+          },
+          "children": "Inquiry Form Content"
+        }
+      ],
+      "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Form variant=\"inquiry\" />\n  );\n}"
+    },
+    {
+      "title": "Newsletter Signup",
+      "components": [
+        {
+          "type": "Form",
+          "props": {
+            "variant": "newsletter",
+            "fields": ["email", "interests"]
+          },
+          "children": "Newsletter Signup Content"
+        }
+      ],
+      "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  const additionalFields = [\n    {\n      name: 'preferences',\n      label: 'Email Preferences',\n      type: 'select',\n      options: ['Daily Updates', 'Weekly News', 'Monthly Summary'],\n      required: true,\n    },\n    {\n      name: 'timezone',\n      label: 'Timezone',\n      type: 'text',\n      required: false,\n    },\n  ];\n\n  return (\n    <Form variant=\"newsletter\" additionalFields={additionalFields} />\n  );\n}"
+    }
+  ],
+  "propsTable": {
+    "title": "Form Props",
+    "description": "List of all props supported by the Form component.",
+    "headers": ["Prop Name", "Type", "Description", "Default Value"],
+    "rows": [
+      {
+        "propName": "variant",
+        "type": "string",
+        "description": "Specifies the type of form (e.g., 'contact', 'appointment', etc.).",
+        "defaultValue": "'contact'"
+      },
+      {
+        "propName": "fields",
+        "type": "array",
+        "description": "Defines the fields included in the form. Can be customized dynamically.",
+        "defaultValue": "[]"
+      },
+      {
+        "propName": "onSubmit",
+        "type": "function",
+        "description": "Callback function triggered when the form is submitted.",
+        "defaultValue": "undefined"
+      },
+      {
+        "propName": "customStyles",
+        "type": "object",
+        "description": "Custom styles for the form fields and buttons.",
+        "defaultValue": "{}"
+      },
+      {
+        "propName": "additionalFields",
+        "type": "array",
+        "description": "Additional fields that can be dynamically added to the form.",
+        "defaultValue": "[]"
+      },
+      {
+        "propName": "successMessage",
+        "type": "string",
+        "description": "Message displayed after successful form submission.",
+        "defaultValue": "'Thank you! Your form has been submitted.'"
+      }
+    ]
+  },
+  "eventsTable": {
+    "title": "Events",
+    "description": "List of all events emitted by the Form component.",
+    "headers": ["Event Name", "Description"],
+    "rows": [
+      {
+        "propName": "onSubmit",
+        "type": "Triggered when the form is submitted. The callback receives the form data as an argument."
+      },
+      {
+        "propName": "onChange",
+        "type": "Triggered when an input value changes. Can be used to monitor real-time user input."
+      }
+    ]
+  },
+  "accessibility": {
+    "title": "Accessibility",
+    "description": "Accessibility considerations for the Form component.",
+    "ariaRoles": [
+      {
+        "propName": "Form",
+        "description": "The Form component is rendered with the 'form' role for better screen reader compatibility."
+      },
+      {
+        "propName": "Form",
+        "description": "An aria-label can be added for accessibility if the form has no header."
+      },
+      {
+        "propName": "Polite",
+        "description": "Live regions are used for dynamic updates like success messages."
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+@use "../../styles/main.scss" as styles;
+
+.DynamicComponent {
+  padding: 1.5rem;
+  border-radius: 8px;
+
+  .toggleButtons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    button {
+      background-color: styles.$slightlyLighter-color;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      // border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+  }
+
+  .componentDisplay {
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    // transition: background-color 0.3s, box-shadow 0.3s;
+  }
+}
+
+.componentUl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  & li {
+
+    flex-grow: 1;
+  }
+}

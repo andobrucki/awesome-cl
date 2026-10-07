@@ -1,0 +1,155 @@
+@use "../../styles/main.scss" as styles;
+@use "sass:color";
+
+.footer {
+  background-color: #2b282d;
+  color: styles.$text-color;
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid #ffffff33;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.3s ease, padding-left 0.3s ease; // Smooth transition for sidebar changes
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px 0;
+  }
+}
+
+.sidebarOpen {
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  width: calc(100% - 12rem); // Sidebar width when open
+  margin-left: 12rem;
+}
+
+.sidebarClosed {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sections {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+  gap: 120px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.links,
+.contact,
+.social {
+  padding: 10px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 5px;
+    text-align: center;
+  }
+}
+
+.links h4,
+.contact h4,
+.social h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: color.adjust(styles.$secondary-color, $lightness: 15%);
+  text-transform: uppercase;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+}
+
+.links a,
+.social a {
+  color: styles.$text-color;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: color.adjust(
+      styles.$secondary-color,
+      $lightness: 20%
+    ); // Use color.adjust for lightening
+  }
+
+  @media (max-width: 480px) {
+    margin: 3px 0;
+    font-size: 0.9rem;
+  }
+}
+
+.contact p {
+  margin: 5px 0;
+  color: rgba(255, 255, 255, 0.8);
+
+  @media (max-width: 480px) {
+    margin: 3px 0;
+    font-size: 0.9rem;
+  }
+}
+
+.social i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+
+  @media (max-width: 480px) {
+    margin-right: 5px;
+    font-size: 1rem;
+  }
+}
+
+.brand {
+  margin: 20px 0;
+
+  .logo {
+    width: 150px;
+    height: auto;
+
+    @media (max-width: 480px) {
+      width: 100px;
+    }
+  }
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+}

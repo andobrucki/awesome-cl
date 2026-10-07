@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Database Connection and API Documentation Setup",
+    "path": "/backend/configurations"
+  },
+  {
+    "title": "WorkScheduleManagement",
+    "path": "/Backend/Controllers/WorkScheduleManagement"
+  },
+  {
+    "title": "ServiceRequestManagement",
+    "path": "/Backend/Controllers/ServiceRequestManagement"
+  },
+  { "title": "UserManagement", "path": "/Backend/Controllers/UserManagement" },
+  { "title": ".env Configuration Variables", "path": "/backend/envFiles" },
+  {
+    "title": "Middleware for Authentication, Authorization, and Error Handling",
+    "path": "/backend/middlewares"
+  },
+  {
+    "title": "Models for Users, Service Requests, and Work Schedules",
+    "path": "/backend/models"
+  },
+  {
+    "title": "Unit Tests for User Registration, Login, Email Verification, and Protected Routes",
+    "path": "/backend/tests"
+  },
+  { "title": "Email Sending Middleware", "path": "/backend/utils" },
+  { "title": "Button", "path": "/frontend/components/button" },
+  {
+    "title": "WorkScheduleManagement",
+    "path": "/Backend/Controllers/WorkScheduleManagement"
+  },
+  {
+    "title": "ServiceRequestManagement",
+    "path": "/Backend/Controllers/ServiceRequestManagement"
+  },
+  { "title": "UserManagement", "path": "/Backend/Controllers/UserManagement" },
+  {
+    "title": "WorkScheduleManagement",
+    "path": "/Backend/Controllers/WorkScheduleManagement"
+  },
+  {
+    "title": "ServiceRequestManagement",
+    "path": "/Backend/Controllers/ServiceRequestManagement"
+  },
+  { "title": "UserManagement", "path": "/Backend/Controllers/UserManagement" }
+]

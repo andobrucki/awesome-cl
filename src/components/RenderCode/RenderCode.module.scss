@@ -1,0 +1,25 @@
+@use "../../styles/main.scss" as styles;
+.div {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 1.5rem;
+
+  // border: 1px solid #f6f5f740;
+  border-radius: 10px;
+}
+.code {
+  border-radius: 10px;
+  border: 1px solid #f6f5f740;
+  padding: 1rem;
+  overflow: auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: calc(10px + 0.4vw);
+  width: 100%;
+}
+
+.copyButton {
+  padding: 0.3rem 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+}

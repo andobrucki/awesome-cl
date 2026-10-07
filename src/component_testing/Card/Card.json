@@ -1,0 +1,471 @@
+{
+  "title": "card",
+  "path": "/frontend/components/card",
+  "description": "A flexible and customizable card component that supports various layouts, variants, and interactive features.",
+  "installation": [
+    {
+      "name": "npm",
+      "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+      "path": "/icons/npm-brands-solid.svg"
+    },
+    {
+      "name": "yarn",
+      "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+      "path": "/icons/yarn-brands-solid.svg"
+    },
+    {
+      "name": "pnpm",
+      "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+      "path": "/icons/cubes-solid.svg"
+    },
+    {
+      "name": "bun",
+      "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+      "path": "/icons/lemon-regular.svg"
+    }
+  ],
+  "import": {
+    "code": "import { Card } from 'AwesomeCL';",
+    "description": "This code shows how to import the Card component from the library."
+  },
+  "examples": [
+    {
+      "title": "Default",
+      "components": [
+        {
+          "type": "Card",
+          "props": {
+            "title": "Card Title",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/green-building.webp"
+              }
+            },
+            {
+              "type": "Button",
+              "props": {
+                "color": "default",
+                "size": "sm",
+                "radius": "full"
+              },
+              "children": "Read More"
+            }
+          ]
+        }
+      ],
+      "code": "import { Card, Image, Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      image={\n        <Image \n          src={snow} \n          objectFit=\"cover\" \n          radius=\"md\" \n          size=\"sm\" \n          alt=\"Example Image\" \n        />\n      }\n      description=\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\"\n      footer={\n        <Button color=\"default\" size=\"sm\" radius=\"full\">Read More</Button>\n      }\n    />\n  );\n}"
+    },
+    {
+      "title": "Variants",
+      "components": [
+        {
+          "type": "Card",
+          "props": {
+            "title": "Subtle Variant",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "variant": "subtle"
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/sofa.webp"
+              }
+            },
+            {
+              "type": "Button",
+              "props": {
+                "color": "default",
+                "size": "sm",
+                "radius": "sm"
+              },
+              "children": "Buy Now"
+            }
+          ]
+        },
+        {
+          "type": "Card",
+          "props": {
+            "title": "Elevated Variant",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "variant": "elevated"
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/sofa.webp"
+              }
+            },
+            {
+              "type": "Button",
+              "props": {
+                "color": "default",
+                "size": "sm",
+                "radius": "sm"
+              },
+              "children": "Buy Now"
+            }
+          ]
+        },
+        {
+          "type": "Card",
+          "props": {
+            "title": "Outlined Variant",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "variant": "outlined"
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/sofa.webp"
+              }
+            },
+            {
+              "type": "Button",
+              "props": {
+                "color": "default",
+                "size": "sm",
+                "radius": "sm"
+              },
+              "children": "Buy Now"
+            }
+          ]
+        }
+      ],
+      "code": "import { Card, Image, Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      variant=\"subtle\" \n      variant=\"elevated\" \n      variant=\"outlined\" \n    />\n  );\n}"
+    },
+    {
+      "title": "Sizes",
+      "components": [
+        {
+          "type": "Card",
+          "props": {
+            "title": "Small Card",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "size": "sm"
+          }
+        },
+        {
+          "type": "Card",
+          "props": {
+            "title": "Medium Card",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "size": "md"
+          }
+        },
+        {
+          "type": "Card",
+          "props": {
+            "title": "Large Card",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. ",
+            "size": "lg"
+          }
+        }
+      ],
+      "code": "import { Card, Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      size=\"sm\" \n      size=\"md\" \n      size=\"lg\" \n    />\n  );\n}"
+    },
+    {
+      "title": "Header Image",
+      "components": [
+        {
+          "type": "Card",
+          "props": {
+            "title": "Card with Header Image",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "imageTop": true
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/sofa.webp",
+                "radius": "none"
+              }
+            },
+            {
+              "type": "Button",
+              "props": {
+                "color": "default",
+                "size": "sm",
+                "radius": "sm"
+              },
+              "children": "Buy Now"
+            }
+          ]
+        }
+      ],
+      "code": "import { Card, Image, Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      imageTop=\"true\" \n     />\n  );\n}"
+    },
+    {
+      "title": "Horizontal Layout",
+      "components": [
+        {
+          "type": "Card",
+          "props": {
+            "title": "Horizontal Card",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+            "horizontal": true,
+            "size": "lg"
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/bag.webp",
+                "radius": "none",
+                "objectFit": "cover"
+              }
+            }
+          ]
+        }
+      ],
+      "code": "import { Card, Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      horizontal=\"true\" \n    />\n  );\n}"
+    },
+    {
+      "title": "Avatar",
+      "components": [
+        {
+          "type": "Card",
+          "props": {
+            "variant": "subtle",
+            "title": "Card with Avatar",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
+            "titleAlignment": "left",
+            "footerAlignment": "right"
+          },
+          "children": [
+            {
+              "type": "Avatar",
+              "props": {
+                "avatarName": "Brian",
+                "name": "Brian"
+              }
+            },
+            {
+              "type": "Button",
+              "props": {
+                "color": "primary",
+                "size": "sm",
+                "radius": "sm"
+              },
+              "children": "Click here"
+            }
+          ]
+        }
+      ],
+      "code": "import { Card, Avatar } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      avatar={<Avatar avatarName=\"Brian\" name=\"Brian\" />} \n      description=\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\" \n    />\n  );\n}"
+    },
+    {
+      "title": "Interactive",
+      "components": [
+        {
+          "type": "Card",
+          "props": {
+            "title": "Interactive Card",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor."
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/green-window.webp",
+                "radius": "md",
+                "objectFit": "cover"
+              }
+            }
+          ]
+        },
+        {
+          "type": "Card",
+          "props": {
+            "title": "Non-Interactive Card",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+            "isInteractive": false
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/green-window.webp",
+                "radius": "md",
+                "objectFit": "cover"
+              }
+            }
+          ]
+        }
+      ],
+      "code": "import { Card, Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      isInteractive=\"true\" \n      isInteractive=\"false\" \n    />\n  );\n}"
+    },
+    {
+      "title": "Alignment",
+      "components": [
+        {
+          "type": "Card",
+          "props": {
+            "title": "Align Left",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+            "titleAlignment": "left",
+            "footerAlignment": "left"
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/green-building.webp",
+                "radius": "md",
+                "objectFit": "cover"
+              }
+            },
+            {
+              "type": "Button",
+              "props": {
+                "color": "default",
+                "size": "sm",
+                "radius": "sm"
+              },
+              "children": "Click here"
+            }
+          ]
+        },
+        {
+          "type": "Card",
+          "props": {
+            "title": "Align Right",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+            "titleAlignment": "right",
+            "footerAlignment": "right"
+          },
+          "children": [
+            {
+              "type": "Image",
+              "props": {
+                "src": "/images/green-building.webp",
+                "radius": "md",
+                "objectFit": "cover"
+              }
+            },
+            {
+              "type": "Button",
+              "props": {
+                "color": "default",
+                "size": "sm",
+                "radius": "sm"
+              },
+              "children": "Click here"
+            }
+          ]
+        }
+      ],
+      "code": "import { Card, Image, Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      titleAlignment=\"left\" \n      footerAlignment=\"left\" \n      titleAlignment=\"right\" \n      footerAlignment=\"right\" \n    />\n  );\n}"
+    }
+  ],
+  "propsTable": {
+    "title": "Card Props",
+    "description": "List of all props supported by the Card component.",
+    "headers": ["Prop Name", "Type", "Description", "Default Value"],
+    "rows": [
+      {
+        "propName": "title",
+        "type": "string",
+        "description": "The title of the card.",
+        "defaultValue": ""
+      },
+      {
+        "propName": "description",
+        "type": "string",
+        "description": "The description of the card.",
+        "defaultValue": ""
+      },
+      {
+        "propName": "footer",
+        "type": "node",
+        "description": "Defines the footer content of the card. Commonly includes actions like buttons.",
+        "defaultValue": "-"
+      },
+      {
+        "propName": "variant",
+        "type": "string",
+        "description": "Visual style of the card. Options: 'subtle', 'elevated', 'outlined'.",
+        "defaultValue": "'subtle'"
+      },
+      {
+        "propName": "size",
+        "type": "string",
+        "description": "Size of the card. Options: 'sm', 'md', 'lg'.",
+        "defaultValue": "'md'"
+      },
+      {
+        "propName": "radius",
+        "type": "string",
+        "description": "Adjusts the corner radius of the card. Options: 'none', 'sm', 'md', 'lg'.",
+        "defaultValue": "'md'"
+      },
+      {
+        "propName": "image",
+        "type": "node",
+        "description": "Optional image to display in the card.",
+        "defaultValue": "-"
+      },
+      {
+        "propName": "avatar",
+        "type": "node",
+        "description": "Renders an optional avatar. Typically used for `Avatar` components.",
+        "defaultValue": "-"
+      },
+      {
+        "propName": "imageTop",
+        "type": "boolean",
+        "description": "Determines whether the image appears at the top of the card. If `true`, the image is styled accordingly.",
+        "defaultValue": "false"
+      },
+      {
+        "propName": "horizontal",
+        "type": "boolean",
+        "description": "When set to `true`, switches the card layout to a horizontal orientation.",
+        "defaultValue": "false"
+      },
+      {
+        "propName": "textAlignment",
+        "type": "string",
+        "description": "Specifies the alignment of the card title and description. Options: `'left'`, `'center'`, `'right'`.",
+        "defaultValue": "'center'"
+      },
+      {
+        "propName": "footerAlignment",
+        "type": "string",
+        "description": "Specifies the alignment of the footer content. Options: `'left'`, `'center'`, `'right'`.",
+        "defaultValue": "'center'"
+      },
+      {
+        "propName": "isInteractive",
+        "type": "boolean",
+        "description": "Enables hover effect.",
+        "defaultValue": "true"
+      },
+      {
+        "propName": "className",
+        "type": "string",
+        "description": "Additional CSS classes for the card.",
+        "defaultValue": ""
+      },
+      {
+        "propName": "style",
+        "type": "object",
+        "description": "Applies custom inline styles to the card container.",
+        "defaultValue": "{}"
+      },
+      {
+        "propName": "aria",
+        "type": "string",
+        "description": "ARIA role for accessibility.",
+        "defaultValue": "'card'"
+      }
+    ]
+  }
+}

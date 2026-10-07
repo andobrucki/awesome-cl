@@ -1,0 +1,234 @@
+{
+  "title": "image",
+  "path": "/frontend/components/image",
+  "description": "A customizable image component.",
+  "installation": [
+    {
+      "name": "CLI",
+      "command": "cli-command-to-install",
+      "path": "/icons/cube-solid.svg"
+    },
+    {
+      "name": "npm",
+      "command": "npm install your-library",
+      "path": "/icons/npm-brands-solid.svg"
+    },
+    {
+      "name": "yarn",
+      "command": "yarn add your-library",
+      "path": "/icons/yarn-brands-solid.svg"
+    },
+    {
+      "name": "pnpm",
+      "command": "pnpm add your-library",
+      "path": "/icons/cubes-solid.svg"
+    },
+    {
+      "name": "bun",
+      "command": "bun add your-library",
+      "path": "/icons/lemon-regular.svg"
+    }
+  ],
+  "import": {
+    "code": "import { Image } from 'AwesomeCL';",
+    "description": "This code shows how to import the image component from the library."
+  },
+  "examples": [
+    {
+      "title": "Default Image",
+      "components": [
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/200"
+          },
+          "children": ""
+        }
+      ],
+      "code": "import { Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Image src=\"https://picsum.photos/200\" />\n  );\n}"
+    },
+    {
+      "title": "Width and Height",
+      "components": [
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/1920/1080"
+          },
+          "children": ""
+        },
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/1920/1080",
+            "height": "200px",
+            "width": "200px"
+          },
+          "children": ""
+        },
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/1920/1080",
+            "width": "400px"
+          },
+          "children": ""
+        }
+      ],
+      "code": "import { Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Image src=\"https://picsum.photos/1920/1080\" />\n    <Image src=\"https://picsum.photos/1920/1080\" height=\"200px\" width=\"200px\" />\n    <Image src=\"https://picsum.photos/1920/1080\" width=\"400px\" />\n  );\n}"
+    },
+    {
+      "title": "Zoom in effect",
+      "components": [
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/200",
+            "isZoomed": "true"
+          },
+          "children": ""
+        }
+      ],
+      "code": "import { Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Image src=\"https://picsum.photos/200\" isZoomed/>\n  );\n}"
+    },
+    {
+      "title": "Border Radius",
+      "components": [
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/200",
+            "radius": "none"
+          },
+          "children": ""
+        },
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/200",
+            "radius": "sm"
+          },
+          "children": ""
+        },
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/200",
+            "radius": "md"
+          },
+          "children": ""
+        },
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/200",
+            "radius": "lg"
+          },
+          "children": ""
+        },
+        {
+          "type": "Image",
+          "props": {
+            "src": "https://picsum.photos/200",
+            "radius": "full"
+          },
+          "children": ""
+        }
+      ],
+      "code": "import { Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Image src=\"https://picsum.photos/200\" radius=\"none\" />\n    <Image src=\"https://picsum.photos/200\" radius=\"sm\" />\n    <Image src=\"https://picsum.photos/200\" radius=\"md\" />\n    <Image src=\"https://picsum.photos/200\" radius=\"lg\" />\n    <Image src=\"https://picsum.photos/200\" radius=\"full\" />\n  );\n}"
+    }
+  ],
+
+  "propsTable": {
+    "title": "Modal Props",
+    "description": "List of all props supported by the Modal component.",
+    "headers": ["Prop Name", "Type", "Description", "Default Value"],
+    "rows": [
+      {
+        "propName": "width",
+        "type": "string",
+        "description": "Defines the width of the image to override original size. Use with unit (e.g. px).",
+        "defaultValue": "-"
+      },
+      {
+        "propName": "height",
+        "type": "string",
+        "description": "Defines the height of the image to override original size. Use with unit (e.g. px).",
+        "defaultValue": "-"
+      },
+      {
+        "propName": "alt",
+        "type": "string",
+        "description": "Add an alt text for accessibility.",
+        "defaultValue": "Image alt text"
+      },
+      {
+        "propName": "src",
+        "type": "string",
+        "description": "The path to source file of the image.",
+        "defaultValue": "-"
+      },
+      {
+        "propName": "isZoomed",
+        "type": "boolean",
+        "description": "Adds the Zoom in effect when hovering over the image.",
+        "defaultValue": "false"
+      },
+      {
+        "propName": "radius",
+        "type": "string",
+        "description": "Defines the border-radius of the modal. Options are: 'none', 'sm', 'md', 'lg', 'full'.",
+        "defaultValue": "'md'"
+      },
+      {
+        "propName": "objectFit",
+        "type": "string",
+        "description": "Defines how the image should be resized to fit the container. Options are 'fill', 'contain', 'cover', 'none' and 'scale-down'.",
+        "defaultValue": "cover"
+      },
+      {
+        "propName": "style",
+        "type": "object",
+        "description": "Additional inline CSS to add to the image.",
+        "defaultValue": "''"
+      },
+      {
+        "propName": "classNameWrapper",
+        "type": "string",
+        "description": "Additional CSS class names to apply to the image wrapper.",
+        "defaultValue": "''"
+      },
+      {
+        "propName": "classNameImage",
+        "type": "string",
+        "description": "Additional CSS class names to apply to the image.",
+        "defaultValue": "''"
+      }
+    ]
+  },
+  "eventsTable": {
+    "title": "Events",
+    "description": "List of all events emitted by the Modal component.",
+    "headers": ["Event Name", "Description"],
+    "rows": [
+      {
+        "propName": "onClick",
+        "type": "Triggered when the image is clicked."
+      },
+      {
+        "propName": "onLoad",
+        "type": "Handler is called when the image is loading."
+      }
+    ]
+  },
+  "accessibility": {
+    "title": "Accessibility",
+    "description": "Accessibility considerations for the image component.",
+    "ariaRoles": [
+      {
+        "propName": "alt",
+        "description": "The image component has an alt text with space for an image description."
+      }
+    ]
+  }
+}

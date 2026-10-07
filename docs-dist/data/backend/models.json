@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Models for Users, Service Requests, and Work Schedules",
+        "description": "This group contains the Mongoose models used for the application. Each model represents a MongoDB collection with a specific schema. The models include Users, Service Requests, and Work Schedules, which define how data is structured and managed in the application.",
+        "controllers": [
+            {
+                "title": "User Model",
+                "description": "The User model defines the structure for storing user data, including their name, email, password, role, and verification status. It also includes methods for comparing passwords and a pre-save middleware for hashing passwords before storing them in the database.",
+                "code": "const { Schema, model } = require('mongoose');\nconst { compare, genSalt, hash } = require('bcryptjs');\n\nconst userSchema = Schema({\n  name: { type: String, required: true }, \n  email: { type: String, required: true, unique: true },\n  password: { type: String, required: true }, \n  role: { type: String, default: 'client' }, \n  isVerified: { type: Boolean, default: false }, \n  address: { type: String, default: '' }, \n  phone: { type: String, default: '' } \n}, {\n  timestamps: true\n});\n\n// Instance method to compare entered password with the hashed password stored in the database\nuserSchema.methods.matchPassword = async function(enteredPassword) {\n  return await compare(enteredPassword, this.password); // Compare entered password with hashed password\n};\n\n// Pre-save middleware to hash the password before saving the user document to the database\nuserSchema.pre('save', async function(next) {\n  // If the password field has not been modified, skip the hashing\n  if (!this.isModified('password')) {\n    next(); // Move to the next middleware or save operation\n  }\n  // Generate a salt for hashing the password\n  const salt = await genSalt(10);\n  // Hash the password using bcrypt and save the hashed password to the user object\n  this.password = hash(this.password, salt);\n});\n\n// Create the User model from the schema\nconst User = model('User', userSchema);\n\nmodule.exports = User; // Export the User model",
+                "language": "javascript"
+            },
+            {
+                "title": "Service Request Model",
+                "description": "The ServiceRequest model defines the schema for storing service requests. It references the User model and includes fields such as service type, date, time, address, and optional notes. The timestamps option automatically records the creation and update times.",
+                "code": "const { Schema, model } = require('mongoose');\n\nconst serviceRequestSchema = Schema({\n  user: {\n    type: Schema.Types.ObjectId,\n    required: true,\n    ref: 'User'\n  },\n  serviceType: { type: String, required: true },\n  date: { type: Date, required: true },\n  time: { type: String, required: true },\n  address: { type: String, required: true },\n  notes: { type: String }\n}, {\n  timestamps: true\n});\n\nconst ServiceRequest = model('ServiceRequest', serviceRequestSchema);\nmodule.exports = ServiceRequest;",
+                "language": "javascript"
+            },
+            {
+                "title": "Work Schedule Model",
+                "description": "The WorkSchedule model defines the structure for storing the work schedules of clients. It includes fields for the client ID (which references the User model), working days, start time, and end time.",
+                "code": "const mongoose = require('mongoose');\n\nconst workScheduleSchema = new mongoose.Schema({\n  clientId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },\n  days: [String],  // Working days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']\n  startTime: String, // start (format: '08:00')\n  endTime: String,   // end (format: '16:00')\n});\n\nmodule.exports = mongoose.model('WorkSchedule', workScheduleSchema);",
+                "language": "javascript"
+            }
+        ]
+    }
+]

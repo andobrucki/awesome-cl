@@ -1,0 +1,96 @@
+// @use "../../node_modules/AwesomeCL/dist/exports.css";
+
+@use "sass:map";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Primary colors
+$primary-color: #083748;
+$secondary-color: #083e52;
+$optional-color: #5a2778;
+$slightlyLighter-color: #095874;
+$background-color: #252525;
+$light-purple: #8c50c7;
+$dark-purple: #57548d;
+$coolBlue: #5983c1;
+$text-color: #ffffff;
+$muted-text-color: #a1a1aa;
+$border-color: 1px solid rgba(255, 255, 255, 0.2);
+$font-stack: "Roboto", "Ubuntu Mono", sans-serif;
+
+// box shadow
+$box-shadow-light: rgba(0, 0, 0, 0.3);
+$box-shadow-small: 0 2px 4px $box-shadow-light;
+$box-shadow-medium: 0 4px 6px $box-shadow-light;
+$box-shadow-large: 0 6px 10px $box-shadow-light;
+$box-shadow-all-sides: 0 2px 3px rgba(0, 0, 0, 0.1),
+  0 -2px 3px rgba(0, 0, 0, 0.1), 2px 0 3px rgba(0, 0, 0, 0.1),
+  -2px 0 3px rgba(0, 0, 0, 0.1);
+
+// Font sizes
+$title-font-size: 2.5rem;
+$h1-font-size: 2rem;
+$h2-font-size: 1.75rem;
+$h3-font-size: 1.5rem;
+$paragraph-font-size: 1rem;
+
+// Define breakpoints map
+$breakpoints: (
+  "xs": 480px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 1024px,
+  // "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1600px,
+);
+
+// Mixin to use breakpoints
+@mixin media($size) {
+  @media (max-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// Flexbox centerin utility mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Reset and base styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  background-image: url("../assets/images/bbblurry.svg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  //background-size: cover;
+  @media (max-width: map.get($breakpoints, "lg")) {
+    background-size: 150%;
+  }
+  @media (max-width: map.get($breakpoints, "md")) {
+    background-size: 200%;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}

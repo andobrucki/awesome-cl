@@ -1,0 +1,66 @@
+@use "../../styles/main.scss" as styles;
+
+.legalNotice {
+  padding: 40px 20px;
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+  max-width: 1300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color-transparent);
+  @media (max-width: 1024px) {
+    padding: 30px 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 15px;
+  }
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  // color: styles.$slightlyLighter-color;
+  background: linear-gradient(to right, #8f52bc, #26b3c6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: styles.$border-color;
+  padding-bottom: 8px;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+  }
+}
+
+.description {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-top: 20px;
+
+  h3 {
+    font-size: var(--h3-font-size);
+    margin-top: 1rem;
+  }
+
+  p {
+    font-size: var(--paragraph-font-size);
+    color: (var(--muted-text-color));
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}

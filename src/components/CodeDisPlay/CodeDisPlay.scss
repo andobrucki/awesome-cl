@@ -1,0 +1,53 @@
+.code-display {
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 350px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  &.default {
+    background: #f8f9fa;
+  }
+
+  &.dark-theme {
+    background: #1e1e1e;
+  }
+
+  &.neon-theme {
+    background: #2a2854;
+  }
+
+  pre {
+    background: transparent;
+    overflow-x: auto;
+    white-space: pre-wrap;
+  }
+  pre::-webkit-scrollbar {
+    height: 0;
+  }
+
+  pre::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  pre::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  @media (max-width: 768px) {
+    width: 400px;
+    padding: 15px;
+    height: auto;
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 25px;
+    height: 400px;
+    font-size: 1rem;
+  }
+}

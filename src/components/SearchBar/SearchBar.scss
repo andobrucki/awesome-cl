@@ -1,0 +1,97 @@
+@use "../../styles/main.scss" as *;
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.search-input {
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 10px 50px;
+  border: 1px solid $primary-color;
+  border-radius: 50px;
+  outline: none;
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    border-color: var(--input-focus-color);
+  }
+}
+
+.search-icon {
+  font-size: 0.8rem;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: $slightlyLighter-color;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  border: 1px solid var(--input-border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+
+  li,
+  p {
+    padding: 10px;
+    border-bottom: 1px solid rgba(var(--text-color), 0.1);
+    &:hover {
+      background-color: var(--input-border-color);
+    }
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      transition: background-color 0.2s ease;
+    }
+    span {
+      color: var(--text-color);
+      font-weight: normal;
+      font-style: italic;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .search-wrapper {
+    max-width: 90%;
+  }
+
+  .search-input {
+    padding: 10px 35px 10px 10px;
+    font-size: 14px;
+  }
+
+  .search-results {
+    top: calc(100% + 5px);
+
+    li {
+      padding: 8px;
+      display: inline-block;
+    }
+
+    p {
+      padding: 8px;
+    }
+  }
+}

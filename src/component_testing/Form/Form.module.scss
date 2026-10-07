@@ -1,0 +1,253 @@
+@use "../../styles/main.scss" as *;
+
+.formBackdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1100;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.formContainer {
+  color: var(--text-color);
+  border-radius: 15px;
+  padding: 3vh 2vw;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  overflow-y: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.contactForm {
+    max-width: 800px;
+
+    .inputRow {
+      display: flex;
+      gap: 1rem;
+      .label {
+        flex: 1;
+      }
+    }
+  }
+
+  &.contactForm {
+    background: linear-gradient(135deg, #a3c1d9, #8ba9c9);
+
+    .submitButton {
+      background: linear-gradient(135deg, #8ba9c9, #a3c1d9);
+      color: $text-color;
+    }
+  }
+
+  &.appointmentForm {
+    background: linear-gradient(135deg, #2a5675, #3e738a);
+
+    .button {
+      background: linear-gradient(135deg, #3e738a, #2a5675);
+      color: $text-color;
+    }
+  }
+
+  &.feedbackForm {
+    background: linear-gradient(135deg, #b9a6c7, #c6b4db);
+
+    .submitButton {
+      background: linear-gradient(135deg, #c6b4db, #b9a6c7);
+      color: $text-color;
+    }
+  }
+
+  &.inquiryForm {
+    background: linear-gradient(135deg, #c4d2dd, #a5bcc7);
+
+    .submitButton {
+      background: linear-gradient(135deg, #a5bcc7, #c4d2dd);
+      color: $text-color;
+    }
+  }
+
+  &.newsletterForm {
+    background: linear-gradient(to top, #58e2d5 0%, #9c81c4 100%);
+
+    .submitButton {
+      background: linear-gradient(to right, #9c81c4, #58e2d5);
+      color: $text-color;
+    }
+  }
+}
+
+.submitButton {
+  padding: 0.8rem;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  &:hover {
+    opacity: 0.9;
+    transform: none;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: var(--background-color);
+  border-radius: 12px;
+  gap: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputField,
+.datePicker,
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--input-bg-color);
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+
+  &:focus {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+}
+
+.datePicker {
+  width: 460px;
+  @media (max-width: 768px) {
+    width: 375px;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 1rem;
+  border: none;
+  color: $text-color;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-radius: 30%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.openButton {
+  font-size: 1rem;
+  background-color: var(--button-bg-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.submitHeader {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  line-height: 1.2;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: fadeInSlideUp 0.5s ease-out forwards;
+}
+
+.successMessage {
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.helperText {
+  display: flex;
+  text-align: left;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 3vh 5vw;
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    margin: 1rem auto;
+    padding: 2vh 3vw;
+  }
+  .openButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

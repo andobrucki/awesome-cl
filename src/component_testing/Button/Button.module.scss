@@ -1,0 +1,112 @@
+/* src/components/Button/Button.scss */
+@use "../lib-styles/borders.scss";
+@use "../lib-styles/colors.scss";
+@use "../lib-styles/font-sizes.scss";
+@use "../lib-styles/paddings.scss";
+@use "../lib-styles/radius.scss";
+
+.button {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+/* Size Classes */
+
+.size-sm {
+  font-size: var(--font-size-sm);
+  padding: var(--padding-sm);
+}
+
+.size-md {
+  font-size: var(--font-size-md);
+  padding: var(--padding-md);
+}
+
+.size-lg {
+  font-size: var(--font-size-lg);
+  padding: var(--padding-xl);
+}
+
+/* radius classes */
+
+.radius-none {
+  border-radius: var(--border-radius-none);
+}
+
+.radius-sm {
+  border-radius: var(--border-radius-sm);
+}
+
+.radius-md {
+  border-radius: var(--border-radius-md);
+}
+
+.radius-lg {
+  border-radius: var(--border-radius-lg);
+}
+
+.radius-full {
+  border-radius: var(--border-radius-full);
+}
+
+/* border-classes */
+
+.border-none {
+  border: none;
+}
+
+.border-xs {
+  border: var(--border-xs);
+}
+.border-sm {
+  border: var(--border-sm);
+}
+.border-md {
+  border: var(--border-md);
+}
+
+.border-lg {
+  border: var(--border-lg);
+}
+.border-xl {
+  border: var(--border-xl);
+}
+
+/* color-classes */
+.color-primary {
+  background-color: var(--primary-base);
+  color: var(--default-light);
+  border-color: var(--primary-dark);
+}
+
+.color-default {
+  background-color: var(--default-base);
+  color: var(--default-light);
+  border-color: var(--default-dark);
+}
+
+.color-secondary {
+  background-color: var(--secondary-base);
+  color: var(--default-light);
+  border-color: var(--secondary-dark);
+}
+
+.color-success {
+  background-color: var(--success-base);
+  color: var(--default-dark);
+  border-color: var(--success-dark);
+}
+
+.color-warning {
+  background-color: var(--warning-base);
+  color: var(--default-dark);
+  border-color: var(--warning-dark);
+}
+
+.color-danger {
+  background-color: var(--danger-base);
+  color: var(--default-light);
+  border-color: var(--danger-dark);
+}
