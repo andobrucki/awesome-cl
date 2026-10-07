@@ -8,7 +8,7 @@ import LegalNotice from "../../pages/LegalNotice/LegalNotice";
 
 const Footer = ({ isSidebarOpen }) => {
   const copyToClipboard = () => {
-    navigator.clipboard.writeText("awesomeCL@protonmail.com");
+    navigator.clipboard.writeText("krst@mailbox.org");
     alert("Email address copied to clipboard!");
   };
   return (
@@ -28,10 +28,7 @@ const Footer = ({ isSidebarOpen }) => {
           </div>
           <div className={styles.social}>
             <h4>Contact</h4>
-            <a
-              href="https://github.com/Team-Collaborators/Awesome-CL"
-              target="blank"
-            >
+            <a href="https://github.com/andobrucki/awesome-cl" target="blank">
               <FaGithub style={{ marginRight: "10px" }} /> Github
             </a>
             <a
