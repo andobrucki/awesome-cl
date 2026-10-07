@@ -1,6 +1,7 @@
 [
   {
-    "title": "Database Connection and API Documentation Setup",
+    "title": "configurations",
+    "oldTitle": "Database Connection and API Documentation Setup",
     "description": "This group of middleware functions is responsible for establishing a connection to the MongoDB database using Mongoose, and for setting up API documentation using Swagger. These are essential for ensuring that the application can connect to the database and provide documentation to help developers interact with the API endpoints.",
     "controllers": [
       {

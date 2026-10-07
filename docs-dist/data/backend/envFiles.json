@@ -1,6 +1,7 @@
 [
   {
-    "title": ".env Configuration Variables",
+    "title": "envFiles",
+    "oldTitle": "envFiles Configuration Variables",
     "description": "This file contains the environment variables required for the application's configuration. Each variable is explained to help with setting up a secure and functional environment.",
     "controllers": [
       {

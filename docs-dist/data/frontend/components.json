@@ -1,81 +1,309 @@
 [
   {
-    "title": "Button",
+    "title": "button",
+    "path": "/frontend/components/button",
     "description": "A versatile button component that can be used in different styles and sizes.",
-    
     "installation": [
       {
-        "name": "CLI",
-        "command": "cli-command-to-install",
-        "path": "relative/path/to/cli-icon.png"
-      },
-      {
         "name": "npm",
-        "command": "npm install your-library",
-        "path": "relative/path/to/npm-icon.png"
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
       },
       {
         "name": "yarn",
-        "command": "yarn add your-library",
-        "path": "relative/path/to/yarn-icon.png"
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
       },
       {
         "name": "pnpm",
-        "command": "pnpm add your-library",
-        "path": "relative/path/to/pnpm-icon.png"
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
       },
       {
         "name": "bun",
-        "command": "bun add your-library",
-        "path": "relative/path/to/bun-icon.png"
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
       }
     ],
-    
     "import": {
-      "code": "import { Button } from 'your-library';",
-      "description": "This code shows how to import the Button component from your library."
+      "code": "import { Button } from 'AwesomeCL';",
+      "description": "This code shows how to import the Button component from the library."
     },
-    
-    "examples": {
-      "code": "<Button size='large' color='primary'>Click Me</Button>",
-      "description": "Basic usage of the Button component with size and color props.",
-      "renderVariants": true,
-      "variants": [
-        {
-          "size": "small",
-          "color": "secondary",
-          "label": "Small Button"
-        },
-        {
-          "size": "large",
-          "color": "primary",
-          "label": "Large Button"
-        }
-      ]
-    },
-  
+    "examples": [
+      {
+        "title": "Default",
+        "components": [
+          {
+            "type": "Button",
+            "props": {},
+            "children": "Button"
+          }
+        ],
+        "code": "import { Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Button>\n      Button\n    </Button>\n  );\n}"
+      },
+      {
+        "title": "Sizes",
+        "components": [
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "md",
+              "radius": "sm",
+              "color": "secondary"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "lg",
+              "radius": "sm",
+              "color": "secondary"
+            },
+            "children": "Button"
+          }
+        ],
+        "code": "import { Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Button size=\"sm\" radius=\"sm\" color=\"secondary\">Button</Button>\n      <Button size=\"md\" radius=\"sm\" color=\"secondary\">Button</Button>\n      <Button size=\"lg\" radius=\"sm\" color=\"secondary\">Button</Button>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Radius",
+        "components": [
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "none",
+              "color": "secondary"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "md",
+              "color": "secondary"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "lg",
+              "color": "secondary"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "full",
+              "color": "secondary"
+            },
+            "children": "Button"
+          }
+        ],
+        "code": "import { Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Button radius=\"none\" size=\"sm\" color=\"secondary\">Button</Button>\n      <Button radius=\"sm\" size=\"sm\" color=\"secondary\">Button</Button>\n      <Button radius=\"md\" size=\"sm\" color=\"secondary\">Button</Button>\n      <Button radius=\"lg\" size=\"sm\" color=\"secondary\">Button</Button>\n      <Button radius=\"full\" size=\"sm\" color=\"secondary\">Button</Button>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Colors",
+        "components": [
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "default"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "primary"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "success"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "warning"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "danger"
+            },
+            "children": "Button"
+          }
+        ],
+        "code": "import { Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Button color=\"default\" size=\"sm\" radius=\"sm\">Button</Button>\n      <Button color=\"primary\" size=\"sm\" radius=\"sm\">Button</Button>\n      <Button color=\"secondary\" size=\"sm\" radius=\"sm\">Button</Button>\n      <Button color=\"success\" size=\"sm\" radius=\"sm\">Button</Button>\n      <Button color=\"warning\" size=\"sm\" radius=\"sm\">Button</Button>\n      <Button color=\"danger\" size=\"sm\" radius=\"sm\">Button</Button>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Borders",
+        "components": [
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary",
+              "border": "none"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary",
+              "border": "xs"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary",
+              "border": "sm"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary",
+              "border": "md"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary",
+              "border": "lg"
+            },
+            "children": "Button"
+          },
+          {
+            "type": "Button",
+            "props": {
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary",
+              "border": "xl"
+            },
+            "children": "Button"
+          }
+        ],
+        "code": "import { Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Button border=\"none\" size=\"sm\" radius=\"sm\" color=\"secondary\">Button</Button>\n      <Button border=\"xs\" size=\"sm\" radius=\"sm\" color=\"secondary\">Button</Button>\n      <Button border=\"sm\" size=\"sm\" radius=\"sm\" color=\"secondary\">Button</Button>\n      <Button border=\"md\" size=\"sm\" radius=\"sm\" color=\"secondary\">Button</Button>\n      <Button border=\"lg\" size=\"sm\" radius=\"sm\" color=\"secondary\">Button</Button>\n    </>\n  );\n}"
+      }
+    ],
     "propsTable": {
-      "title": "Props",
+      "title": " Button Props",
       "description": "List of all props supported by the Button component.",
-      "columns": ["Prop Name", "Type", "Description", "Default Value"],
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
       "rows": [
         {
-          "propName": "size",
+          "propName": "children",
+          "type": "node",
+          "description": "Content to be displayed inside the button.",
+          "defaultValue": "null"
+        },
+        {
+          "propName": "aria",
           "type": "string",
-          "description": "Defines the size of the button. Options are: 'small', 'medium', 'large'.",
-          "defaultValue": "medium"
+          "description": "Aria label for accessibility. Provides additional context for screen readers.",
+          "defaultValue": "'button'"
         },
         {
           "propName": "color",
           "type": "string",
-          "description": "Defines the color of the button. Options are: 'primary', 'secondary', 'success', 'danger'.",
-          "defaultValue": "primary"
+          "description": "Defines the color of the button. Options are: 'primary', 'secondary', 'success', 'warning', 'danger'.",
+          "defaultValue": "'primary'"
         },
         {
-          "propName": "disabled",
-          "type": "boolean",
-          "description": "Disables the button when set to true.",
-          "defaultValue": "false"
+          "propName": "size",
+          "type": "string",
+          "description": "Defines the size of the button. Options are: 'sm', 'md', 'lg'.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "radius",
+          "type": "string",
+          "description": "Defines the border-radius of the button. Options are: 'none', 'sm', 'md', 'lg', 'full'.",
+          "defaultValue": "'none'"
+        },
+        {
+          "propName": "border",
+          "type": "string",
+          "description": "Defines the border width of the button. Options are: 'none', 'xs', 'sm', 'md', 'lg', 'xl'.",
+          "defaultValue": "'none'"
+        },
+        {
+          "propName": "className",
+          "type": "string",
+          "description": "Additional CSS class names to apply to the button.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "style",
+          "type": "object",
+          "description": "Inline styles to be applied to the button.",
+          "defaultValue": "undefined"
         },
         {
           "propName": "onClick",
@@ -85,33 +313,4223 @@
         }
       ]
     },
-  
     "eventsTable": {
       "title": "Events",
       "description": "List of all events emitted by the Button component.",
-      "columns": ["Event Name", "Description"],
+      "headers": ["Event Name", "Description"],
       "rows": [
         {
-          "eventName": "onClick",
-          "description": "Triggered when the button is clicked."
+          "propName": "onClick",
+          "type": "Triggered when the button is clicked."
         }
       ]
     },
-  
     "accessibility": {
+      "title": "Accessibility",
       "description": "Accessibility considerations for the Button component.",
       "ariaRoles": [
         {
-          "role": "button",
+          "propName": "Button",
           "description": "The Button component is rendered with the button role by default."
         },
         {
-          "ariaProp": "aria-label",
+          "propName": "Aria-label",
           "description": "If the button has only an icon and no text, you should add an aria-label for screen readers."
         }
       ]
     }
+  },
+  {
+    "title": "modal",
+    "path": "/frontend/components/modal",
+    "description": "A modal component that can be customized with various sizes, placements, scroll options, and backdrop styles.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Modal } from 'AwesomeCL';",
+      "description": "This code shows how to import the Modal component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default Modal",
+        "components": [
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!"
+            },
+            "children": "Default"
+          }
+        ],
+        "code": "import { Modal } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Modal modalHeader=\"Example Header\" modalBody=\"Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!\">\n         Default\n    </Modal>\n  );\n}"
+      },
+      {
+        "title": "Sizes",
+        "components": [
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "size": "sm",
+              "radius": "sm",
+              "color": "secondary"
+            },
+            "children": "Size sm"
+          },
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "size": "md",
+              "radius": "sm",
+              "color": "secondary"
+            },
+            "children": "Size md"
+          },
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "size": "lg",
+              "radius": "sm",
+              "color": "secondary"
+            },
+            "children": "Size lg"
+          }
+        ],
+        "code": "import { Modal } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Modal size=\"xs\">Extra Small Modal</Modal>\n      <Modal size=\"sm\">Small Modal</Modal>\n      <Modal size=\"md\">Medium Modal</Modal>\n      <Modal size=\"lg\">Large Modal</Modal>\n      <Modal size=\"xl\">Extra Large Modal</Modal>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Placement",
+        "components": [
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "placement": "top"
+            },
+            "children": "Top "
+          },
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "placement": "bottom"
+            },
+            "children": "Bottom "
+          },
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "placement": "center"
+            },
+            "children": "Center"
+          }
+        ],
+        "code": "import { Modal } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Modal placement=\"top\">Top Placement</Modal>\n      <Modal placement=\"bottom\">Bottom Placement</Modal>\n      <Modal placement=\"center\">Center Placement</Modal>\n      <Modal placement=\"top-center\">Top Center Placement</Modal>\n      <Modal placement=\"bottom-center\">Bottom Center Placement</Modal>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Scroll Options",
+        "components": [
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "size": "sm"
+            },
+            "children": "Scroll"
+          }
+        ],
+        "code": "import { Modal } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Modal scroll=\"inside\">Inside Scroll</Modal>\n      <Modal scroll=\"outside\">Outside Scroll</Modal>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Backdrop Options",
+        "components": [
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "backdrop": "opaque"
+            },
+            "children": "Opaque"
+          },
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "backdrop": "blur"
+            },
+            "children": "Blur"
+          },
+          {
+            "type": "Modal",
+            "props": {
+              "modalHeader": "Example Header",
+              "modalBody": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatibus ullam, cupiditate vitae voluptates quas voluptatum repudiandae corrupti neque quam assumenda sint facilis nihil voluptatem voluptate hic non nemo nostrum earum! Magnam quos ipsa quibusdam nulla laboriosam ducimus itaque ex eos esse voluptas at rem velit, praesentium reprehenderit? Architecto!",
+              "backdrop": "transparent"
+            },
+            "children": "Transparent"
+          }
+        ],
+        "code": "import { Modal } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Modal backdrop=\"opaque\">Opaque Backdrop</Modal>\n      <Modal backdrop=\"blur\">Blur Backdrop</Modal>\n      <Modal backdrop=\"transparent\">Transparent Backdrop</Modal>\n    </>\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Modal Props",
+      "description": "List of all props supported by the Modal component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "children",
+          "type": "string",
+          "description": "Content to be displayed inside the modal body.",
+          "defaultValue": "null"
+        },
+        {
+          "propName": "modalHeader",
+          "type": "string",
+          "description": "Content to be displayed in the modal header section.",
+          "defaultValue": "null"
+        },
+        {
+          "propName": "modalBody",
+          "type": "string",
+          "description": "Content to be displayed in the modal body, as an alternative to 'children'.",
+          "defaultValue": "null"
+        },
+        {
+          "propName": "size",
+          "type": "string",
+          "description": "Defines the size of the modal. Options are: 'sm', 'md', 'lg'.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "radius",
+          "type": "string",
+          "description": "Defines the border-radius of the modal. Options are: 'none', 'sm', 'md', 'lg', 'full'.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "placement",
+          "type": "string",
+          "description": "Defines the placement of the modal on the screen. Options are: 'center', 'top', 'bottom'.",
+          "defaultValue": "'center'"
+        },
+        {
+          "propName": "backdrop",
+          "type": "string",
+          "description": "Defines the backdrop style of the modal. Options are: 'transparent', 'dark'.",
+          "defaultValue": "'transparent'"
+        },
+        {
+          "propName": "color",
+          "type": "string",
+          "description": "Defines the color theme of the modal. Options are: 'primary', 'secondary', 'success', 'warning', 'danger'.",
+          "defaultValue": "'primary'"
+        },
+        {
+          "propName": "classNames",
+          "type": "string",
+          "description": "Additional CSS class names to apply to the modal.",
+          "defaultValue": "''"
+        }
+      ]
+    },
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Modal component.",
+      "headers": ["Event Name", "Description"],
+      "rows": [
+        {
+          "propName": "onOpen",
+          "type": "Triggered when the modal is opened."
+        },
+        {
+          "propName": "onClose",
+          "type": "Triggered when the modal is closed."
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Modal component.",
+      "ariaRoles": [
+        {
+          "propName": "Dialog",
+          "description": "The Modal component is rendered with the 'dialog' role to provide a container for the modal content."
+        },
+        {
+          "propName": "Aria-modal",
+          "description": "The modal has an 'aria-modal' attribute set to 'true' to indicate it's a modal dialog."
+        },
+        {
+          "propName": "Backdrop Click",
+          "description": "The modal can be closed by clicking the backdrop, which should be announced to users if they need alternative options for closing."
+        },
+        {
+          "propName": "Keyboard Navigation",
+          "description": "Ensures keyboard focus is retained within the modal when open, and provides a close button accessible via keyboard navigation."
+        }
+      ]
+    }
+  },
+  {
+    "title": "accordion",
+    "path": "/frontend/components/accordion",
+    "description": "A customizable accordion component that comes in different variants.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Accordion, AccordionItem } from 'AwesomeCL';",
+      "description": "This code shows how to import the accordion component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default (Variant Bordered)",
+        "components": [
+          {
+            "type": "Accordion",
+            "props": {
+              "variant": "bordered",
+              "style": {
+                "width": "60%",
+                "margin": "auto"
+              }
+            },
+            "children": [
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 1"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio dolore, laboriosam voluptatum consequatur non mollitia. Magni eligendi eaque eum aperiam iste similique ad commodi."
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 2"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis velit provident earum vel, perferendis cupiditate beatae illo aut minima libero consequuntur aperiam officiis quisquam error neque id eos possimus est. Deserunt voluptatum inventore laudantium veritatis?"
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 3"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque officiis cupiditate placeat ut beatae temporibus deserunt neque, quis iure! Repudiandae eius eos facere numquam, suscipit voluptatibus sequi sunt esse excepturi."
+              }
+            ]
+          }
+        ],
+        "code": "import { Accordion, AccordionItem } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Accordion style={{ margin: \"auto\", width: \"60%\" }}>\n            <AccordionItem title='Section 1'>\n              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem unde quis, ea ratione obcaecati. Quaerat autem unde cupiditate ipsa.\n            </AccordionItem>\n            <AccordionItem title='Section 2'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, amet voluptatibus soluta reprehenderit sed laudantium optio ut sint nemo illum earum ducimus tempora nulla quia nam placeat explicabo facilis quisquam minus? Fuga, labore facilis.\n            </AccordionItem>\n            <AccordionItem title='Section 3'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, est exercitationem consequatur dolorum architecto molestiae aspernatur voluptatem ducimus nisi ea quo, atque tempora magni necessitatibus.\n            </AccordionItem>\n    </Accordion>\n );\n}"
+      },
+      {
+        "title": "Multiple items open",
+        "components": [
+          {
+            "type": "Accordion",
+            "props": {
+              "variant": "bordered",
+              "allowMultipleOpen": "true",
+              "style": {
+                "width": "60%",
+                "margin": "auto"
+              }
+            },
+            "children": [
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 1"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio dolore, laboriosam voluptatum consequatur non mollitia. Magni eligendi eaque eum aperiam iste similique ad commodi."
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 2"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis velit provident earum vel, perferendis cupiditate beatae illo aut minima libero consequuntur aperiam officiis quisquam error neque id eos possimus est. Deserunt voluptatum inventore laudantium veritatis?"
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 3"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque officiis cupiditate placeat ut beatae temporibus deserunt neque, quis iure! Repudiandae eius eos facere numquam, suscipit voluptatibus sequi sunt esse excepturi."
+              }
+            ]
+          }
+        ],
+        "code": "import { Accordion, AccordionItem } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Accordion allowMultipleOpen={true} style={{ margin: \"auto\", width: \"60%\" }}>\n            <AccordionItem title='Section 1'>\n              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem unde quis, ea ratione obcaecati. Quaerat autem unde cupiditate ipsa.\n            </AccordionItem>\n            <AccordionItem title='Section 2'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, amet voluptatibus soluta reprehenderit sed laudantium optio ut sint nemo illum earum ducimus tempora nulla quia nam placeat explicabo facilis quisquam minus? Fuga, labore facilis.\n            </AccordionItem>\n            <AccordionItem title='Section 3'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, est exercitationem consequatur dolorum architecto molestiae aspernatur voluptatem ducimus nisi ea quo, atque tempora magni necessitatibus.\n            </AccordionItem>\n    </Accordion>\n );\n}"
+      },
+      {
+        "title": "With Subtitles",
+        "components": [
+          {
+            "type": "Accordion",
+            "props": {
+              "variant": "bordered",
+              "style": {
+                "width": "60%",
+                "margin": "auto"
+              }
+            },
+            "children": [
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 1",
+                  "subtitle": "Subtitle 1"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio dolore, laboriosam voluptatum consequatur non mollitia. Magni eligendi eaque eum aperiam iste similique ad commodi."
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 2",
+                  "subtitle": "Subtitle 2"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis velit provident earum vel, perferendis cupiditate beatae illo aut minima libero consequuntur aperiam officiis quisquam error neque id eos possimus est. Deserunt voluptatum inventore laudantium veritatis?"
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 3",
+                  "subtitle": "Subtitle 3"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque officiis cupiditate placeat ut beatae temporibus deserunt neque, quis iure! Repudiandae eius eos facere numquam, suscipit voluptatibus sequi sunt esse excepturi."
+              }
+            ]
+          }
+        ],
+        "code": "import { Accordion, AccordionItem } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Accordion style={{ margin: \"auto\", width: \"60%\" }}>\n            <AccordionItem title='Section 1' subtitle='Subtitle 1'>\n              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem unde quis, ea ratione obcaecati. Quaerat autem unde cupiditate ipsa.\n            </AccordionItem>\n            <AccordionItem title='Section 2' subtitle='Subtitle 2'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, amet voluptatibus soluta reprehenderit sed laudantium optio ut sint nemo illum earum ducimus tempora nulla quia nam placeat explicabo facilis quisquam minus? Fuga, labore facilis.\n            </AccordionItem>\n            <AccordionItem title='Section 3' subtitle='Subtitle 3'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, est exercitationem consequatur dolorum architecto molestiae aspernatur voluptatem ducimus nisi ea quo, atque tempora magni necessitatibus.\n            </AccordionItem>\n    </Accordion>\n );\n}"
+      },
+      {
+        "title": "Variant Shadow",
+        "components": [
+          {
+            "type": "Accordion",
+            "props": {
+              "variant": "shadow",
+              "style": {
+                "width": "60%",
+                "margin": "auto"
+              }
+            },
+            "children": [
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 1"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio dolore, laboriosam voluptatum consequatur non mollitia. Magni eligendi eaque eum aperiam iste similique ad commodi."
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 2"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis velit provident earum vel, perferendis cupiditate beatae illo aut minima libero consequuntur aperiam officiis quisquam error neque id eos possimus est. Deserunt voluptatum inventore laudantium veritatis?"
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 3"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque officiis cupiditate placeat ut beatae temporibus deserunt neque, quis iure! Repudiandae eius eos facere numquam, suscipit voluptatibus sequi sunt esse excepturi."
+              }
+            ]
+          }
+        ],
+        "code": "import { Accordion, AccordionItem } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Accordion variant='shadow' style={{ margin: \"auto\", width: \"60%\" }}>\n            <AccordionItem title='Section 1'>\n              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem unde quis, ea ratione obcaecati. Quaerat autem unde cupiditate ipsa.\n            </AccordionItem>\n            <AccordionItem title='Section 2'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, amet voluptatibus soluta reprehenderit sed laudantium optio ut sint nemo illum earum ducimus tempora nulla quia nam placeat explicabo facilis quisquam minus? Fuga, labore facilis.\n            </AccordionItem>\n            <AccordionItem title='Section 3'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, est exercitationem consequatur dolorum architecto molestiae aspernatur voluptatem ducimus nisi ea quo, atque tempora magni necessitatibus.\n            </AccordionItem>\n    </Accordion>\n );\n}"
+      },
+      {
+        "title": "Variant Light",
+        "components": [
+          {
+            "type": "Accordion",
+            "props": {
+              "variant": "light",
+              "style": {
+                "width": "60%",
+                "margin": "auto"
+              }
+            },
+            "children": [
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 1"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio dolore, laboriosam voluptatum consequatur non mollitia. Magni eligendi eaque eum aperiam iste similique ad commodi."
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 2"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis velit provident earum vel, perferendis cupiditate beatae illo aut minima libero consequuntur aperiam officiis quisquam error neque id eos possimus est. Deserunt voluptatum inventore laudantium veritatis?"
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 3"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque officiis cupiditate placeat ut beatae temporibus deserunt neque, quis iure! Repudiandae eius eos facere numquam, suscipit voluptatibus sequi sunt esse excepturi."
+              }
+            ]
+          }
+        ],
+        "code": "import { Accordion, AccordionItem } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Accordion variant='light' style={{ margin: \"auto\", width: \"60%\" }}>\n            <AccordionItem title='Section 1'>\n              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem unde quis, ea ratione obcaecati. Quaerat autem unde cupiditate ipsa.\n            </AccordionItem>\n            <AccordionItem title='Section 2'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, amet voluptatibus soluta reprehenderit sed laudantium optio ut sint nemo illum earum ducimus tempora nulla quia nam placeat explicabo facilis quisquam minus? Fuga, labore facilis.\n            </AccordionItem>\n            <AccordionItem title='Section 3'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, est exercitationem consequatur dolorum architecto molestiae aspernatur voluptatem ducimus nisi ea quo, atque tempora magni necessitatibus.\n            </AccordionItem>\n    </Accordion>\n );\n}"
+      },
+      {
+        "title": "Variant Splitted",
+        "components": [
+          {
+            "type": "Accordion",
+            "props": {
+              "variant": "splitted",
+              "style": {
+                "width": "60%",
+                "margin": "auto"
+              }
+            },
+            "children": [
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 1"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio dolore, laboriosam voluptatum consequatur non mollitia. Magni eligendi eaque eum aperiam iste similique ad commodi."
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 2"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis velit provident earum vel, perferendis cupiditate beatae illo aut minima libero consequuntur aperiam officiis quisquam error neque id eos possimus est. Deserunt voluptatum inventore laudantium veritatis?"
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 3"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque officiis cupiditate placeat ut beatae temporibus deserunt neque, quis iure! Repudiandae eius eos facere numquam, suscipit voluptatibus sequi sunt esse excepturi."
+              }
+            ]
+          }
+        ],
+        "code": "import { Accordion, AccordionItem } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Accordion variant='splitted' style={{ margin: \"auto\", width: \"60%\" }}>\n            <AccordionItem title='Section 1'>\n              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem unde quis, ea ratione obcaecati. Quaerat autem unde cupiditate ipsa.\n            </AccordionItem>\n            <AccordionItem title='Section 2'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, amet voluptatibus soluta reprehenderit sed laudantium optio ut sint nemo illum earum ducimus tempora nulla quia nam placeat explicabo facilis quisquam minus? Fuga, labore facilis.\n            </AccordionItem>\n            <AccordionItem title='Section 3'>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, est exercitationem consequatur dolorum architecto molestiae aspernatur voluptatem ducimus nisi ea quo, atque tempora magni necessitatibus.\n            </AccordionItem>\n    </Accordion>\n );\n}"
+      },
+      {
+        "title": "Change Icons",
+        "components": [
+          {
+            "type": "Accordion",
+            "props": {
+              "variant": "bordered",
+              "style": {
+                "width": "60%",
+                "margin": "auto"
+              }
+            },
+            "children": [
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 1",
+                  "iconClose": "FaMinus",
+                  "iconOpen": "FaPlus"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident optio dolore, laboriosam voluptatum consequatur non mollitia. Magni eligendi eaque eum aperiam iste similique ad commodi."
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 2",
+                  "iconClose": "FaMinus",
+                  "iconOpen": "FaPlus"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis velit provident earum vel, perferendis cupiditate beatae illo aut minima libero consequuntur aperiam officiis quisquam error neque id eos possimus est. Deserunt voluptatum inventore laudantium veritatis?"
+              },
+              {
+                "type": "AccordionItem",
+                "props": {
+                  "title": "Section 3",
+                  "iconClose": "FaMinus",
+                  "iconOpen": "FaPlus"
+                },
+                "children": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque officiis cupiditate placeat ut beatae temporibus deserunt neque, quis iure! Repudiandae eius eos facere numquam, suscipit voluptatibus sequi sunt esse excepturi."
+              }
+            ]
+          }
+        ],
+        "code": "import { Accordion, AccordionItem } from 'AwesomeCL';\nimport { FaPlus, FaMinus } from 'react-icons/fa6';\n\nfunction App() {\n  return (\n    <Accordion variant='bordered'>\n            <AccordionItem title='Section 1' iconClose={<FaMinus />} iconOpen={<FaPlus />} >\n              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem unde quis, ea ratione obcaecati. Quaerat autem unde cupiditate ipsa.\n            </AccordionItem>\n            <AccordionItem title='Section 2' iconClose={<FaMinus />} iconOpen={<FaPlus />}>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, amet voluptatibus soluta reprehenderit sed laudantium optio ut sint nemo illum earum ducimus tempora nulla quia nam placeat explicabo facilis quisquam minus? Fuga, labore facilis.\n            </AccordionItem>\n            <AccordionItem title='Section 3' iconClose={<FaMinus />} iconOpen={<FaPlus />}>\n              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, est exercitationem consequatur dolorum architecto molestiae aspernatur voluptatem ducimus nisi ea quo, atque tempora magni necessitatibus.\n            </AccordionItem>\n    </Accordion>\n );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Accordion Props",
+      "description": "List of all properties supported by the accordion component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "allowMultipleOpen",
+          "type": "Boolean",
+          "description": "Defines whether multiple items can be toggled at the same time.",
+          "defaultValue": "false"
+        },
+        {
+          "propName": "variant",
+          "type": "string",
+          "description": "Defines the visual variant of the accordion. Options are: 'light', 'bordered', 'shadow', 'splitted'.",
+          "defaultValue": "bordered"
+        },
+        {
+          "propName": "children",
+          "type": "React Node",
+          "description": "Children nodes for the accordion. Used for adding Accordion items.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "aria",
+          "type": "string",
+          "description": "Aria label for accessibility. Provides additional context for screen readers.",
+          "defaultValue": "'accordion'"
+        },
+        {
+          "propName": "className",
+          "type": "string",
+          "description": "Additional CSS class names to apply.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "style",
+          "type": "object",
+          "description": "Inline styles to be applied to the search bar.",
+          "defaultValue": "-"
+        }
+      ]
+    },
+    "propsTable2": {
+      "title": "Accordion Item Props",
+      "description": "List of all properties supported by the accordion item component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "children",
+          "type": "string/ React Node",
+          "description": "The content for the accordion item.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "aria",
+          "type": "string",
+          "description": "Aria label for accessibility. Provides additional context for screen readers.",
+          "defaultValue": "'accordion-item'"
+        },
+        {
+          "propName": "title",
+          "type": "string",
+          "description": "Defines the headline for the accordion item.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "subtitle",
+          "type": "string",
+          "description": "Defines the subtitle for the accordion item.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "iconClose",
+          "type": "(React) icon",
+          "description": "Defines the icon that is visible when item is open. Works with react icons.",
+          "defaultValue": "Arrow down"
+        },
+        {
+          "propName": "iconOpen",
+          "type": "string/ React Node",
+          "description": "Defines the icon that is visible when item is closed. Works with react icons.",
+          "defaultValue": "Arrow left"
+        },
+        {
+          "propName": "onToggle",
+          "type": "funcrion",
+          "description": "Callback function executing on item toggle event.",
+          "defaultValue": "-"
+        }
+      ]
+    },
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Search bar component.",
+      "headers": ["Event Name", "Description"],
+      "rows": [
+        {
+          "propName": "onToggle",
+          "type": "Accordion item event. Defines action on toggle."
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Search bar component.",
+      "ariaRoles": [
+        {
+          "propName": "Accordion",
+          "description": "The Accordion component is rendered with the search accordion by default."
+        },
+        {
+          "propName": "Accordion Item",
+          "description": "The Accordion Item component is rendered with the accordion item accordion by default."
+        }
+      ]
+    }
+  },
+  {
+    "title": "checkbox",
+    "path": "/frontend/components/checkbox",
+    "description": "A checkbox component that supports various styles, sizes, and allows for flexible positioning of the label.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Checkbox } from 'AwesomeCL';",
+      "description": "This code shows how to import the Checkbox component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default",
+        "components": [
+          {
+            "type": "Checkbox",
+            "props": {
+              "checked": false,
+              "size": "md"
+            },
+            "children": "Click me"
+          }
+        ],
+        "code": "import { Checkbox } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Checkbox>\n      Click me\n    </Checkbox>\n  );\n}"
+      },
+      {
+        "title": "Label Position",
+        "components": [
+          {
+            "type": "Checkbox",
+            "props": {
+              "labelPosition": "right"
+            },
+            "children": "Right Label"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "labelPosition": "left"
+            },
+            "children": "Left Label"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "labelPosition": "top"
+            },
+            "children": "Top Label"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "labelPosition": "bottom"
+            },
+            "children": "Bottom Label"
+          }
+        ],
+        "code": "import { Checkbox } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Checkbox labelPosition=\"right\">Right Label</Checkbox>\n      <Checkbox labelPosition=\"left\">Left Label</Checkbox>\n      <Checkbox labelPosition=\"top\">Top Label</Checkbox>\n      <Checkbox labelPosition=\"bottom\">Bottom Label</Checkbox>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Checked State",
+        "components": [
+          {
+            "type": "Checkbox",
+            "props": {
+              "checked": true
+            },
+            "children": "Checked"
+          }
+        ],
+        "code": "import { Checkbox } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Checkbox checked={true}>\n      Checked\n    </Checkbox>\n  );\n}"
+      },
+      {
+        "title": "Sizes",
+        "components": [
+          {
+            "type": "Checkbox",
+            "props": {
+              "size": "sm"
+            },
+            "children": "Small"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "size": "md"
+            },
+            "children": "Medium"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "size": "lg"
+            },
+            "children": "Large"
+          }
+        ],
+        "code": "import { Checkbox } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Checkbox size=\"sm\">Small</Checkbox>\n      <Checkbox size=\"md\">Medium</Checkbox>\n      <Checkbox size=\"lg\">Large</Checkbox>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Radius",
+        "components": [
+          {
+            "type": "Checkbox",
+            "props": {
+              "size": "lg",
+              "radius": "none"
+            },
+            "children": "None"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "size": "lg",
+              "radius": "sm"
+            },
+            "children": "Small"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "size": "lg",
+              "radius": "md"
+            },
+            "children": "Medium"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "size": "lg",
+              "radius": "full"
+            },
+            "children": "Full"
+          }
+        ],
+        "code": "import { Switch } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Checkbox radius=\"none\" size=\"large\">None</Checkbox>\n      <Checkbox radius=\"sm\"  size=\"large\">Small</Checkbox>\n      <Checkbox radius=\"md\" size=\"large\">Medium</Checkbox>\n      <Checkbox radius=\"full\" size=\"large\">Full</Checkbox>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Style Variants",
+        "components": [
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "subtle",
+              "color": "default"
+            },
+            "children": "Subtle"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "solid",
+              "color": "default"
+            },
+            "children": "Solid"
+          }
+        ],
+        "code": "import { Checkbox } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Checkbox variant=\"subtle\">Subtle</Checkbox>\n      <Checkbox variant=\"solid\">Solid</Checkbox>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Colors Subtle",
+        "components": [
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "subtle",
+              "color": "default"
+            },
+            "children": "Default"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "subtle",
+              "color": "primary"
+            },
+            "children": "Primary"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "subtle",
+              "color": "secondary"
+            },
+            "children": "Secondary"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "subtle",
+              "color": "success"
+            },
+            "children": "Success"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "subtle",
+              "color": "warning"
+            },
+            "children": "Warning"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "subtle",
+              "color": "danger"
+            },
+            "children": "Danger"
+          }
+        ],
+        "code": "import { Checkbox } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Checkbox color=\"default\">Default</Checkbox>\n      <Checkbox color=\"primary\">Primary</Checkbox>\n      <Checkbox color=\"secondary\">Secondary</Checkbox>\n      <Checkbox color=\"success\">Success</Checkbox>\n      <Checkbox color=\"warning\">Warning</Checkbox>\n      <Checkbox color=\"danger\">Danger</Checkbox>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Colors Solid",
+        "components": [
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "solid",
+              "color": "default",
+              "checked": true
+            },
+            "children": "Default"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "solid",
+              "color": "primary",
+              "checked": true
+            },
+            "children": "Primary"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "solid",
+              "color": "secondary",
+              "checked": true
+            },
+            "children": "Secondary"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "solid",
+              "color": "success",
+              "checked": true
+            },
+            "children": "Success"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "solid",
+              "color": "warning",
+              "checked": true
+            },
+            "children": "Warning"
+          },
+          {
+            "type": "Checkbox",
+            "props": {
+              "variant": "solid",
+              "color": "danger",
+              "checked": true
+            },
+            "children": "Danger"
+          }
+        ],
+        "code": "import { Checkbox } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Checkbox color=\"default\" variant=\"solid\">Default</Checkbox>\n      <Checkbox color=\"primary\" variant=\"solid\">Primary</Checkbox>\n      <Checkbox color=\"secondary\" variant=\"solid\">Secondary</Checkbox>\n      <Checkbox color=\"success\" variant=\"solid\">Success</Checkbox>\n      <Checkbox color=\"warning\" variant=\"solid\">Warning</Checkbox>\n      <Checkbox color=\"danger\" variant=\"solid\">Danger</Checkbox>\n    </>\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Checkbox Props",
+      "description": "List of all props supported by the Checkbox component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "children",
+          "type": "node",
+          "description": "Content to be displayed next to the checkbox.",
+          "defaultValue": "null"
+        },
+        {
+          "propName": "aria",
+          "type": "string",
+          "description": "Aria label for accessibility. Provides additional context for screen readers.",
+          "defaultValue": "'checkbox'"
+        },
+        {
+          "propName": "labelPosition",
+          "type": "string",
+          "description": "Defines the position of the label. Options are: 'left', 'right', 'top', 'bottom'.",
+          "defaultValue": "'right'"
+        },
+        {
+          "propName": "checked",
+          "type": "Boolean",
+          "description": "Render checkbox in checked state.",
+          "defaultValue": "false"
+        },
+        {
+          "propName": "size",
+          "type": "string",
+          "description": "Defines the size of the checkbox. Options are: 'sm', 'md', 'lg'.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "radius",
+          "type": "string",
+          "description": "Defines the border-radius of the checkbox. Options are: 'none', 'sm', 'md', 'full'.",
+          "defaultValue": "'sm'"
+        },
+        {
+          "propName": "variant",
+          "type": "string",
+          "description": "Defines the style variant of the checkbox. Options are: 'solid' and  'subtle'.",
+          "defaultValue": "'subtle'"
+        },
+        {
+          "propName": "color",
+          "type": "string",
+          "description": "Defines the color of the checkbox. Options are: 'default', 'primary', 'secondary', 'success', 'warning', 'danger'.",
+          "defaultValue": "'default'"
+        },
+        {
+          "propName": "className",
+          "type": "string",
+          "description": "Additional CSS class names to apply to the checkbox container.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "style",
+          "type": "object",
+          "description": "Inline styles to be applied to the checkbox container.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "onChange",
+          "type": "function",
+          "description": "Callback function triggered when the checkbox is clicked",
+          "defaultValue": "-"
+        }
+      ]
+    },
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Checkbox component.",
+      "headers": ["Event Name", "Description"],
+      "rows": [
+        {
+          "propName": "onChange",
+          "type": "Triggered when the checkbox is clicked."
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Checkbox component.",
+      "ariaRoles": [
+        {
+          "propName": "Checkbox",
+          "description": "The Checkbox component is rendered with the checkbox role by default."
+        },
+        {
+          "propName": "Aria-label",
+          "description": "If the checkbox has only an icon and no text, you should add an aria-label for screen readers."
+        }
+      ]
+    }
+  },
+  {
+    "title": "form",
+    "path": "/frontend/components/form",
+    "description": "A versatile form component with multiple variants for various use cases like contact, appointment, feedback, inquiry, and newsletter.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Form } from 'AwesomeCL';",
+      "description": "This code shows how to import the Form component from the library."
+    },
+    "examples": [
+      {
+        "title": "Contact Form",
+        "components": [
+          {
+            "type": "Form",
+            "props": {
+              "variant": "contact",
+              "fields": ["firstName", "lastName", "email", "message"]
+            },
+            "children": "Contact Form Content"
+          }
+        ],
+        "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Form variant=\"contact\" />\n  );\n}"
+      },
+      {
+        "title": "Appointment Form",
+        "components": [
+          {
+            "type": "Form",
+            "props": {
+              "variant": "appointment",
+              "fields": [
+                "firstName",
+                "lastName",
+                "email",
+                "phone",
+                "appointmentDate"
+              ]
+            },
+            "children": "Appointment Form Content"
+          }
+        ],
+        "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  const additionalFields = [\n    {\n      name: 'reason',\n      label: 'Reason for Appointment',\n      type: 'textarea',\n      required: true,\n    },\n  ];\n\n  const handleSubmit = (formData) => {\n    alert(`Appointment Scheduled: ${JSON.stringify(formData, null, 2)}`);\n  };\n\n  return (\n    <Form\n      variant=\"appointment\"\n      additionalFields={additionalFields}\n    onSubmit={handleSubmit}\n    />\n  );\n}"
+      },
+      {
+        "title": "Feedback Form",
+        "components": [
+          {
+            "type": "Form",
+            "props": {
+              "variant": "feedback",
+              "fields": ["firstName", "lastName", "email", "feedback"]
+            },
+            "children": "Feedback Form Content"
+          }
+        ],
+        "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  const customStyles = {\n    inputField: {\n      border: '2px solid #4caf50',\n      padding: '10px',\n      borderRadius: '5px',\n    },\n    submitButton: {\n      backgroundColor: '#4caf50',\n      color: 'white',\n      padding: '10px 20px',\n      border: 'none',\n      borderRadius: '5px',\n      cursor: 'pointer',\n    },\n  };\n\n  return (\n    <Form variant=\"feedback\" customStyles={customStyles} />\n  );\n}"
+      },
+      {
+        "title": "Inquiry Form",
+        "components": [
+          {
+            "type": "Form",
+            "props": {
+              "variant": "inquiry",
+              "fields": ["firstName", "lastName", "email", "inquiry"]
+            },
+            "children": "Inquiry Form Content"
+          }
+        ],
+        "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Form variant=\"inquiry\" />\n  );\n}"
+      },
+      {
+        "title": "Newsletter Signup",
+        "components": [
+          {
+            "type": "Form",
+            "props": {
+              "variant": "newsletter",
+              "fields": ["email", "interests"]
+            },
+            "children": "Newsletter Signup Content"
+          }
+        ],
+        "code": "import { Form } from 'AwesomeCL';\n\nfunction App() {\n  const additionalFields = [\n    {\n      name: 'preferences',\n      label: 'Email Preferences',\n      type: 'select',\n      options: ['Daily Updates', 'Weekly News', 'Monthly Summary'],\n      required: true,\n    },\n    {\n      name: 'timezone',\n      label: 'Timezone',\n      type: 'text',\n      required: false,\n    },\n  ];\n\n  return (\n    <Form variant=\"newsletter\" additionalFields={additionalFields} />\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Form Props",
+      "description": "List of all props supported by the Form component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "variant",
+          "type": "string",
+          "description": "Specifies the type of form (e.g., 'contact', 'appointment', etc.).",
+          "defaultValue": "'contact'"
+        },
+        {
+          "propName": "fields",
+          "type": "array",
+          "description": "Defines the fields included in the form. Can be customized dynamically.",
+          "defaultValue": "[]"
+        },
+        {
+          "propName": "onSubmit",
+          "type": "function",
+          "description": "Callback function triggered when the form is submitted.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "customStyles",
+          "type": "object",
+          "description": "Custom styles for the form fields and buttons.",
+          "defaultValue": "{}"
+        },
+        {
+          "propName": "additionalFields",
+          "type": "array",
+          "description": "Additional fields that can be dynamically added to the form.",
+          "defaultValue": "[]"
+        },
+        {
+          "propName": "successMessage",
+          "type": "string",
+          "description": "Message displayed after successful form submission.",
+          "defaultValue": "'Thank you! Your form has been submitted.'"
+        }
+      ]
+    },
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Form component.",
+      "headers": ["Event Name", "Description"],
+      "rows": [
+        {
+          "propName": "onSubmit",
+          "type": "Triggered when the form is submitted. The callback receives the form data as an argument."
+        },
+        {
+          "propName": "onChange",
+          "type": "Triggered when an input value changes. Can be used to monitor real-time user input."
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Form component.",
+      "ariaRoles": [
+        {
+          "propName": "Form",
+          "description": "The Form component is rendered with the 'form' role for better screen reader compatibility."
+        },
+        {
+          "propName": "Form",
+          "description": "An aria-label can be added for accessibility if the form has no header."
+        },
+        {
+          "propName": "Polite",
+          "description": "Live regions are used for dynamic updates like success messages."
+        }
+      ]
+    }
+  },
+
+  {
+    "title": "input",
+    "path": "/frontend/components/input",
+    "description": "A customizable form element with adjustable label positioning (above or to the left), size, color, and border styles.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Input } from 'AwesomeCL';",
+      "description": "This code shows how to import the input component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default",
+        "components": [
+          {
+            "type": "Input",
+            "props": {
+              "size": "sm"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Input } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Input />\n );\n}"
+      },
+      {
+        "title": "Sizes",
+        "components": [
+          {
+            "type": "Input",
+            "props": {
+              "size": "sm",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "size": "md",
+              "placeholder": "Email"
+            },
+            "children": "Input"
+          },
+          {
+            "type": "Input",
+            "props": {
+              "size": "lg",
+              "placeholder": "Email"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Input } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Input size=\"sm\" />\n      <Input size=\"md\"/>\n      <Input size=\"lg\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Radius",
+        "components": [
+          {
+            "type": "Input",
+            "props": {
+              "radius": "none",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "radius": "sm",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "radius": "md",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "radius": "lg",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "radius": "full",
+              "placeholder": "Email"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Input } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Input radius=\"none\" placeholder=\"Email\" />\n      <Input radius=\"sm\"  placeholder=\"Email\" />\n      <Input radius=\"md\" placeholder=\"Email\" />\n      <Input radius=\"lg\" placeholder=\"Email\" />\n      <Input radius=\"full\" placeholder=\"Email\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Colors",
+        "components": [
+          {
+            "type": "Input",
+            "props": {
+              "color": "default",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "color": "primary",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "color": "secondary",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "color": "success",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "color": "warning",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "color": "danger",
+              "placeholder": "Email"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Input } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Input color=\"default\" placeholder= \"Email\" />\n      <Input color=\"primary\" placeholder= \"Email\" />\n      <Input color=\"secondary\" placeholder= \"Email\" />\n      <Input color=\"success\" placeholder= \"Email\" />\n      <Input color=\"warning\" placeholder= \"Email\" />\n      <Input color=\"danger\" placeholder= \"Email\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Borders",
+        "components": [
+          {
+            "type": "Input",
+            "props": {
+              "border": "none",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "border": "default",
+              "placeholder": "Email"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "border": "bottom",
+              "placeholder": "Email"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Input } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Input border=\"none\" placeholder= \"Email\" />\n      <Input border=\"default\" placeholder= \"Email\" />\n      <Input border=\"bottom\" placeholder= \"Email\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Label Placements",
+        "components": [
+          {
+            "type": "Input",
+            "props": {
+              "label": "Email",
+              "labelPlacement": "outside"
+            },
+            "children": ""
+          },
+          {
+            "type": "Input",
+            "props": {
+              "label": "Email",
+              "labelPlacement": "outside-left"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Input } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Input label=\"Email\" labelPlacement= \"outside\" />\n      <Input label=\"Email\" labelPlacement= \"outside-left\" />\n    </>\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Input Props",
+      "description": "List of all properties supported by the Input component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "aria",
+          "type": "string",
+          "description": "Aria label for accessibility. Provides additional context for screen readers.",
+          "defaultValue": "'input'"
+        },
+        {
+          "propName": "type",
+          "type": "string",
+          "description": "Changes the input type, all common HTML input types are valid.",
+          "defaultValue": "'text'"
+        },
+        {
+          "propName": "required",
+          "type": "Boolean",
+          "description": "Specifies whether an input field must be filled out before form submission.",
+          "defaultValue": "'text'"
+        },
+        {
+          "propName": "color",
+          "type": "string",
+          "description": "Defines the color of the button. Options are: 'primary', 'secondary', 'success', 'warning', 'danger'.",
+          "defaultValue": "'default'"
+        },
+        {
+          "propName": "style",
+          "type": "object",
+          "description": "Inline styles to be applied to the button.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "size",
+          "type": "string",
+          "description": "Defines the size of the button. Options are: 'sm', 'md', 'lg'.",
+          "defaultValue": "'sm'"
+        },
+        {
+          "propName": "radius",
+          "type": "string",
+          "description": "Defines the border-radius of the button. Options are: 'none', 'sm', 'md', 'lg', 'full'.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "border",
+          "type": "string",
+          "description": "Defines the border width of the button. Options are: 'none', 'default', 'bottom'.",
+          "defaultValue": "'default'"
+        },
+        {
+          "propName": "label",
+          "type": "string",
+          "description": "Adds a label to the input field. If left blank there is no label. Also determines 'name'-tag.",
+          "defaultValue": ""
+        },
+        {
+          "propName": "labelPlacement",
+          "type": "string",
+          "description": "Determines the position of the label. Options are: 'outside' (places label on top), 'outside-left'.",
+          "defaultValue": "'outside'"
+        },
+        {
+          "propName": "className",
+          "type": "string",
+          "description": "Additional CSS class names to apply to the button.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "value",
+          "type": "string",
+          "description": "Changes the value of the input tag for different operations.",
+          "defaultValue": ""
+        }
+      ]
+    },
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Input component.",
+      "headers": ["Event Name", "Description"],
+      "rows": [
+        {
+          "propName": "onValueChange",
+          "type": "Triggered when the value changes."
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Input component.",
+      "ariaRoles": [
+        {
+          "propName": "Input",
+          "description": "The Input component is rendered with the input role by default."
+        }
+      ]
+    }
+  },
+  {
+    "title": "searchbar",
+    "path": "/frontend/components/searchbar",
+    "description": "A customizable search bar with button element with adjustable positioning, size, color, and border styles.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Search } from 'AwesomeCL';",
+      "description": "This code shows how to import the search component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default",
+        "components": [
+          {
+            "type": "Search",
+            "props": {
+              "size": "sm"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Search } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Search />\n );\n}"
+      },
+      {
+        "title": "Sizes",
+        "components": [
+          {
+            "type": "Search",
+            "props": {
+              "size": "sm"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "size": "md"
+            },
+            "children": "Search"
+          },
+          {
+            "type": "Search",
+            "props": {
+              "size": "lg"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Search } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Search size=\"sm\" />\n      <Search size=\"md\"/>\n      <Search size=\"lg\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Radius",
+        "components": [
+          {
+            "type": "Search",
+            "props": {
+              "radius": "none"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "radius": "sm"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "radius": "md"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "radius": "lg"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "radius": "full"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Search } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Search radius=\"none\" />\n      <Search radius=\"sm\" />\n      <Search radius=\"md\" />\n      <Search radius=\"lg\" />\n      <Search radius=\"full\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Colors",
+        "components": [
+          {
+            "type": "Search",
+            "props": {
+              "color": "default"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "color": "primary"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "color": "secondary"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "color": "success"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "color": "warning"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "color": "danger"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Search } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Search color=\"default\" />\n      <Search color=\"primary\" />\n      <Search color=\"secondary\" />\n      <Search color=\"success\" />\n      <Search color=\"warning\" />\n      <Search color=\"danger\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Borders",
+        "components": [
+          {
+            "type": "Search",
+            "props": {
+              "border": "none"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "border": "default"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "border": "bottom"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Search } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Search border=\"none\" />\n      <Search border=\"default\" />\n      <Search border=\"bottom\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Button Placements",
+        "components": [
+          {
+            "type": "Search",
+            "props": {
+              "buttonPlacement": "outside-end"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "buttonPlacement": "outside-start"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "buttonPlacement": "inside-start"
+            },
+            "children": ""
+          },
+          {
+            "type": "Search",
+            "props": {
+              "buttonPlacement": "inside-start"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Search } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Search buttonPlacement= \"outside-start\" />\n      <Search labelPlacement= \"outside-end\" />\n      <Search labelPlacement= \"inside-start\" />\n      <Search labelPlacement= \"inside-end\" />\n    </>\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Search Props",
+      "description": "List of all properties supported by the Search component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "aria",
+          "type": "string",
+          "description": "Aria label for accessibility. Provides additional context for screen readers.",
+          "defaultValue": "'search'"
+        },
+        {
+          "propName": "color",
+          "type": "string",
+          "description": "Defines the color of the search bar. Options are: 'primary', 'secondary', 'success', 'warning', 'danger'.",
+          "defaultValue": "'default'"
+        },
+        {
+          "propName": "style",
+          "type": "object",
+          "description": "Inline styles to be applied to the search bar.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "size",
+          "type": "string",
+          "description": "Defines the size of the search bar. Options are: 'sm', 'md', 'lg'.",
+          "defaultValue": "'sm'"
+        },
+        {
+          "propName": "radius",
+          "type": "string",
+          "description": "Defines the border-radius of the search bar. Options are: 'none', 'sm', 'md', 'lg', 'full'.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "border",
+          "type": "string",
+          "description": "Defines the border width of the search bar. Options are: 'none', 'default', 'bottom'.",
+          "defaultValue": "'default'"
+        },
+        {
+          "propName": "buttonPlacement",
+          "type": "string",
+          "description": "Determines the position of the label. Options are: 'outside.start', 'outside-end', 'inside-start' and 'inside-end'.",
+          "defaultValue": "'inside-end'"
+        },
+        {
+          "propName": "className",
+          "type": "string",
+          "description": "Additional CSS class names to apply.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "value",
+          "type": "string",
+          "description": "Changes the value of the search bar for different operations.",
+          "defaultValue": ""
+        },
+        {
+          "propName": "placeholder",
+          "type": "string",
+          "description": "Adds placeholder text to the search bar.",
+          "defaultValue": ""
+        }
+      ]
+    },
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Search bar component.",
+      "headers": ["Event Name", "Description"],
+      "rows": [
+        {
+          "propName": "onValueChange",
+          "type": "Triggered when the value changes."
+        },
+        {
+          "propName": "onSearchClick",
+          "type": "Triggered when the button is clicked."
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Search bar component.",
+      "ariaRoles": [
+        {
+          "propName": "Search",
+          "description": "The Search component is rendered with the search role by default."
+        }
+      ]
+    }
+  },
+  {
+    "title": "spinner",
+    "path": "/frontend/components/spinner",
+    "description": "A customizable spinner component for indicating loading states.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Spinner } from 'AwesomeCL';",
+      "description": "This code shows how to import the Spinner component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default",
+        "components": [
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg"
+            }
+          }
+        ],
+        "code": "import { Spinner } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Spinner />\n  );\n}"
+      },
+      {
+        "title": "Sizes",
+        "components": [
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "sm",
+              "color": "default"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "md",
+              "color": "default"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "default"
+            }
+          }
+        ],
+        "code": "import { Spinner } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Spinner size=\"sm\" />\n      <Spinner size=\"md\" />\n      <Spinner size=\"lg\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Thickness",
+        "components": [
+          {
+            "type": "Spinner",
+            "props": {
+              "thickness": "sm",
+              "color": "default"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "thickness": "md",
+              "color": "default"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "thickness": "lg",
+              "color": "default"
+            }
+          }
+        ],
+        "code": "import { Spinner } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Spinner thickness=\"sm\" />\n      <Spinner thickness=\"md\" />\n      <Spinner thickness=\"lg\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Colors",
+        "components": [
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "default"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "primary"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "secondary"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "success"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "warning"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "danger"
+            }
+          }
+        ],
+        "code": "import { Spinner } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Spinner color=\"default\" />\n      <Spinner color=\"primary\" />\n      <Spinner color=\"secondary\" />\n      <Spinner color=\"success\" />\n      <Spinner color=\"warning\" />\n      <Spinner color=\"danger\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Speed",
+        "components": [
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "default",
+              "speed": "1s"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "default",
+              "speed": "2s"
+            }
+          },
+          {
+            "type": "Spinner",
+            "props": {
+              "size": "lg",
+              "color": "default",
+              "speed": "3s"
+            }
+          }
+        ],
+        "code": "import { Spinner } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Spinner speed=\"1s\" />\n      <Spinner speed=\"2s\" />\n      <Spinner speed=\"3s\" />\n    </>\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Spinner Props",
+      "description": "List of all props supported by the Spinner component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "size",
+          "type": "string",
+          "description": "Defines the size of the spinner. Options are: 'sm', 'md', 'lg'.",
+          "defaultValue": "'lg'"
+        },
+        {
+          "propName": "thickness",
+          "type": "string",
+          "description": "Defines the thickness of the spinner. Options are: 'sm', 'md', 'lg'.",
+          "defaultValue": "'lg'"
+        },
+        {
+          "propName": "color",
+          "type": "string",
+          "description": "Defines the color of the spinner. Options are: 'default-dark', 'default-light', or any other predefined CSS color.",
+          "defaultValue": "'default'"
+        },
+        {
+          "propName": "speed",
+          "type": "string",
+          "description": "Specifies the animation duration of the spinner. Accepts any valid CSS time unit, e.g., '1s', '500ms'.",
+          "defaultValue": "'1s'"
+        },
+        {
+          "propName": "style",
+          "type": "object",
+          "description": "Inline styles to apply to the spinner.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "className",
+          "type": "string",
+          "description": "Additional CSS class names to apply to the spinner.",
+          "defaultValue": "-"
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Spinner component.",
+      "ariaRoles": [
+        {
+          "propName": "role",
+          "description": "The Spinner component uses the 'status' role to indicate loading."
+        },
+        {
+          "propName": "aria-busy",
+          "description": "The Spinner component sets 'aria-busy' to 'true' to communicate the loading state to assistive technologies."
+        }
+      ]
+    }
+  },
+  {
+    "title": "switch",
+    "path": "/frontend/components/switch",
+    "description": "A customizable switch component that toggles between two states.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Switch } from 'AwesomeCL';",
+      "description": "This code shows how to import the Switch component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default",
+        "components": [
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg"
+            },
+            "children": "Enable Notifications"
+          }
+        ],
+        "code": "import { Switch } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Switch>\n      Enable Notifications\n    </Switch>\n  );\n}"
+      },
+      {
+        "title": "Sizes",
+        "components": [
+          {
+            "type": "Switch",
+            "props": {
+              "size": "sm",
+              "radius": "lg",
+              "color": "default"
+            },
+            "children": "Small"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "md",
+              "radius": "lg",
+              "color": "default"
+            },
+            "children": "Medium"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "lg",
+              "color": "default"
+            },
+            "children": "Large"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "xl",
+              "radius": "lg",
+              "color": "default"
+            },
+            "children": "Extra Large"
+          }
+        ],
+        "code": "import { Switch } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Switch size=\"sm\">Small</Switch>\n      <Switch size=\"md\">Medium</Switch>\n      <Switch size=\"lg\">Large</Switch>\n      <Switch size=\"xl\">Extra Large</Switch>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Radius",
+        "components": [
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "none",
+              "color": "default"
+            },
+            "children": "None"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "sm",
+              "color": "default"
+            },
+            "children": "Small"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "lg",
+              "color": "default"
+            },
+            "children": "Large"
+          }
+        ],
+        "code": "import { Switch } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Switch radius=\"none\">None</Switch>\n      <Switch radius=\"sm\">Small</Switch>\n      <Switch radius=\"lg\">Large</Switch>\n    </>\n  );\n}"
+      },
+      {
+        "title": "Colors",
+        "components": [
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "lg",
+              "color": "default",
+              "checked": true
+            },
+            "children": "Default"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "lg",
+              "color": "primary",
+              "checked": true
+            },
+            "children": "Primary"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "lg",
+              "color": "secondary",
+              "checked": true
+            },
+            "children": "Secondary"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "lg",
+              "color": "success",
+              "checked": true
+            },
+            "children": "Success"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "lg",
+              "color": "warning",
+              "checked": true
+            },
+            "children": "Warning"
+          },
+          {
+            "type": "Switch",
+            "props": {
+              "size": "lg",
+              "radius": "lg",
+              "color": "danger",
+              "checked": true
+            },
+            "children": "Danger"
+          }
+        ],
+        "code": "import { Switch } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Switch color=\"default\">Default</Switch>\n      <Switch color=\"primary\">Primary</Switch>\n      <Switch color=\"secondary\">Secondary</Switch>\n      <Switch color=\"success\">Success</Switch>\n      <Switch color=\"warning\">Warning</Switch>\n      <Switch color=\"danger\">Danger</Switch>\n    </>\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Switch Props",
+      "description": "List of all props supported by the Switch component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "aria",
+          "type": "string",
+          "description": "Aria label for accessibility. Provides additional context for screen readers.",
+          "defaultValue": "\"switch\""
+        },
+        {
+          "propName": "color",
+          "type": "string",
+          "description": "Defines the color of the switch. Options are: 'default', 'primary', 'secondary', 'success', 'warning', 'danger'.",
+          "defaultValue": "\"default\""
+        },
+        {
+          "propName": "onChange",
+          "type": "function",
+          "description": "Callback function triggered when the switch is toggled.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "style",
+          "type": "object",
+          "description": "Inline styles to be applied to the switch.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "size",
+          "type": "string",
+          "description": "Defines the size of the switch. Options are: 'sm', 'md', 'lg'.",
+          "defaultValue": "\"md\""
+        },
+        {
+          "propName": "radius",
+          "type": "string",
+          "description": "Defines the border-radius of the switch. Options are: 'none', 'sm', 'md', 'lg', 'full'.",
+          "defaultValue": "\"lg\""
+        },
+        {
+          "propName": "checked",
+          "type": "boolean",
+          "description": "Determines if the switch is initially checked.",
+          "defaultValue": "false"
+        },
+        {
+          "propName": "className",
+          "type": "string",
+          "description": "Additional CSS class names to apply to the switch.",
+          "defaultValue": "\"\""
+        },
+        {
+          "propName": "sliderColor",
+          "type": "string",
+          "description": "Optional color of the slider.",
+          "defaultValue": "\"-\""
+        }
+      ]
+    },
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Switch component.",
+      "headers": ["Event Name", "Description"],
+      "rows": [
+        {
+          "propName": "onChange",
+          "type": "Triggered when the switch is toggled, passing the new checked state."
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Switch component.",
+      "ariaRoles": [
+        {
+          "propName": "Switch",
+          "description": "The Switch component uses role='switch' to signify toggle functionality."
+        },
+        {
+          "propName": "aria-checked",
+          "description": "The aria-checked attribute is used to indicate the current state of the switch (true or false)."
+        },
+        {
+          "propName": "aria-label",
+          "description": "The aria label (default is 'switch') should be customized if additional context is needed for screen readers."
+        }
+      ]
+    }
+  },
+  {
+    "title": "carousel",
+    "path": "/frontend/components/carousel",
+    "description": "A versatile carousel component that can be used in different variants and styles.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Carousel } from 'AwesomeCL';",
+      "description": "This code shows how to import the Button component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default",
+        "components": [
+          {
+            "type": "Carousel",
+            "props": {
+              "images": [
+                {
+                  "url": "/images/green-mountain.webp",
+                  "alt": "A mountaibn range and trees."
+                },
+                {
+                  "url": "/images/beach-with-waves.webp",
+                  "alt": "aerial view of waves crashing on a beach."
+                },
+                {
+                  "url": "/images/lake-under-blue-sky.webp",
+                  "alt": "A misty lake in the morning."
+                },
+                {
+                  "url": "/images/lavender-flower-field.webp",
+                  "alt": "Flower fields in front of a lake with mountains in the background."
+                },
+                {
+                  "url": "/images/body-of-water-surrounded-by-trees.webp",
+                  "alt": "A river surrounded by trees and mountains."
+                },
+                {
+                  "url": "/images/mountain-range-with-snow.webp",
+                  "alt": "A snowy mountain range under blue sky."
+                },
+                {
+                  "url": "/images/rock-formation-on-body.webp",
+                  "alt": "Rock formation on the shore."
+                },
+                {
+                  "url": "/images/snow-mountain-under-stars.webp",
+                  "alt": "A snowy mountain under stars."
+                },
+                {
+                  "url": "/images/tree-on-body-of-water-near-mountains.webp",
+                  "alt": "Tree on the water in front of mountain range."
+                },
+                {
+                  "url": "/images/waterfalls-in-forest.webp",
+                  "alt": "A waterfall in the autumn forest."
+                }
+              ],
+              "variant": "classic",
+              "width": 600,
+              "height": 300
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Carousel } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Carousel\n      images={[\n        { url: 'https://picsum.photos/id/10/600/300',\n          alt: 'Aerial view photography of green trees beside ocean' },\n        { url: 'https://picsum.photos/id/11/600/300',\n          alt: 'Green grass field'},\n        { url: 'https://picsum.photos/id/12/600/300',\n          alt: 'Rippling body of water facing the coastline' },\n        { url: 'https://picsum.photos/id/13/600/300',\n          alt: 'Calm water and seashore near trees under white clouds' },\n        { url: 'https://picsum.photos/id/14/600/300',\n          alt: 'Brown rocks beside body of water' },\n        { url: 'https://picsum.photos/id/15/600/300',\n          alt: 'Landscape photography of river and trees' },\n        { url: 'https://picsum.photos/id/16/600/300',\n          alt: 'Body of water under blue sky' },\n        { url: 'https://picsum.photos/id/17/600/300',\n          alt: 'Road surrounded by green leafed trees' },\n        { url: 'https://picsum.photos/id/18/600/300',\n          alt: 'Shallow focus photography of green grass' },\n        { url: 'https://picsum.photos/id/19/600/300',\n          alt: 'Selective focus photography of tree trunk on daytime' }\n      ]}\n      variant=\"classic\"\n      width=600\n      height=300\n    />\n  );\n}"
+      },
+      {
+        "title": "Auto play",
+        "components": [
+          {
+            "type": "Carousel",
+            "props": {
+              "images": [
+                {
+                  "url": "/images/green-mountain.webp",
+                  "alt": "A mountaibn range and trees."
+                },
+                {
+                  "url": "/images/beach-with-waves.webp",
+                  "alt": "aerial view of waves crashing on a beach."
+                },
+                {
+                  "url": "/images/lake-under-blue-sky.webp",
+                  "alt": "A misty lake in the morning."
+                },
+                {
+                  "url": "/images/lavender-flower-field.webp",
+                  "alt": "Flower fields in front of a lake with mountains in the background."
+                },
+                {
+                  "url": "/images/body-of-water-surrounded-by-trees.webp",
+                  "alt": "A river surrounded by trees and mountains."
+                },
+                {
+                  "url": "/images/mountain-range-with-snow.webp",
+                  "alt": "A snowy mountain range under blue sky."
+                },
+                {
+                  "url": "/images/rock-formation-on-body.webp",
+                  "alt": "Rock formation on the shore."
+                },
+                {
+                  "url": "/images/snow-mountain-under-stars.webp",
+                  "alt": "A snowy mountain under stars."
+                },
+                {
+                  "url": "/images/tree-on-body-of-water-near-mountains.webp",
+                  "alt": "Tree on the water in front of mountain range."
+                },
+                {
+                  "url": "/images/waterfalls-in-forest.webp",
+                  "alt": "A waterfall in the autumn forest."
+                }
+              ],
+              "variant": "classic",
+              "autoPlay": "true",
+              "interval": 3,
+              "width": 600,
+              "height": 300,
+              "showArrows": "false",
+              "showDots": "false"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Carousel } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Carousel\n      images={[\n        { url: 'https://picsum.photos/id/10/600/300',\n          alt: 'Aerial view photography of green trees beside ocean' },\n        { url: 'https://picsum.photos/id/11/600/300',\n          alt: 'Green grass field'},\n        { url: 'https://picsum.photos/id/12/600/300',\n          alt: 'Rippling body of water facing the coastline' },\n        { url: 'https://picsum.photos/id/13/600/300',\n          alt: 'Calm water and seashore near trees under white clouds' },\n        { url: 'https://picsum.photos/id/14/600/300',\n          alt: 'Brown rocks beside body of water' },\n        { url: 'https://picsum.photos/id/15/600/300',\n          alt: 'Landscape photography of river and trees' },\n        { url: 'https://picsum.photos/id/16/600/300',\n          alt: 'Body of water under blue sky' },\n        { url: 'https://picsum.photos/id/17/600/300',\n          alt: 'Road surrounded by green leafed trees' },\n        { url: 'https://picsum.photos/id/18/600/300',\n          alt: 'Shallow focus photography of green grass' },\n        { url: 'https://picsum.photos/id/19/600/300',\n          alt: 'Selective focus photography of tree trunk on daytime' }\n      ]}\n      variant=\"classic\"\n      autoPlay=true\n      interval=3000\n      width=600\n      height=300\n      showArrows=false\n      showDots=false\n    />\n  );\n}"
+      },
+      {
+        "title": "Border radius",
+        "components": [
+          {
+            "type": "Carousel",
+            "props": {
+              "images": [
+                {
+                  "url": "/images/green-mountain.webp",
+                  "alt": "A mountaibn range and trees."
+                },
+                {
+                  "url": "/images/beach-with-waves.webp",
+                  "alt": "aerial view of waves crashing on a beach."
+                },
+                {
+                  "url": "/images/lake-under-blue-sky.webp",
+                  "alt": "A misty lake in the morning."
+                },
+                {
+                  "url": "/images/lavender-flower-field.webp",
+                  "alt": "Flower fields in front of a lake with mountains in the background."
+                },
+                {
+                  "url": "/images/body-of-water-surrounded-by-trees.webp",
+                  "alt": "A river surrounded by trees and mountains."
+                },
+                {
+                  "url": "/images/mountain-range-with-snow.webp",
+                  "alt": "A snowy mountain range under blue sky."
+                },
+                {
+                  "url": "/images/rock-formation-on-body.webp",
+                  "alt": "Rock formation on the shore."
+                },
+                {
+                  "url": "/images/snow-mountain-under-stars.webp",
+                  "alt": "A snowy mountain under stars."
+                },
+                {
+                  "url": "/images/tree-on-body-of-water-near-mountains.webp",
+                  "alt": "Tree on the water in front of mountain range."
+                },
+                {
+                  "url": "/images/waterfalls-in-forest.webp",
+                  "alt": "A waterfall in the autumn forest."
+                }
+              ],
+              "variant": "classic",
+              "autoPlay": "true",
+              "interval": 3,
+              "width": 600,
+              "height": 300,
+              "borderRadius": 16
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Carousel } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Carousel\n      images={[\n        { url: 'https://picsum.photos/id/10/600/300',\n          alt: 'Aerial view photography of green trees beside ocean' },\n        { url: 'https://picsum.photos/id/11/600/300',\n          alt: 'Green grass field'},\n        { url: 'https://picsum.photos/id/12/600/300',\n          alt: 'Rippling body of water facing the coastline' },\n        { url: 'https://picsum.photos/id/13/600/300',\n          alt: 'Calm water and seashore near trees under white clouds' },\n        { url: 'https://picsum.photos/id/14/600/300',\n          alt: 'Brown rocks beside body of water' },\n        { url: 'https://picsum.photos/id/15/600/300',\n          alt: 'Landscape photography of river and trees' },\n        { url: 'https://picsum.photos/id/16/600/300',\n          alt: 'Body of water under blue sky' },\n        { url: 'https://picsum.photos/id/17/600/300',\n          alt: 'Road surrounded by green leafed trees' },\n        { url: 'https://picsum.photos/id/18/600/300',\n          alt: 'Shallow focus photography of green grass' },\n        { url: 'https://picsum.photos/id/19/600/300',\n          alt: 'Selective focus photography of tree trunk on daytime' }\n      ]}\n      variant=\"classic\"\n      autoPlay=true\n      interval=3000\n      width=600\n      height=300\n      borderRadius=16\n    />\n  );\n}"
+      },
+      {
+        "title": "Slider default",
+        "components": [
+          {
+            "type": "Carousel",
+            "props": {
+              "images": [
+                {
+                  "url": "/images/green-mountain.webp",
+                  "alt": "A mountaibn range and trees."
+                },
+                {
+                  "url": "/images/beach-with-waves.webp",
+                  "alt": "aerial view of waves crashing on a beach."
+                },
+                {
+                  "url": "/images/lake-under-blue-sky.webp",
+                  "alt": "A misty lake in the morning."
+                },
+                {
+                  "url": "/images/lavender-flower-field.webp",
+                  "alt": "Flower fields in front of a lake with mountains in the background."
+                },
+                {
+                  "url": "/images/body-of-water-surrounded-by-trees.webp",
+                  "alt": "A river surrounded by trees and mountains."
+                },
+                {
+                  "url": "/images/mountain-range-with-snow.webp",
+                  "alt": "A snowy mountain range under blue sky."
+                },
+                {
+                  "url": "/images/rock-formation-on-body.webp",
+                  "alt": "Rock formation on the shore."
+                },
+                {
+                  "url": "/images/snow-mountain-under-stars.webp",
+                  "alt": "A snowy mountain under stars."
+                },
+                {
+                  "url": "/images/tree-on-body-of-water-near-mountains.webp",
+                  "alt": "Tree on the water in front of mountain range."
+                },
+                {
+                  "url": "/images/waterfalls-in-forest.webp",
+                  "alt": "A waterfall in the autumn forest."
+                }
+              ],
+              "variant": "slider",
+              "autoPlay": "true",
+              "animationDuration": 40,
+              "width": 600,
+              "height": 300
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Carousel } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Carousel\n      images={[\n        { url: 'https://picsum.photos/id/10/600/300',\n          alt: 'Aerial view photography of green trees beside ocean' },\n        { url: 'https://picsum.photos/id/11/600/300',\n          alt: 'Green grass field'},\n        { url: 'https://picsum.photos/id/12/600/300',\n          alt: 'Rippling body of water facing the coastline' },\n        { url: 'https://picsum.photos/id/13/600/300',\n          alt: 'Calm water and seashore near trees under white clouds' },\n        { url: 'https://picsum.photos/id/14/600/300',\n          alt: 'Brown rocks beside body of water' },\n        { url: 'https://picsum.photos/id/15/600/300',\n          alt: 'Landscape photography of river and trees' },\n        { url: 'https://picsum.photos/id/16/600/300',\n          alt: 'Body of water under blue sky' },\n        { url: 'https://picsum.photos/id/17/600/300',\n          alt: 'Road surrounded by green leafed trees' },\n        { url: 'https://picsum.photos/id/18/600/300',\n          alt: 'Shallow focus photography of green grass' },\n        { url: 'https://picsum.photos/id/19/600/300',\n          alt: 'Selective focus photography of tree trunk on daytime' }\n      ]}\n      variant=\"slider\"\n      autoPlay=true\n      animationDuration=40\n      width=600\n      height=300\n    />\n  );\n}"
+      },
+      {
+        "title": "Gap on slider variant",
+        "components": [
+          {
+            "type": "Carousel",
+            "props": {
+              "images": [
+                {
+                  "url": "/images/green-mountain.webp",
+                  "alt": "A mountaibn range and trees."
+                },
+                {
+                  "url": "/images/beach-with-waves.webp",
+                  "alt": "aerial view of waves crashing on a beach."
+                },
+                {
+                  "url": "/images/lake-under-blue-sky.webp",
+                  "alt": "A misty lake in the morning."
+                },
+                {
+                  "url": "/images/lavender-flower-field.webp",
+                  "alt": "Flower fields in front of a lake with mountains in the background."
+                },
+                {
+                  "url": "/images/body-of-water-surrounded-by-trees.webp",
+                  "alt": "A river surrounded by trees and mountains."
+                },
+                {
+                  "url": "/images/mountain-range-with-snow.webp",
+                  "alt": "A snowy mountain range under blue sky."
+                },
+                {
+                  "url": "/images/rock-formation-on-body.webp",
+                  "alt": "Rock formation on the shore."
+                },
+                {
+                  "url": "/images/snow-mountain-under-stars.webp",
+                  "alt": "A snowy mountain under stars."
+                },
+                {
+                  "url": "/images/tree-on-body-of-water-near-mountains.webp",
+                  "alt": "Tree on the water in front of mountain range."
+                },
+                {
+                  "url": "/images/waterfalls-in-forest.webp",
+                  "alt": "A waterfall in the autumn forest."
+                }
+              ],
+              "variant": "slider",
+              "autoPlay": "true",
+              "animationDuration": 40,
+              "gap": 16,
+              "borderRadius": 16,
+              "width": 600,
+              "height": 300
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Carousel } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Carousel\n      images={[\n        { url: 'https://picsum.photos/id/10/600/300',\n          alt: 'Aerial view photography of green trees beside ocean' },\n        { url: 'https://picsum.photos/id/11/600/300',\n          alt: 'Green grass field'},\n        { url: 'https://picsum.photos/id/12/600/300',\n          alt: 'Rippling body of water facing the coastline' },\n        { url: 'https://picsum.photos/id/13/600/300',\n          alt: 'Calm water and seashore near trees under white clouds' },\n        { url: 'https://picsum.photos/id/14/600/300',\n          alt: 'Brown rocks beside body of water' },\n        { url: 'https://picsum.photos/id/15/600/300',\n          alt: 'Landscape photography of river and trees' },\n        { url: 'https://picsum.photos/id/16/600/300',\n          alt: 'Body of water under blue sky' },\n        { url: 'https://picsum.photos/id/17/600/300',\n          alt: 'Road surrounded by green leafed trees' },\n        { url: 'https://picsum.photos/id/18/600/300',\n          alt: 'Shallow focus photography of green grass' },\n        { url: 'https://picsum.photos/id/19/600/300',\n          alt: 'Selective focus photography of tree trunk on daytime' }\n      ]}\n      variant=\"slider\"\n      autoPlay=true\n      animationDuration=40\n      gap=16\n      borderRadius=16\n      width=600\n      height=300\n    />\n  );\n}"
+      },
+      {
+        "title": "Slider with icons",
+        "components": [
+          {
+            "type": "Carousel",
+            "props": {
+              "variant": "slider",
+              "autoPlay": "true",
+              "animationDuration": 10,
+              "width": 300,
+              "height": 300,
+              "iconSize": 150,
+              "iconColor": "#313131"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Carousel } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Carousel\n      images={[\n        { icon: <FaReact />,\n          alt: 'React icon' },\n        { icon: <SiJavascript />,\n          alt: 'JavaScript icon' },\n        { icon: <SiHtml5 />,\n          alt: 'Html icon' },\n        { icon: <SiCss3 />,\n          alt: 'Css3 icon' },\n        { icon: <FaGitAlt />,\n          alt: 'Git icon' },\n        { icon: <FaGithub />,\n          alt: 'GitHub icon' },\n        { icon: <SiNpm />,\n          alt: 'Npm icon' },\n        { icon: <FaNodeJs />,\n          alt: 'NodeJS icon' },\n        { icon: <SiWebpack />,\n          alt: 'Webpack icon' },\n        { icon: <SiVite />,\n          alt: 'Vite icon' }\n      ]}\n      variant=\"slider\"\n      autoPlay=true\n      animationDuration=10\n      width=300\n      height=300\n      iconSize=170\n      iconColor=\"#313131\"\n    />\n  );\n}"
+      },
+      {
+        "title": "Colors and shadow",
+        "components": [
+          {
+            "type": "Carousel",
+            "props": {
+              "variant": "slider",
+              "autoPlay": "true",
+              "animationDuration": 10,
+              "width": 300,
+              "height": 300,
+              "iconSize": 150,
+              "iconColor": "#61DAFB",
+              "backgroundColor": "#d8edfd",
+              "shadow": "true"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Carousel } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Carousel\n      images={[\n        { icon: <FaReact />,\n          alt: 'React icon' },\n        { icon: <SiJavascript />,\n          alt: 'JavaScript icon' },\n        { icon: <SiHtml5 />,\n          alt: 'Html icon' },\n        { icon: <SiCss3 />,\n          alt: 'Css3 icon' },\n        { icon: <FaGitAlt />,\n          alt: 'Git icon' },\n        { icon: <FaGithub />,\n          alt: 'GitHub icon' },\n        { icon: <SiNpm />,\n          alt: 'Npm icon' },\n        { icon: <FaNodeJs />,\n          alt: 'NodeJS icon' },\n        { icon: <SiWebpack />,\n          alt: 'Webpack icon' },\n        { icon: <SiVite />,\n          alt: 'Vite icon' }\n      ]}\n      variant=\"slider\"\n      autoPlay=true\n      animationDuration=10\n      width=300\n      height=300\n      iconSize=150\n      iconColor=\"#051923\"\n      backgroundColor=\"#d8edfd\"\n      shadow=true\n    />\n  );\n}"
+      },
+      {
+        "title": "Size",
+        "components": [
+          {
+            "type": "Carousel",
+            "props": {
+              "images": [
+                {
+                  "url": "https://picsum.photos/id/10/300/300",
+                  "alt": "Aerial view photography of green trees beside ocean"
+                },
+                {
+                  "url": "https://picsum.photos/id/11/300/300",
+                  "alt": "Green grass field"
+                },
+                {
+                  "url": "https://picsum.photos/id/12/300/300",
+                  "alt": "rippling body of water facing the coastline"
+                },
+                {
+                  "url": "https://picsum.photos/id/13/300/300",
+                  "alt": "Calm water and seashore near trees under white clouds"
+                },
+                {
+                  "url": "https://picsum.photos/id/14/300/300",
+                  "alt": "Brown rocks beside body of water"
+                },
+                {
+                  "url": "https://picsum.photos/id/15/300/300",
+                  "alt": "Landscape photography of river and trees"
+                },
+                {
+                  "url": "https://picsum.photos/id/16/300/300",
+                  "alt": "Body of water under blue sky"
+                },
+                {
+                  "url": "https://picsum.photos/id/17/300/300",
+                  "alt": "Road surrounded by green leafed trees"
+                },
+                {
+                  "url": "https://picsum.photos/id/18/300/300",
+                  "alt": "Shallow focus photography of green grass"
+                },
+                {
+                  "url": "https://picsum.photos/id/19/300/300",
+                  "alt": "Selective focus photography of tree trunk on daytime"
+                }
+              ],
+              "variant": "slider",
+              "autoPlay": "true",
+              "containerWidth": 900,
+              "width": 300,
+              "height": 400,
+              "gap": 16,
+              "animationDuration": 40,
+              "borderRadius": 16,
+              "shadow": "true"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Carousel } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Carousel\n      images={[\n        { url: 'https://picsum.photos/id/10/300/300',\n          alt: 'Aerial view photography of green trees beside ocean' },\n        { url: 'https://picsum.photos/id/11/300/300',\n          alt: 'Green grass field' },\n        { url: 'https://picsum.photos/id/12/300/300',\n          alt: 'Rippling body of water facing the coastline' },\n        { url: 'https://picsum.photos/id/13/300/300',\n          alt: 'Calm water and seashore near trees under white clouds' },\n        { url: 'https://picsum.photos/id/14/300/300',\n          alt: 'Brown rocks beside body of water' },\n        { url: 'https://picsum.photos/id/15/300/300',\n          alt: 'Landscape photography of river and trees' },\n        { url: 'https://picsum.photos/id/16/300/300',\n          alt: 'Body of water under blue sky' },\n        { url: 'https://picsum.photos/id/17/300/300',\n          alt: 'Road surrounded by green leafed trees' },\n        { url: 'https://picsum.photos/id/18/300/300',\n          alt: 'Shallow focus photography of green grass' },\n        { url: 'https://picsum.photos/id/19/300/300',\n          alt: 'Selective focus photography of tree trunk on daytime' }\n      ]}\n      variant=\"slider\"\n      autoPlay=true\n      containerWidth=900\n      width=300\n      height=400\n      gap=16\n      animationDuration=40\n      borderRadius=16\n      shadow=true\n    />\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Carousel Props",
+      "description": "List of all props supported by the Carousel component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "images",
+          "type": "Array",
+          "description": "Array of objects representing the images or icons to display. Each object can include `url`, `alt`, and optionally `icon` for icons.",
+          "defaultValue": "[]"
+        },
+        {
+          "propName": "variant",
+          "type": "String",
+          "description": "Defines the style of the carousel. Options are: 'classic', 'slider'.",
+          "defaultValue": "'classic'"
+        },
+        {
+          "propName": "autoPlay",
+          "type": "Boolean",
+          "description": "Whether the carousel should autoplay slides.",
+          "defaultValue": "true"
+        },
+        {
+          "propName": "interval",
+          "type": "number",
+          "description": "Time interval (in milliseconds) between autoPlay transitions.",
+          "defaultValue": "0"
+        },
+        {
+          "propName": "showArrows",
+          "type": "boolean",
+          "description": "Whether to display navigation arrows.",
+          "defaultValue": "true"
+        },
+        {
+          "propName": "showDots",
+          "type": "boolean",
+          "description": "Whether to display navigation dots.",
+          "defaultValue": "true"
+        },
+        {
+          "propName": "containerWidth",
+          "type": "string",
+          "description": "Specifies the width of the carousel container. Defaults to the screen width for 'slider' variant.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "width",
+          "type": "number",
+          "description": "Defines the width of each slide in pixels.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "height",
+          "type": "number",
+          "description": "Defines the height of the carousel in pixels.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "gap",
+          "type": "number",
+          "description": "Defines the gap between slides in pixels.",
+          "defaultValue": "0"
+        },
+        {
+          "propName": "borderRadius",
+          "type": "number",
+          "description": "Specifies the border-radius of the carousel container and slides.",
+          "defaultValue": "0"
+        },
+        {
+          "propName": "iconSize",
+          "type": "number",
+          "description": "Size of the icons if used in place of images.",
+          "defaultValue": "0"
+        },
+        {
+          "propName": "iconColor",
+          "type": "string",
+          "description": "Color of the icons if used in place of images.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "backgroundColor",
+          "type": "string",
+          "description": "Background color of the carousel container.",
+          "defaultValue": "transparent"
+        },
+        {
+          "propName": "shadow",
+          "type": "boolean",
+          "description": "Whether to apply a shadow to icons or images.",
+          "defaultValue": "false"
+        },
+        {
+          "propName": "animationDuration",
+          "type": "number",
+          "description": "Duration (in seconds) of the slider animation for the 'slider' variant.",
+          "defaultValue": "0"
+        },
+        {
+          "propName": "enableSwipe",
+          "type": "boolean",
+          "description": "Whether swipe gestures are enabled for navigating slides.",
+          "defaultValue": "true"
+        }
+      ]
+    },
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Carousel component.",
+      "headers": ["Event Name", "Description"],
+      "rows": [
+        {
+          "propName": "onSlideChange",
+          "type": "Triggered when the current slide changes, providing the new slide index."
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Carousel component.",
+      "ariaRoles": [
+        {
+          "propName": "Carousel",
+          "description": "The carousel container uses a region role to group related content."
+        },
+        {
+          "propName": "Aria-label",
+          "description": "Each slide has an aria-label describing its content."
+        },
+        {
+          "propName": "Keyboard Navigation",
+          "description": "Users can navigate through slides using the arrow keys when the carousel is focused."
+        }
+      ]
+    }
+  },
+  {
+    "title": "image",
+    "path": "/frontend/components/image",
+    "description": "A customizable image component.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Image } from 'AwesomeCL';",
+      "description": "This code shows how to import the image component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default Image",
+        "components": [
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/lavender-flower-field.webp"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Image src=\"https://picsum.photos/200\" />\n  );\n}"
+      },
+      {
+        "title": "Width and Height",
+        "components": [
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/snow-mountain-under-stars.webp"
+            },
+            "children": ""
+          },
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/snow-mountain-under-stars.webp",
+              "height": "200px",
+              "width": "200px"
+            },
+            "children": ""
+          },
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/snow-mountain-under-stars.webp",
+              "width": "400px"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Image src=\"https://picsum.photos/1920/1080\" />\n    <Image src=\"https://picsum.photos/1920/1080\" height=\"200px\" width=\"200px\" />\n    <Image src=\"https://picsum.photos/1920/1080\" width=\"400px\" />\n  );\n}"
+      },
+      {
+        "title": "Zoom in effect",
+        "components": [
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/lake-under-blue-sky.webp",
+              "isZoomed": "true"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Image src=\"https://picsum.photos/200\" isZoomed/>\n  );\n}"
+      },
+      {
+        "title": "Border Radius",
+        "components": [
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/fly-agaric.webp",
+              "width": "200px",
+              "height": "200px",
+              "radius": "none"
+            },
+            "children": ""
+          },
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/fly-agaric.webp",
+              "width": "200px",
+              "height": "200px",
+              "radius": "sm"
+            },
+            "children": ""
+          },
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/fly-agaric.webp",
+              "width": "200px",
+              "height": "200px",
+              "radius": "md"
+            },
+            "children": ""
+          },
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/fly-agaric.webp",
+              "width": "200px",
+              "height": "200px",
+              "radius": "lg"
+            },
+            "children": ""
+          },
+          {
+            "type": "Image",
+            "props": {
+              "src": "/images/fly-agaric.webp",
+              "width": "200px",
+              "height": "200px",
+              "radius": "full"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Image src=\"https://picsum.photos/200\" radius=\"none\" />\n    <Image src=\"https://picsum.photos/200\" radius=\"sm\" />\n    <Image src=\"https://picsum.photos/200\" radius=\"md\" />\n    <Image src=\"https://picsum.photos/200\" radius=\"lg\" />\n    <Image src=\"https://picsum.photos/200\" radius=\"full\" />\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Modal Props",
+      "description": "List of all props supported by the Modal component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "width",
+          "type": "string",
+          "description": "Defines the width of the image to override original size. Use with unit (e.g. px).",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "height",
+          "type": "string",
+          "description": "Defines the height of the image to override original size. Use with unit (e.g. px).",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "alt",
+          "type": "string",
+          "description": "Add an alt text for accessibility.",
+          "defaultValue": "Image alt text"
+        },
+        {
+          "propName": "src",
+          "type": "string",
+          "description": "The path to source file of the image.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "isZoomed",
+          "type": "boolean",
+          "description": "Adds the Zoom in effect when hovering over the image.",
+          "defaultValue": "false"
+        },
+        {
+          "propName": "radius",
+          "type": "string",
+          "description": "Defines the border-radius of the modal. Options are: 'none', 'sm', 'md', 'lg', 'full'.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "objectFit",
+          "type": "string",
+          "description": "Defines how the image should be resized to fit the container. Options are 'fill', 'contain', 'cover', 'none' and 'scale-down'.",
+          "defaultValue": "cover"
+        },
+        {
+          "propName": "style",
+          "type": "object",
+          "description": "Additional inline CSS to add to the image.",
+          "defaultValue": "''"
+        },
+        {
+          "propName": "classNameWrapper",
+          "type": "string",
+          "description": "Additional CSS class names to apply to the image wrapper.",
+          "defaultValue": "''"
+        },
+        {
+          "propName": "classNameImage",
+          "type": "string",
+          "description": "Additional CSS class names to apply to the image.",
+          "defaultValue": "''"
+        }
+      ]
+    },
+    "eventsTable": {
+      "title": "Events",
+      "description": "List of all events emitted by the Modal component.",
+      "headers": ["Event Name", "Description"],
+      "rows": [
+        {
+          "propName": "onClick",
+          "type": "Triggered when the image is clicked."
+        },
+        {
+          "propName": "onLoad",
+          "type": "Handler is called when the image is loading."
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the image component.",
+      "ariaRoles": [
+        {
+          "propName": "alt",
+          "description": "The image component has an alt text with space for an image description."
+        }
+      ]
+    }
+  },
+  {
+    "title": "avatar",
+    "path": "/frontend/components/avatar",
+    "description": "A customizable Avatar component that supports DiceBear SVG generation, image sources, sizes, colors, shapes, and additional user details like name and description.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import Avatar from 'AwesomeCL';",
+      "description": "This code shows how to import the Avatar component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default",
+        "components": [
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Jude",
+              "size": "md",
+              "color": "default"
+            },
+            "children": ""
+          },
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Brian",
+              "size": "md",
+              "color": "default"
+            },
+            "children": ""
+          },
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Andrea",
+              "size": "md",
+              "color": "default"
+            },
+            "children": ""
+          },
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Luis",
+              "size": "md",
+              "color": "default"
+            },
+            "children": ""
+          },
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Emery",
+              "size": "md",
+              "color": "default"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Avatar } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Avatar name=\"Jude\" size=\"sm\" color=\"default\" />\n    <Avatar name=\"Brian\" size=\"sm\" color=\"default\" />\n    <Avatar name=\"Andrea\" size=\"sm\" color=\"default\" />\n    <Avatar name=\"Luis\" size=\"sm\" color=\"default\" />\n    <Avatar name=\"Emery\" size=\"sm\" color=\"default\" />  );\n}"
+      },
+      {
+        "title": "Sizes",
+        "description": "Avatars displayed with various sizes and bordered with different colors.",
+        "components": [
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Jude",
+              "size": "sm"
+            },
+            "children": ""
+          },
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Brian",
+              "size": "md"
+            },
+            "children": ""
+          },
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Andrea",
+              "size": "lg"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Avatar } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Avatar name=\"Jude\" size=\"sm\"  />\n      <Avatar name=\"Brian\" size=\"md\"  />\n      <Avatar name=\"Andrea\" size=\"lg\"  />\n    </>\n  );\n}"
+      },
+      {
+        "title": "Radius",
+        "description": "Avatars with varying radius.",
+        "components": [
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Jude",
+              "size": "md",
+              "radius": "sm",
+              "shape": "square",
+              "color": "secondary"
+            },
+            "children": ""
+          },
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Brian",
+              "size": "md",
+              "radius": "md",
+              "shape": "square",
+              "color": "secondary"
+            },
+            "children": ""
+          },
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Andrea",
+              "size": "md",
+              "radius": "lg",
+              "shape": "square",
+              "color": "secondary"
+            },
+            "children": ""
+          },
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Luis",
+              "size": "md",
+              "shape": "square",
+              "color": "secondary"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Avatar } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n      <Avatar name=\"Jude\" size=\"md\" radius=\"sm\" shape=\"square\" />\n      <Avatar name=\"Brian\" size=\"md\" radius=\"md\" shape=\"square\" />\n      <Avatar name=\"Andrea\" size=\"md\" radius=\"lg\" shape=\"square\" />\n      <Avatar name=\"Luis\" size=\"md\" shape=\"square\" />\n    </>\n  );\n}"
+      },
+      {
+        "title": "User",
+        "description": "Avatars displayed with name and description.",
+        "components": [
+          {
+            "type": "Avatar",
+            "props": {
+              "avatarName": "Emery",
+              "size": "lg",
+              "name": "Emery",
+              "description": "Web Developer"
+            },
+            "children": ""
+          }
+        ],
+        "code": "import { Avatar } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <>\n    <Avatar name=\"Emery\" size=\"lg\"  name=\"Emery\"  description=\"Web Developer\" />\n   </>\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Avatar Props",
+      "description": "List of all props supported by the Avatar component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "src",
+          "type": "string",
+          "description": "The source URL for the avatar image.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "avatarName",
+          "type": "string",
+          "description": "Seed value for generating a DiceBear avatar.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "name",
+          "type": "string",
+          "description": "User's name displayed below the avatar.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "description",
+          "type": "string",
+          "description": "Additional description or role displayed below the name.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "description": "The size of the avatar.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "color",
+          "type": "'primary' | 'secondary' | 'default' | 'success' | 'warning'",
+          "description": "The background color of the avatar.",
+          "defaultValue": "'primary'"
+        },
+        {
+          "propName": "shape",
+          "type": "'circle' | 'square'",
+          "description": "The shape of the avatar.",
+          "defaultValue": "'circle'"
+        },
+        {
+          "propName": "radius",
+          "type": "'none' | 'sm' | 'md' | 'lg' | 'full'",
+          "description": "The border radius of the avatar.",
+          "defaultValue": "'none'"
+        },
+        {
+          "propName": "className",
+          "type": "string",
+          "description": "Additional class names for custom styling.",
+          "defaultValue": "undefined"
+        },
+        {
+          "propName": "style",
+          "type": "React.CSSProperties",
+          "description": "Inline styles applied to the avatar.",
+          "defaultValue": "undefined"
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Avatar component.",
+      "ariaRoles": [
+        {
+          "propName": "Alt Text",
+          "description": "The `alt` attribute is used for the `img` element to describe the avatar when an image source (`src`) is provided. This ensures screen readers can interpret the visual content."
+        },
+        {
+          "propName": "Aria-label",
+          "description": "For SVG avatars generated via DiceBear, the `aria-label` attribute is applied to describe the avatar content using the `name` prop."
+        },
+        {
+          "propName": "Initials Fallback",
+          "description": "If no `src` or `name` is provided, the avatar defaults to displaying a '?' or initials, ensuring visual context is always present."
+        },
+        {
+          "propName": "Keyboard Focus",
+          "description": "Interactive avatars (e.g., clickable or focusable) should have proper keyboard focus handling. Ensure tab index and accessible roles are provided where necessary."
+        },
+        {
+          "propName": "Color Contrast",
+          "description": "Ensure that the background and text or SVG colors meet WCAG contrast standards for sufficient readability."
+        },
+        {
+          "propName": "Responsive Design",
+          "description": "Avatar sizes (`size` prop) should be responsive and maintain accessibility for varying device sizes."
+        }
+      ]
+    }
+  },
+  {
+    "title": "card",
+    "path": "/frontend/components/card",
+    "description": "A flexible and customizable card component that supports various layouts, variants, and interactive features.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { Card } from 'AwesomeCL';",
+      "description": "This code shows how to import the Card component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default",
+        "components": [
+          {
+            "type": "Card",
+            "props": {
+              "title": "Card Title",
+              "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/green-building.webp"
+                }
+              },
+              {
+                "type": "Button",
+                "props": {
+                  "color": "default",
+                  "size": "sm",
+                  "radius": "full"
+                },
+                "children": "Read More"
+              }
+            ]
+          }
+        ],
+        "code": "import { Card, Image, Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      image={\n        <Image \n          src={snow} \n          objectFit=\"cover\" \n          radius=\"md\" \n          size=\"sm\" \n          alt=\"Example Image\" \n        />\n      }\n      description=\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.\"\n      footer={\n        <Button color=\"default\" size=\"sm\" radius=\"full\">Read More</Button>\n      }\n    />\n  );\n}"
+      },
+      {
+        "title": "Variants",
+        "components": [
+          {
+            "type": "Card",
+            "props": {
+              "title": "Subtle Variant",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "variant": "subtle"
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/sofa.webp"
+                }
+              },
+              {
+                "type": "Button",
+                "props": {
+                  "color": "default",
+                  "size": "sm",
+                  "radius": "sm"
+                },
+                "children": "Buy Now"
+              }
+            ]
+          },
+          {
+            "type": "Card",
+            "props": {
+              "title": "Elevated Variant",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "variant": "elevated"
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/sofa.webp"
+                }
+              },
+              {
+                "type": "Button",
+                "props": {
+                  "color": "default",
+                  "size": "sm",
+                  "radius": "sm"
+                },
+                "children": "Buy Now"
+              }
+            ]
+          },
+          {
+            "type": "Card",
+            "props": {
+              "title": "Outlined Variant",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "variant": "outlined"
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/sofa.webp"
+                }
+              },
+              {
+                "type": "Button",
+                "props": {
+                  "color": "default",
+                  "size": "sm",
+                  "radius": "sm"
+                },
+                "children": "Buy Now"
+              }
+            ]
+          }
+        ],
+        "code": "import { Card, Image, Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      variant=\"subtle\" \n      variant=\"elevated\" \n      variant=\"outlined\" \n    />\n  );\n}"
+      },
+      {
+        "title": "Sizes",
+        "components": [
+          {
+            "type": "Card",
+            "props": {
+              "title": "Small Card",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "size": "sm"
+            }
+          },
+          {
+            "type": "Card",
+            "props": {
+              "title": "Medium Card",
+              "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+              "size": "md"
+            }
+          },
+          {
+            "type": "Card",
+            "props": {
+              "title": "Large Card",
+              "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. ",
+              "size": "lg"
+            }
+          }
+        ],
+        "code": "import { Card, Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      size=\"sm\" \n      size=\"md\" \n      size=\"lg\" \n    />\n  );\n}"
+      },
+      {
+        "title": "Header Image",
+        "components": [
+          {
+            "type": "Card",
+            "props": {
+              "title": "Card with Header Image",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+              "imageTop": true
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/sofa.webp",
+                  "radius": "none"
+                }
+              },
+              {
+                "type": "Button",
+                "props": {
+                  "color": "default",
+                  "size": "sm",
+                  "radius": "sm"
+                },
+                "children": "Buy Now"
+              }
+            ]
+          }
+        ],
+        "code": "import { Card, Image, Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      imageTop=\"true\" \n     />\n  );\n}"
+      },
+      {
+        "title": "Horizontal Layout",
+        "components": [
+          {
+            "type": "Card",
+            "props": {
+              "title": "Horizontal Card",
+              "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+              "horizontal": true,
+              "size": "lg"
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/bag.webp",
+                  "radius": "none",
+                  "objectFit": "cover"
+                }
+              }
+            ]
+          }
+        ],
+        "code": "import { Card, Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      horizontal=\"true\" \n    />\n  );\n}"
+      },
+      {
+        "title": "Avatar",
+        "components": [
+          {
+            "type": "Card",
+            "props": {
+              "variant": "subtle",
+              "title": "Card with Avatar",
+              "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
+              "titleAlignment": "left",
+              "footerAlignment": "right"
+            },
+            "children": [
+              {
+                "type": "Avatar",
+                "props": {
+                  "avatarName": "Brian",
+                  "name": "Brian"
+                }
+              },
+              {
+                "type": "Button",
+                "props": {
+                  "color": "primary",
+                  "size": "sm",
+                  "radius": "sm"
+                },
+                "children": "Click here"
+              }
+            ]
+          }
+        ],
+        "code": "import { Card, Avatar } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      avatar={<Avatar avatarName=\"Brian\" name=\"Brian\" />} \n      description=\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\" \n    />\n  );\n}"
+      },
+      {
+        "title": "Interactive",
+        "components": [
+          {
+            "type": "Card",
+            "props": {
+              "title": "Interactive Card",
+              "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor."
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/green-window.webp",
+                  "radius": "md",
+                  "objectFit": "cover"
+                }
+              }
+            ]
+          },
+          {
+            "type": "Card",
+            "props": {
+              "title": "Non-Interactive Card",
+              "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+              "isInteractive": false
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/green-window.webp",
+                  "radius": "md",
+                  "objectFit": "cover"
+                }
+              }
+            ]
+          }
+        ],
+        "code": "import { Card, Image } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      isInteractive=\"true\" \n      isInteractive=\"false\" \n    />\n  );\n}"
+      },
+      {
+        "title": "Alignment",
+        "components": [
+          {
+            "type": "Card",
+            "props": {
+              "title": "Align Left",
+              "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+              "titleAlignment": "left",
+              "footerAlignment": "left"
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/green-building.webp",
+                  "radius": "md",
+                  "objectFit": "cover"
+                }
+              },
+              {
+                "type": "Button",
+                "props": {
+                  "color": "default",
+                  "size": "sm",
+                  "radius": "sm"
+                },
+                "children": "Click here"
+              }
+            ]
+          },
+          {
+            "type": "Card",
+            "props": {
+              "title": "Align Right",
+              "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+              "titleAlignment": "right",
+              "footerAlignment": "right"
+            },
+            "children": [
+              {
+                "type": "Image",
+                "props": {
+                  "src": "/images/green-building.webp",
+                  "radius": "md",
+                  "objectFit": "cover"
+                }
+              },
+              {
+                "type": "Button",
+                "props": {
+                  "color": "default",
+                  "size": "sm",
+                  "radius": "sm"
+                },
+                "children": "Click here"
+              }
+            ]
+          }
+        ],
+        "code": "import { Card, Image, Button } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <Card \n      titleAlignment=\"left\" \n      footerAlignment=\"left\" \n      titleAlignment=\"right\" \n      footerAlignment=\"right\" \n    />\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Card Props",
+      "description": "List of all props supported by the Card component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "title",
+          "type": "string",
+          "description": "The title of the card.",
+          "defaultValue": ""
+        },
+        {
+          "propName": "description",
+          "type": "string",
+          "description": "The description of the card.",
+          "defaultValue": ""
+        },
+        {
+          "propName": "footer",
+          "type": "node",
+          "description": "Defines the footer content of the card. Commonly includes actions like buttons.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "variant",
+          "type": "string",
+          "description": "Visual style of the card. Options: 'subtle', 'elevated', 'outlined'.",
+          "defaultValue": "'subtle'"
+        },
+        {
+          "propName": "size",
+          "type": "string",
+          "description": "Size of the card. Options: 'sm', 'md', 'lg'.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "radius",
+          "type": "string",
+          "description": "Adjusts the corner radius of the card. Options: 'none', 'sm', 'md', 'lg'.",
+          "defaultValue": "'md'"
+        },
+        {
+          "propName": "image",
+          "type": "node",
+          "description": "Optional image to display in the card.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "avatar",
+          "type": "node",
+          "description": "Renders an optional avatar. Typically used for `Avatar` components.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "imageTop",
+          "type": "boolean",
+          "description": "Determines whether the image appears at the top of the card. If `true`, the image is styled accordingly.",
+          "defaultValue": "false"
+        },
+        {
+          "propName": "horizontal",
+          "type": "boolean",
+          "description": "When set to `true`, switches the card layout to a horizontal orientation.",
+          "defaultValue": "false"
+        },
+        {
+          "propName": "textAlignment",
+          "type": "string",
+          "description": "Specifies the alignment of the card title and description. Options: `'left'`, `'center'`, `'right'`.",
+          "defaultValue": "'center'"
+        },
+        {
+          "propName": "footerAlignment",
+          "type": "string",
+          "description": "Specifies the alignment of the footer content. Options: `'left'`, `'center'`, `'right'`.",
+          "defaultValue": "'center'"
+        },
+        {
+          "propName": "isInteractive",
+          "type": "boolean",
+          "description": "Enables hover effect.",
+          "defaultValue": "true"
+        },
+        {
+          "propName": "className",
+          "type": "string",
+          "description": "Additional CSS classes for the card.",
+          "defaultValue": ""
+        },
+        {
+          "propName": "style",
+          "type": "object",
+          "description": "Applies custom inline styles to the card container.",
+          "defaultValue": "{}"
+        },
+        {
+          "propName": "aria",
+          "type": "string",
+          "description": "ARIA role for accessibility.",
+          "defaultValue": "'card'"
+        }
+      ]
+    }
+  },
+  {
+    "title": "product-card",
+    "path": "/frontend/components/product-card",
+    "description": "A reusable and adaptable product card component with multiple themes, dynamic content, and interactivity.",
+    "installation": [
+      {
+        "name": "npm",
+        "command": "npm install git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/npm-brands-solid.svg"
+      },
+      {
+        "name": "yarn",
+        "command": "yarn add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/yarn-brands-solid.svg"
+      },
+      {
+        "name": "pnpm",
+        "command": "pnpm add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/cubes-solid.svg"
+      },
+      {
+        "name": "bun",
+        "command": "bun add git+https://github.com/Team-Collaborators/Awesome-CL.git",
+        "path": "/icons/lemon-regular.svg"
+      }
+    ],
+    "import": {
+      "code": "import { ProductCard } from 'AwesomeCL';",
+      "description": "This code shows how to import the ProductCard component from the library."
+    },
+    "examples": [
+      {
+        "title": "Default Theme with Theme Switcher",
+        "description": "Showcases the default theme of the product card with theme switcher buttons, allowing users to toggle between 'default', 'dark', and 'neon' themes.",
+        "components": [
+          {
+            "type": "ProductCard",
+            "props": {
+              "showThemeSwitcher": true
+            }
+          }
+        ],
+        "code": "import { ProductCard } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <ProductCard showThemeSwitcher={true} />;\n  );\n}"
+      },
+      {
+        "title": "Dark Theme",
+        "description": "Renders the product card with the 'dark-theme' applied, using predefined values from the component.",
+        "components": [
+          {
+            "type": "ProductCard",
+            "props": {
+              "theme": "dark-theme"
+            }
+          }
+        ],
+        "code": "import { ProductCard } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <ProductCard \n      theme=\"dark-theme\" \n    />;\n  );\n}"
+      },
+      {
+        "title": "Neon Theme",
+        "description": "Applies the 'neon-theme' for a vibrant and dynamic appearance, using predefined values from the component.",
+        "components": [
+          {
+            "type": "ProductCard",
+            "props": {
+              "theme": "neon-theme"
+            }
+          }
+        ],
+        "code": "import { ProductCard } from 'AwesomeCL';\n\nfunction App() {\n  return (\n    <ProductCard \n      theme=\"neon-theme\" \n    />;\n  );\n}"
+      },
+      {
+        "title": "Custom Theme",
+        "description": "Demonstrates a custom-themed product card with unique styles and a custom image.",
+        "components": [
+          {
+            "type": "ProductCard",
+            "props": {
+              "theme": "custom-theme",
+              "name": "VR Headset",
+              "description": "Revolutionize your VR experience with vibrant customization.",
+              "price": 899.99,
+              "originalPrice": 1199.99,
+              "discount": 25,
+              "image": "/images/vr-headset.jpg",
+              "customTheme": {
+                "backgroundColor": "#1E1E2F",
+                "textColor": "#E0E0E0",
+                "buttonBackground": "#4C64F2",
+                "buttonHoverBackground": "#637AFF",
+                "buttonTextColor": "#FFFFFF",
+                "priceColor": "#38D39F",
+                "originalPriceColor": "#E94560",
+                "discountColor": "#FFD700",
+                "border": "2px solid #2C2C3D",
+                "boxShadow": "4px 4px 10px rgba(77, 20, 91, 0.5), -4px -4px 10px rgba(77, 20, 91, 0.5), -4px 4px 10px rgba(77, 20, 91, 0.5), 4px -4px 10px rgba(77, 20, 91, 0.5)",
+                "nameTextShadow": "2px 2px 5px rgba(0, 0, 0, 0.5)",
+                "descriptionTextShadow": "1px 1px 3px rgba(0, 0, 0, 0.3)"
+              }
+            }
+          }
+        ],
+        "code": "import { ProductCard } from 'AwesomeCL';\n\nfunction App() {\n  const handleBuyNow = () => {\n    alert('Buy Now clicked!');\n  };\n\n  const handleAddToBag = () => {\n    alert('Add to Bag clicked!');\n  };\n\n  return (\n    <ProductCard \n      theme=\"custom-theme\"\n      name=\"VR Headset\"\n      description=\"Revolutionize your VR experience with vibrant customization.\"\n      price={899.99}\n      originalPrice={1199.99}\n      discount={25}\n      image=\"/images/vr-headset.jpg\"\n      customTheme={{\n        backgroundColor: \"#E6E6FA\", // Light lavender\n        textColor: \"#1E3A8A\", // Deep blue for text\n        buttonBackground: \"#4F46E5\", // Vibrant indigo for buttons\n        buttonTextColor: \"#FFFFFF\", // White for button text\n        priceColor: \"#4ADE80\", // Light green for price\n        originalPriceColor: \"#9333EA\", // Purple for original price\n        discountColor: \"#60A5FA\", // Sky blue for discount\n        border: \"2px solid #7C3AED\", // Bold purple border\n        boxShadow: \"0 6px 15px rgba(124, 58, 237, 0.3)\", // Purple shadow\n        fontWeight: \"bold\" // Bold text for emphasis\n      }}\n      onBuyNow={handleBuyNow}\n      onAddToBag={handleAddToBag}\n    />;\n  );\n}"
+      }
+    ],
+    "propsTable": {
+      "title": "Product Card Props",
+      "description": "A list of all properties supported by the Product Card component.",
+      "headers": ["Prop Name", "Type", "Description", "Default Value"],
+      "rows": [
+        {
+          "propName": "theme",
+          "type": "string",
+          "description": "The theme for the product card. Options: 'default', 'dark-theme', 'neon-theme', 'custom-theme'.",
+          "defaultValue": "'default'"
+        },
+        {
+          "propName": "name",
+          "type": "string",
+          "description": "The name of the product.",
+          "defaultValue": "Unnamed Product"
+        },
+        {
+          "propName": "description",
+          "type": "string",
+          "description": "A brief description of the product.",
+          "defaultValue": "No description available."
+        },
+        {
+          "propName": "price",
+          "type": "number",
+          "description": "The current price of the product.",
+          "defaultValue": "0"
+        },
+        {
+          "propName": "originalPrice",
+          "type": "number",
+          "description": "The original price of the product, used to calculate discounts.",
+          "defaultValue": "0"
+        },
+        {
+          "propName": "discount",
+          "type": "number",
+          "description": "The discount percentage on the product.",
+          "defaultValue": "0"
+        },
+        {
+          "propName": "image",
+          "type": "string",
+          "description": "The URL or path to the product image.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "customTheme",
+          "type": "object",
+          "description": "Custom styles for the product card (backgroundColor, textColor, buttonBackground, buttonTextColor).",
+          "defaultValue": "{}"
+        },
+        {
+          "propName": "showThemeSwitcher",
+          "type": "boolean",
+          "description": "Whether to show theme switcher buttons.",
+          "defaultValue": "false"
+        },
+        {
+          "propName": "onThemeChange",
+          "type": "function",
+          "description": "Callback function triggered when the theme changes.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "onBuyNow",
+          "type": "function",
+          "description": "Callback function for the 'Buy Now' button.",
+          "defaultValue": "-"
+        },
+        {
+          "propName": "onAddToBag",
+          "type": "function",
+          "description": "Callback function for the 'Add to Bag' button.",
+          "defaultValue": "-"
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "Accessibility considerations for the Product Card component.",
+      "ariaRoles": [
+        {
+          "propName": "Product Image",
+          "description": "The product image includes an alt tag with the product name for better accessibility."
+        },
+        {
+          "propName": "Buttons",
+          "description": "Interactive buttons have accessible labels for screen readers."
+        },
+        {
+          "propName": "Theme Switcher",
+          "description": "Theme switcher buttons are keyboard-navigable and accessible."
+        }
+      ]
+    }
   }
-  
-  
 ]

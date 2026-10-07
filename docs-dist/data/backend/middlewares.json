@@ -1,6 +1,7 @@
 [
   {
-    "title": "Middleware for Authentication, Authorization, and Error Handling",
+    "title": "middlewares",
+    "oldTitle": "Middleware for Authentication, Authorization, and Error Handling",
     "description": "This group of middleware functions includes mechanisms to protect routes, restrict access to administrators, and handle errors across the application. These middleware functions ensure that only authenticated and authorized users can access certain routes, and that any errors are handled in a consistent manner across the system.",
     "controllers": [
       {

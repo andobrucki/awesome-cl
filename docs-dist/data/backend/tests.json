@@ -1,6 +1,7 @@
 [
   {
-    "title": "Unit Tests for User Registration, Login, Email Verification, and Protected Routes",
+    "title": "tests",
+    "oldTitle": "Unit Tests for User Registration, Login, Email Verification, and Protected Routes",
     "description": "This group contains test suites to validate the functionality of user registration, login, email verification, and access to protected routes. It ensures the application behaves as expected when handling authentication, authorization, and rate limiting.",
     "controllers": [
       {

@@ -1,14 +1,15 @@
 [
-    {
-        "title": "Email Sending Middleware",
-        "description": "This middleware is responsible for sending emails using the Nodemailer library. It uses environment variables to configure the email server and send messages such as account verification, password reset, or any other email communication.",
-        "controllers": [
-            {
-                "title": "Send Email Function",
-                "description": "The `sendEmail` function handles the sending of emails through the configured SMTP server using Nodemailer. It creates a transporter using the email server's host, port, and authentication details from environment variables. The function accepts options such as the recipient's email, subject, and message body.",
-                "code": "const nodemailer = require('nodemailer');\n\nconst sendEmail = async (options) => {\n  try {\n    const transporter = nodemailer.createTransport({\n      host: process.env.EMAIL_SERVER_HOST,\n      port: process.env.EMAIL_SERVER_PORT,  \n      secure: process.env.EMAIL_SERVER_PORT == 465, // Use secure transport for port 465\n      auth: {\n        user: process.env.EMAIL_SERVER_USER, // SMTP user\n        pass: process.env.EMAIL_SERVER_PASSWORD, // SMTP password\n      },\n    });\n\n    const mailOptions = {\n      from: `\"Cleaning Service\" <${process.env.EMAIL_FROM}>`,\n      to: options.email,\n      subject: options.subject,\n      text: options.message,\n    };\n\n    await transporter.sendMail(mailOptions); // Send the email\n  } catch (error) {\n    console.error('Error sending email:', error);\n    throw new Error('Email could not be sent');\n  }\n};\n\nmodule.exports = sendEmail;",
-                "language": "javascript"
-            }
-        ]
-    }
+  {
+    "title": "utils",
+    "oldTitle": "Email Sending Middleware",
+    "description": "This middleware is responsible for sending emails using the Nodemailer library. It uses environment variables to configure the email server and send messages such as account verification, password reset, or any other email communication.",
+    "controllers": [
+      {
+        "title": "Send Email Function",
+        "description": "The `sendEmail` function handles the sending of emails through the configured SMTP server using Nodemailer. It creates a transporter using the email server's host, port, and authentication details from environment variables. The function accepts options such as the recipient's email, subject, and message body.",
+        "code": "const nodemailer = require('nodemailer');\n\nconst sendEmail = async (options) => {\n  try {\n    const transporter = nodemailer.createTransport({\n      host: process.env.EMAIL_SERVER_HOST,\n      port: process.env.EMAIL_SERVER_PORT,  \n      secure: process.env.EMAIL_SERVER_PORT == 465, // Use secure transport for port 465\n      auth: {\n        user: process.env.EMAIL_SERVER_USER, // SMTP user\n        pass: process.env.EMAIL_SERVER_PASSWORD, // SMTP password\n      },\n    });\n\n    const mailOptions = {\n      from: `\"Cleaning Service\" <${process.env.EMAIL_FROM}>`,\n      to: options.email,\n      subject: options.subject,\n      text: options.message,\n    };\n\n    await transporter.sendMail(mailOptions); // Send the email\n  } catch (error) {\n    console.error('Error sending email:', error);\n    throw new Error('Email could not be sent');\n  }\n};\n\nmodule.exports = sendEmail;",
+        "language": "javascript"
+      }
+    ]
+  }
 ]
