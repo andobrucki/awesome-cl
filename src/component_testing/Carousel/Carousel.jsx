@@ -5,7 +5,7 @@ import { FaReact, FaGitAlt, FaGithub, FaNodeJs } from "react-icons/fa";
 import {
   SiJavascript,
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiNpm,
   SiWebpack,
   SiVite,
@@ -26,7 +26,7 @@ export default function Carousel({
       alt: "Html icon",
     },
     {
-      icon: <SiCss3 />,
+      icon: <SiCss />,
       alt: "Css3 icon",
     },
     {
@@ -79,7 +79,7 @@ export default function Carousel({
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
     );
   };
   const nextSlideClassic = () => {
@@ -88,7 +88,7 @@ export default function Carousel({
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
   };
 
@@ -108,7 +108,7 @@ export default function Carousel({
     }
     if (touchEnd - touchStart > 50) {
       setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1,
       );
     }
   };
@@ -148,8 +148,8 @@ export default function Carousel({
           ? containerWidth
           : `${width}px`
         : containerWidth
-        ? containerWidth
-        : `${windowWidth}px`,
+          ? containerWidth
+          : `${windowWidth}px`,
     height: `${height}px`,
     position: "relative",
     margin: 0,
