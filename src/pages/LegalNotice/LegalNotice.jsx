@@ -17,8 +17,8 @@ const LegalNotice = () => {
         </p>
 
         <h3>Contact Information</h3>
-        <p>Email: awesomeCL@protonmail.com </p>
-        <p>Phone: +49 234 567 890</p>
+        <p>Email: krst@mailbox.org </p>
+        <p>Phone: +49 (0)30 29778930</p>
         <br />
         <p>
           This Legal Notice complies with the German laws under § 5 DDG and § 55

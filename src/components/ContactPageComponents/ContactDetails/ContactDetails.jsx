@@ -12,13 +12,13 @@ const ContactDetails = () => {
   return (
     <section className={styles.contactDetails}>
       <div className={styles.contactCards}>
-        <div className={styles.card}>
+        {/* <div className={styles.card}>
           <a href="tel:+49 (0)30 29778930" className={styles.link}>
             <FaPhone className={styles.icon} />
             <h3>Call Us</h3>
             <p>+49 (0)30 29778930</p>
           </a>
-        </div>
+        </div> */}
         <div className={styles.card}>
           <a href="mailto:krst@mailbox.org" className={styles.link}>
             <FaEnvelope className={styles.icon} />
