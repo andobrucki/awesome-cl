@@ -16,11 +16,11 @@ const ContactDetails = () => {
           <a href="tel:+491234567890" className={styles.link}>
             <FaPhone className={styles.icon} />
             <h3>Call Us</h3>
-            <p>(+49) 1234 567890</p>
+            <p>+49 (0)30 29778930</p>
           </a>
         </div>
         <div className={styles.card}>
-          <a href="mailto:info@awesomecl.com" className={styles.link}>
+          <a href="mailto:krst@mailbox.org" className={styles.link}>
             <FaEnvelope className={styles.icon} />
             <h3>Email Us</h3>
             <p>info@awesomecl.com</p>
