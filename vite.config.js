@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
         publicDir: false,
         rollupOptions: {
           input: "./src/library/exports.js",
-          external: ["react", "react-dom"],
+          external: ["react", "react-dom", "react/jsx-runtime"],
           output: {
             assetFileNames: "exports.css",
             globals: {

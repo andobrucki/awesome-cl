@@ -1,77 +1,78 @@
 [
-    {
-        "title": "WorkScheduleManagement",
-        "path": "/Backend/Controllers/WorkScheduleManagement",
-        "description": "These controllers handle the work schedule functionality, including setting work schedules, checking availability, and calculating available time slots.",
-        "controllers": [
-            {
-                "title": "Set Work Schedule",
-                "description": "Sets the work schedule for a client, creating or updating it in the database.",
-                "code": "const WorkSchedule = require('../../models/WorkSchedule');\n\nconst setWorkSchedule = async (req, res, next) => {\n  const { clientId, days, startTime, endTime } = req.body;\n  try {\n    let workSchedule = await WorkSchedule.findOne({ clientId });\n\n    if (!workSchedule) {\n      workSchedule = new WorkSchedule({\n        clientId,\n        days,\n        startTime,\n        endTime,\n      });\n      await workSchedule.save();\n      return res.status(201).json({ message: 'Work schedule created successfully', workSchedule });\n    }\n    workSchedule.days = days;\n    workSchedule.startTime = startTime;\n    workSchedule.endTime = endTime;\n    await workSchedule.save();\n    res.status(200).json({ message: 'Work schedule updated successfully', workSchedule });\n  } catch (error) {\n    res.status(500).json({ message: 'Error setting work schedule', error });\n  }\n};\n\nmodule.exports = { setWorkSchedule };",
-                "language": "javascript"
-            },
-            {
-                "title": "Check Work Schedule Availability",
-                "description": "Checks the availability of a client's work schedule and calculates available time slots based on the requested hours.",
-                "code": "const WorkSchedule = require('../../models/WorkSchedule');\n\nconst checkAvailability = async (req, res) => {\n  const { hours } = req.body;\n  try {\n    const workSchedule = await WorkSchedule.findOne({ clientId: 'client-id' });\n    if (!workSchedule) {\n      return res.status(404).json({ message: 'Work schedule not found' });\n    }\n    const availableSlots = calculateAvailableSlots(workSchedule, hours);\n    res.status(200).json({ slots: availableSlots });\n  } catch (error) {\n    res.status(500).json({ message: 'Error checking availability', error });\n  }\n};\n\nconst calculateAvailableSlots = (workSchedule, requiredHours) => {\n  const availableSlots = [];\n  const startHour = parseInt(workSchedule.startTime.split(':')[0]);\n  const endHour = parseInt(workSchedule.endTime.split(':')[0]);\n  for (let day of workSchedule.days) {\n    let start = startHour;\n    while (start + requiredHours <= endHour) {\n      availableSlots.push({\n        date: day,\n        time: `${start}:00 - ${start + requiredHours}:00`,\n        duration: requiredHours\n      });\n      start += requiredHours;\n    }\n  }\n  return availableSlots;\n};\n\nmodule.exports = { checkAvailability };",
-                "language": "javascript"
-            }
-        ]
-    },
-    {
-        "title": "ServiceRequestManagement",
-        "path": "/Backend/Controllers/ServiceRequestManagement",
-        "description": "These controllers manage service requests, including creating and validating requests, and handling admin functionalities like retrieving and confirming service requests.",
-        "controllers": [
-            {
-                "title": "Service Request Validation",
-                "description": "Validates that the service request has all required fields, such as service type, date, time, and address.",
-                "code": "const { check } = require('express-validator');\n\nconst validateServiceRequest = [\n  check('serviceType').notEmpty().withMessage('Service type is required'),\n  check('date').isISO8601().withMessage('Please provide a valid date'),\n  check('time').notEmpty().withMessage('Time is required'),\n  check('address').isLength({ min: 10 }).withMessage('Address must be at least 10 characters long'),\n];\n\nmodule.exports = { validateServiceRequest };",
-                "language": "javascript"
-            },
-            {
-                "title": "Create Service Request",
-                "description": "Creates a new service request for the authenticated user and saves it to the database.",
-                "code": "const ServiceRequest = require('../../models/ServiceRequest');\n\nconst createServiceRequest = async (req, res, next) => {\n  try {\n    const { serviceType, requiredHours, date, time, notes } = req.body;\n    if (!req.user) {\n      return res.status(401).json({ message: 'Not authorized, no token' });\n    }\n    const serviceRequest = await ServiceRequest.create({\n      user: req.user._id,\n      serviceType,\n      requiredHours,\n      date,\n      time,\n      status: 'pending',\n      address: req.user.address,\n      notes,\n    });\n    res.status(201).json(serviceRequest);\n  } catch (err) {\n    res.status(500).json({ message: 'Error creating service request' });\n    next(err);\n  }\n};\n\nmodule.exports = { createServiceRequest };",
-                "language": "javascript"
-            },
-            {
-                "title": "Get All Service Requests (Admin Only)",
-                "description": "Retrieves all service requests and includes user information. Only admins can access this functionality.",
-                "code": "const ServiceRequest = require('../../models/ServiceRequest');\n\nconst getServiceRequests = async (req, res, next) => {\n  try {\n    if (req.user.role !== 'admin') {\n      const error = new Error('Not authorized to access this resource');\n      error.statusCode = 403;\n      throw error;\n    }\n    const serviceRequests = await ServiceRequest.find().populate('user', 'name email');\n    res.json(serviceRequests);\n  } catch (err) {\n    next(err);\n  }\n};\n\nmodule.exports = { getServiceRequests };",
-                "language": "javascript"
-            }
-        ]
-    },
-    {
-        "title": "UserManagement",
-        "path": "/Backend/Controllers/UserManagement",
-        "description": "These controllers handle user registration, login, profile management, and email verification.",
-        "controllers": [
-            {
-                "title": "User Registration",
-                "description": "Handles user registration with validation, password hashing, and email verification.",
-                "code": "const { check, validationResult } = require('express-validator');\nconst User = require('../../models/User');\nconst jwt = require('jsonwebtoken');\nconst sendEmail = require('../../utils/sendEmail');\nconst bcrypt = require('bcryptjs');\n\nconst registerUser = async (req, res, next) => {\n  try {\n    const { name, email, password } = req.body;\n    const errors = validationResult(req);\n    if (!errors.isEmpty()) {\n      const error = new Error(errors.array()[0].msg);\n      error.statusCode = 400;\n      throw error;\n    }\n    const userExists = await User.findOne({ email });\n    if (userExists) {\n      const error = new Error('User already exists');\n      error.statusCode = 400;\n      throw error;\n    }\n    const hashedPassword = await bcrypt.hash(password, 10);\n    const newUser = new User({ name, email, password: hashedPassword });\n    await newUser.save();\n    const verificationToken = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1d' });\n    const verificationUrl = `${req.protocol}://${req.get('host')}/api/users/verify-email/${verificationToken}`;\n    const message = `Hello ${name},\\n\\nPlease verify your account by clicking the following link:\\n\\n${verificationUrl}\\n\\nThank you,\\nCleaning Service`;\n    await sendEmail({ email, subject: 'Account Verification - Cleaning Service', message });\n    res.status(200).json({ message: 'Verification email sent. Please check your email.' });\n  } catch (err) {\n    next(err);\n  }\n};\n\nmodule.exports = { registerUser };",
-                "language": "javascript"
-            },
-            {
-                "title": "User Login",
-                "description": "Validates user credentials and generates a JWT token for authentication.",
-                "code": "const User = require('../../models/User');\nconst jwt = require('jsonwebtoken');\n\nconst loginUser = async (req, res, next) => {\n  try {\n    const { email, password } = req.body;\n    const user = await User.findOne({ email });\n    if (!user || !(await user.matchPassword(password))) {\n      const error = new Error('Invalid email or password');\n      error.statusCode = 401;\n      throw error;\n    }\n    if (!user.isVerified) {\n      const error = new Error('Please verify your account before logging in.');\n      error.statusCode = 401;\n      throw error;\n    }\n    const token = jwt.sign({ id: user._id, role: user.role, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });\n    res.json({ _id: user._id, name: user.name, email: user.email, role: user.role, token });\n  } catch (err) {\n    next(err);\n  }\n};\n\nmodule.exports = { loginUser };",
-                "language": "javascript"
-            },
-            {
-                "title": "Get User Profile",
-                "description": "Retrieves the authenticated user's profile information, excluding the password.",
-                "code": "const User = require('../../models/User');\n\nconst getUserProfile = async (req, res, next) => {\n  try {\n    const user = await User.findById(req.user._id);\n    if (!user) {\n      const error = new Error('User not found');\n      error.statusCode = 404;\n      throw error;\n    }\n    res.json({ _id: user._id, name: user.name, email: user.email, isVerified: user.isVerified });\n  } catch (err) {\n    next(err);\n  }\n};\n\nmodule.exports = { getUserProfile };",
-                "language": "javascript"
-            },
-            {
-                "title": "Verify User Email",
-                "description": "Verifies a user's email by decoding the JWT token and marking the user's account as verified.",
-                "code": "const User = require('../../models/User');\nconst jwt = require('jsonwebtoken');\n\nconst verifyEmail = async (req, res, next) => {\n  try {\n    const decoded = jwt.verify(req.params.token, process.env.JWT_SECRET);\n    const user = await User.findOne({ email: decoded.email });\n    if (!user) {\n      const error = new Error('User not found');\n      error.statusCode = 400;\n      throw error;\n    }\n    if (user.isVerified) {\n      const error = new Error('User is already verified');\n      error.statusCode = 400;\n      throw error;\n    }\n    user.isVerified = true;\n    await user.save();\n    res.status(201).json({ message: 'Account successfully verified' });\n  } catch (error) {\n    if (error.name === 'JsonWebTokenError' || error.name === 'TokenExpiredError') {\n      return res.status(400).json({ message: 'Invalid or expired token' });\n    }\n    next(error);\n  }\n};\n\nmodule.exports = { verifyEmail };",
-                "language": "javascript"
-            }
-        ]
-    }
+  {
+    "title": "Schedule",
+    "path": "/backend/controllers/schedule",
+    "description": "These controllers handle the work schedule functionality, including setting work schedules, checking availability, and calculating available time slots.",
+    "controllers": [
+      {
+        "title": "Set Work Schedule",
+        "description": "Sets the work schedule for a client, creating or updating it in the database.",
+        "code": "const WorkSchedule = require('../../models/WorkSchedule');\n\nconst setWorkSchedule = async (req, res, next) => {\n  const { clientId, days, startTime, endTime } = req.body;\n  try {\n    let workSchedule = await WorkSchedule.findOne({ clientId });\n\n    if (!workSchedule) {\n      workSchedule = new WorkSchedule({\n        clientId,\n        days,\n        startTime,\n        endTime,\n      });\n      await workSchedule.save();\n      return res.status(201).json({ message: 'Work schedule created successfully', workSchedule });\n    }\n    workSchedule.days = days;\n    workSchedule.startTime = startTime;\n    workSchedule.endTime = endTime;\n    await workSchedule.save();\n    res.status(200).json({ message: 'Work schedule updated successfully', workSchedule });\n  } catch (error) {\n    res.status(500).json({ message: 'Error setting work schedule', error });\n  }\n};\n\nmodule.exports = { setWorkSchedule };",
+        "language": "javascript"
+      },
+      {
+        "title": "Check Work Schedule Availability",
+        "description": "Checks the availability of a client's work schedule and calculates available time slots based on the requested hours.",
+        "code": "const WorkSchedule = require('../../models/WorkSchedule');\n\nconst checkAvailability = async (req, res) => {\n  const { hours } = req.body;\n  try {\n    const workSchedule = await WorkSchedule.findOne({ clientId: 'client-id' });\n    if (!workSchedule) {\n      return res.status(404).json({ message: 'Work schedule not found' });\n    }\n    const availableSlots = calculateAvailableSlots(workSchedule, hours);\n    res.status(200).json({ slots: availableSlots });\n  } catch (error) {\n    res.status(500).json({ message: 'Error checking availability', error });\n  }\n};\n\nconst calculateAvailableSlots = (workSchedule, requiredHours) => {\n  const availableSlots = [];\n  const startHour = parseInt(workSchedule.startTime.split(':')[0]);\n  const endHour = parseInt(workSchedule.endTime.split(':')[0]);\n  for (let day of workSchedule.days) {\n    let start = startHour;\n    while (start + requiredHours <= endHour) {\n      availableSlots.push({\n        date: day,\n        time: `${start}:00 - ${start + requiredHours}:00`,\n        duration: requiredHours\n      });\n      start += requiredHours;\n    }\n  }\n  return availableSlots;\n};\n\nmodule.exports = { checkAvailability };",
+        "language": "javascript"
+      }
+    ]
+  },
+  {
+    "title": "ServiceRequest",
+    "oldTitle": "Service Request",
+    "path": "/backend/controllers/serviceRequest",
+    "description": "These controllers manage service requests, including creating and validating requests, and handling admin functionalities like retrieving and confirming service requests.",
+    "controllers": [
+      {
+        "title": "Service Request Validation",
+        "description": "Validates that the service request has all required fields, such as service type, date, time, and address.",
+        "code": "const { check } = require('express-validator');\n\nconst validateServiceRequest = [\n  check('serviceType').notEmpty().withMessage('Service type is required'),\n  check('date').isISO8601().withMessage('Please provide a valid date'),\n  check('time').notEmpty().withMessage('Time is required'),\n  check('address').isLength({ min: 10 }).withMessage('Address must be at least 10 characters long'),\n];\n\nmodule.exports = { validateServiceRequest };",
+        "language": "javascript"
+      },
+      {
+        "title": "Create Service Request",
+        "description": "Creates a new service request for the authenticated user and saves it to the database.",
+        "code": "const ServiceRequest = require('../../models/ServiceRequest');\n\nconst createServiceRequest = async (req, res, next) => {\n  try {\n    const { serviceType, requiredHours, date, time, notes } = req.body;\n    if (!req.user) {\n      return res.status(401).json({ message: 'Not authorized, no token' });\n    }\n    const serviceRequest = await ServiceRequest.create({\n      user: req.user._id,\n      serviceType,\n      requiredHours,\n      date,\n      time,\n      status: 'pending',\n      address: req.user.address,\n      notes,\n    });\n    res.status(201).json(serviceRequest);\n  } catch (err) {\n    res.status(500).json({ message: 'Error creating service request' });\n    next(err);\n  }\n};\n\nmodule.exports = { createServiceRequest };",
+        "language": "javascript"
+      },
+      {
+        "title": "Get All Service Requests (Admin Only)",
+        "description": "Retrieves all service requests and includes user information. Only admins can access this functionality.",
+        "code": "const ServiceRequest = require('../../models/ServiceRequest');\n\nconst getServiceRequests = async (req, res, next) => {\n  try {\n    if (req.user.role !== 'admin') {\n      const error = new Error('Not authorized to access this resource');\n      error.statusCode = 403;\n      throw error;\n    }\n    const serviceRequests = await ServiceRequest.find().populate('user', 'name email');\n    res.json(serviceRequests);\n  } catch (err) {\n    next(err);\n  }\n};\n\nmodule.exports = { getServiceRequests };",
+        "language": "javascript"
+      }
+    ]
+  },
+  {
+    "title": "Users",
+    "path": "/backend/controllers/users",
+    "description": "These controllers handle user registration, login, profile management, and email verification.",
+    "controllers": [
+      {
+        "title": "User Registration",
+        "description": "Handles user registration with validation, password hashing, and email verification.",
+        "code": "const { check, validationResult } = require('express-validator');\nconst User = require('../../models/User');\nconst jwt = require('jsonwebtoken');\nconst sendEmail = require('../../utils/sendEmail');\nconst bcrypt = require('bcryptjs');\n\nconst registerUser = async (req, res, next) => {\n  try {\n    const { name, email, password } = req.body;\n    const errors = validationResult(req);\n    if (!errors.isEmpty()) {\n      const error = new Error(errors.array()[0].msg);\n      error.statusCode = 400;\n      throw error;\n    }\n    const userExists = await User.findOne({ email });\n    if (userExists) {\n      const error = new Error('User already exists');\n      error.statusCode = 400;\n      throw error;\n    }\n    const hashedPassword = await bcrypt.hash(password, 10);\n    const newUser = new User({ name, email, password: hashedPassword });\n    await newUser.save();\n    const verificationToken = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1d' });\n    const verificationUrl = `${req.protocol}://${req.get('host')}/api/users/verify-email/${verificationToken}`;\n    const message = `Hello ${name},\\n\\nPlease verify your account by clicking the following link:\\n\\n${verificationUrl}\\n\\nThank you,\\nCleaning Service`;\n    await sendEmail({ email, subject: 'Account Verification - Cleaning Service', message });\n    res.status(200).json({ message: 'Verification email sent. Please check your email.' });\n  } catch (err) {\n    next(err);\n  }\n};\n\nmodule.exports = { registerUser };",
+        "language": "javascript"
+      },
+      {
+        "title": "User Login",
+        "description": "Validates user credentials and generates a JWT token for authentication.",
+        "code": "const User = require('../../models/User');\nconst jwt = require('jsonwebtoken');\n\nconst loginUser = async (req, res, next) => {\n  try {\n    const { email, password } = req.body;\n    const user = await User.findOne({ email });\n    if (!user || !(await user.matchPassword(password))) {\n      const error = new Error('Invalid email or password');\n      error.statusCode = 401;\n      throw error;\n    }\n    if (!user.isVerified) {\n      const error = new Error('Please verify your account before logging in.');\n      error.statusCode = 401;\n      throw error;\n    }\n    const token = jwt.sign({ id: user._id, role: user.role, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });\n    res.json({ _id: user._id, name: user.name, email: user.email, role: user.role, token });\n  } catch (err) {\n    next(err);\n  }\n};\n\nmodule.exports = { loginUser };",
+        "language": "javascript"
+      },
+      {
+        "title": "Get User Profile",
+        "description": "Retrieves the authenticated user's profile information, excluding the password.",
+        "code": "const User = require('../../models/User');\n\nconst getUserProfile = async (req, res, next) => {\n  try {\n    const user = await User.findById(req.user._id);\n    if (!user) {\n      const error = new Error('User not found');\n      error.statusCode = 404;\n      throw error;\n    }\n    res.json({ _id: user._id, name: user.name, email: user.email, isVerified: user.isVerified });\n  } catch (err) {\n    next(err);\n  }\n};\n\nmodule.exports = { getUserProfile };",
+        "language": "javascript"
+      },
+      {
+        "title": "Verify User Email",
+        "description": "Verifies a user's email by decoding the JWT token and marking the user's account as verified.",
+        "code": "const User = require('../../models/User');\nconst jwt = require('jsonwebtoken');\n\nconst verifyEmail = async (req, res, next) => {\n  try {\n    const decoded = jwt.verify(req.params.token, process.env.JWT_SECRET);\n    const user = await User.findOne({ email: decoded.email });\n    if (!user) {\n      const error = new Error('User not found');\n      error.statusCode = 400;\n      throw error;\n    }\n    if (user.isVerified) {\n      const error = new Error('User is already verified');\n      error.statusCode = 400;\n      throw error;\n    }\n    user.isVerified = true;\n    await user.save();\n    res.status(201).json({ message: 'Account successfully verified' });\n  } catch (error) {\n    if (error.name === 'JsonWebTokenError' || error.name === 'TokenExpiredError') {\n      return res.status(400).json({ message: 'Invalid or expired token' });\n    }\n    next(error);\n  }\n};\n\nmodule.exports = { verifyEmail };",
+        "language": "javascript"
+      }
+    ]
+  }
 ]
